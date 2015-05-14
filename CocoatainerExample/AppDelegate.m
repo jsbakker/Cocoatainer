@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "JSBCocoatainerConfiguration.h"
+
+#import "CocoaMug.h"
+#import "Kettle.h"
+#import "CocoaPowder.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +22,36 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    JSBCocoatainerConfiguration* config = [[JSBCocoatainerConfiguration alloc] init];
+
+    [config registerComponent:@protocol(HotWaterSource) withBlock:
+     ^{
+         return [[Kettle alloc] init];
+     }];
+
+    [config registerComponent:@protocol(Mix)
+                 dependentOn1:@protocol(Topping)
+                    withBlock:
+     ^(id<Topping> topping){
+         return [[CocoaPowder alloc] initWithTopping:topping];
+     }];
+
+    [config registerComponent:@protocol(LiquidVessel)
+                 dependentOn1:@protocol(HotWaterSource)
+                         and2:@protocol(Mix)
+                    withBlock:
+     ^(id<HotWaterSource> source, id<Mix> mix){
+         return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
+     }];
+
+    id<LiquidVessel> myMug = [config resolveComponent:@protocol(LiquidVessel)];
+    [myMug fill];
+    [myMug drink:20];
+    [myMug checkAmount];
+    [myMug drink:30];
+    [myMug checkAmount];
+
     return YES;
 }
 
