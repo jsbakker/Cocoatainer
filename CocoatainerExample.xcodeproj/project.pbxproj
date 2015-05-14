@@ -14,8 +14,8 @@
 		D29764771B042A0200DE9E61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29764761B042A0200DE9E61 /* Images.xcassets */; };
 		D297647A1B042A0200DE9E61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29764781B042A0200DE9E61 /* LaunchScreen.xib */; };
 		D29764861B042A0200DE9E61 /* CocoatainerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764851B042A0200DE9E61 /* CocoatainerExampleTests.m */; };
-		D29764911B042C5200DE9E61 /* JSBCocoatainerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764901B042C5200DE9E61 /* JSBCocoatainerConfiguration.m */; };
-		D297649C1B04455B00DE9E61 /* JSBAbstractedComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649B1B04455B00DE9E61 /* JSBAbstractedComponent.m */; };
+		D29764911B042C5200DE9E61 /* CCTCocoatainerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764901B042C5200DE9E61 /* CCTCocoatainerConfiguration.m */; };
+		D297649C1B04455B00DE9E61 /* CCTAbstractedComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */; };
 		D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649E1B046C4800DE9E61 /* CocoaMug.m */; };
 		D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764A81B0472EB00DE9E61 /* Kettle.m */; };
 		D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764AB1B0477A900DE9E61 /* CocoaPowder.m */; };
@@ -45,10 +45,10 @@
 		D297647F1B042A0200DE9E61 /* CocoatainerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoatainerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29764841B042A0200DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29764851B042A0200DE9E61 /* CocoatainerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoatainerExampleTests.m; sourceTree = "<group>"; };
-		D297648F1B042C5200DE9E61 /* JSBCocoatainerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBCocoatainerConfiguration.h; sourceTree = "<group>"; };
-		D29764901B042C5200DE9E61 /* JSBCocoatainerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBCocoatainerConfiguration.m; sourceTree = "<group>"; };
-		D297649A1B04455B00DE9E61 /* JSBAbstractedComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBAbstractedComponent.h; sourceTree = "<group>"; };
-		D297649B1B04455B00DE9E61 /* JSBAbstractedComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBAbstractedComponent.m; sourceTree = "<group>"; };
+		D297648F1B042C5200DE9E61 /* CCTCocoatainerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTCocoatainerConfiguration.h; sourceTree = "<group>"; };
+		D29764901B042C5200DE9E61 /* CCTCocoatainerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTCocoatainerConfiguration.m; sourceTree = "<group>"; };
+		D297649A1B04455B00DE9E61 /* CCTAbstractedComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractedComponent.h; sourceTree = "<group>"; };
+		D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractedComponent.m; sourceTree = "<group>"; };
 		D297649D1B046C4800DE9E61 /* CocoaMug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaMug.h; sourceTree = "<group>"; };
 		D297649E1B046C4800DE9E61 /* CocoaMug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaMug.m; sourceTree = "<group>"; };
 		D29764A01B046CB300DE9E61 /* LiquidVessel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiquidVessel.h; sourceTree = "<group>"; };
@@ -107,10 +107,10 @@
 				D29764761B042A0200DE9E61 /* Images.xcassets */,
 				D29764781B042A0200DE9E61 /* LaunchScreen.xib */,
 				D29764691B042A0200DE9E61 /* Supporting Files */,
-				D297648F1B042C5200DE9E61 /* JSBCocoatainerConfiguration.h */,
-				D29764901B042C5200DE9E61 /* JSBCocoatainerConfiguration.m */,
-				D297649A1B04455B00DE9E61 /* JSBAbstractedComponent.h */,
-				D297649B1B04455B00DE9E61 /* JSBAbstractedComponent.m */,
+				D297648F1B042C5200DE9E61 /* CCTCocoatainerConfiguration.h */,
+				D29764901B042C5200DE9E61 /* CCTCocoatainerConfiguration.m */,
+				D297649A1B04455B00DE9E61 /* CCTAbstractedComponent.h */,
+				D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */,
 				D297649D1B046C4800DE9E61 /* CocoaMug.h */,
 				D297649E1B046C4800DE9E61 /* CocoaMug.m */,
 				D29764A71B0472EA00DE9E61 /* Kettle.h */,
@@ -252,9 +252,9 @@
 			files = (
 				D29764721B042A0200DE9E61 /* ViewController.m in Sources */,
 				D297646F1B042A0200DE9E61 /* AppDelegate.m in Sources */,
-				D297649C1B04455B00DE9E61 /* JSBAbstractedComponent.m in Sources */,
+				D297649C1B04455B00DE9E61 /* CCTAbstractedComponent.m in Sources */,
 				D297646C1B042A0200DE9E61 /* main.m in Sources */,
-				D29764911B042C5200DE9E61 /* JSBCocoatainerConfiguration.m in Sources */,
+				D29764911B042C5200DE9E61 /* CCTCocoatainerConfiguration.m in Sources */,
 				D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */,
 				D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */,
 				D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  JSBCocoatainerConfiguration.h
+//  CocoatainerConfiguration.h
 //  CocoatainerExample
 //
 //  Created by Jeffrey Bakker on 2015-05-13.
@@ -15,7 +15,7 @@ typedef id (^CreationBlock3)(id, id, id);
 typedef id (^CreationBlock4)(id, id, id, id);
 typedef id (^CreationBlock5)(id, id, id, id, id);
 
-@interface JSBCocoatainerConfiguration : NSObject
+@interface CCTCocoatainerConfiguration : NSObject
 
 -(void)registerComponent:(Protocol*)abstraction withInstance:(id)object;
 

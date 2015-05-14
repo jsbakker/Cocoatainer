@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "JSBCocoatainerConfiguration.h"
+#import "CCTCocoatainerConfiguration.h"
 
 #import "CocoaMug.h"
 #import "Kettle.h"
@@ -23,7 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    JSBCocoatainerConfiguration* config = [[JSBCocoatainerConfiguration alloc] init];
+    CCTCocoatainerConfiguration* config = [[CCTCocoatainerConfiguration alloc] init];
 
     [config registerComponent:@protocol(HotWaterSource) withBlock:
      ^{

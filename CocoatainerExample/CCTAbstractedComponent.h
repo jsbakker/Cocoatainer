@@ -1,5 +1,5 @@
 //
-//  JSBAbstractedComponent.h
+//  AbstractedComponent.h
 //  CocoatainerExample
 //
 //  Created by Jeffrey Bakker on 2015-05-13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JSBAbstractedComponent : NSObject
+@interface CCTAbstractedComponent : NSObject
 
 @property (nonatomic) Protocol *abstracion;
 @property (nonatomic) NSArray *dependencies;

@@ -1,14 +1,14 @@
 //
-//  JSBCocoatainerConfiguration.m
+//  CocoatainerConfiguration.m
 //  CocoatainerExample
 //
 //  Created by Jeffrey Bakker on 2015-05-13.
 //  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
 //
 
-#import "JSBCocoatainerConfiguration.h"
+#import "CCTCocoatainerConfiguration.h"
 
-@interface JSBCocoatainerConfiguration ()
+@interface CCTCocoatainerConfiguration ()
 {
 @private
     NSMutableDictionary *_abstractionInstanceMap;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation JSBCocoatainerConfiguration
+@implementation CCTCocoatainerConfiguration
 
 -(id)init
 {
