@@ -12,6 +12,7 @@
 #import "CocoaMug.h"
 #import "Kettle.h"
 #import "CocoaPowder.h"
+#import "Marshmallow.h"
 
 @interface AppDelegate ()
 
@@ -23,11 +24,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    CCTCocoatainerConfiguration* config = [[CCTCocoatainerConfiguration alloc] init];
+    CCTCocoatainerConfiguration* config =
+        [[CCTCocoatainerConfiguration alloc] init];
 
     [config registerComponent:@protocol(HotWaterSource) withBlock:
      ^{
          return [[Kettle alloc] init];
+     }];
+
+    [config registerComponent:@protocol(Topping) withBlock:
+     ^{
+         return [[Marshmallow alloc] init];
      }];
 
     [config registerComponent:@protocol(Mix)
@@ -45,7 +52,20 @@
          return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
      }];
 
+    // Comment the above registry and uncomment below to change the order
+    // of dependencies. Notice the order of which the -(void)start methods
+    // are called between the Mix and the HotWaterSource.
+//    [config registerComponent:@protocol(LiquidVessel)
+//                 dependentOn1:@protocol(Mix)
+//                         and2:@protocol(HotWaterSource)
+//                    withBlock:
+//     ^(id<Mix> mix, id<HotWaterSource> source){
+//         return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
+//     }];
+
     id<LiquidVessel> myMug = [config resolveComponent:@protocol(LiquidVessel)];
+    [config start];
+
     [myMug fill];
     [myMug drink:20];
     [myMug checkAmount];

@@ -7,6 +7,7 @@
 //
 
 #import "CCTCocoatainerConfiguration.h"
+#import "CCTStartable.h"
 
 @interface CCTCocoatainerConfiguration ()
 {
@@ -228,4 +229,17 @@
     }
     return nil;
 }
+
+-(void)start
+{
+    for (NSString* key in _abstractionInstanceMap)
+    {
+        id instance = _abstractionInstanceMap[key];
+        if ([instance conformsToProtocol:@protocol(CCTStartable)])
+        {
+            [instance start];
+        }
+    }
+}
+
 @end

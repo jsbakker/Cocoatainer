@@ -7,15 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCTStartable.h"
 #import "Mix.h"
+#import "Topping.h"
 
-@protocol Topping <NSObject>
-@end
-
-@interface Marshmallow : NSObject<Topping>
-@end
-
-@interface CocoaPowder : NSObject<Mix>
+@interface CocoaPowder : NSObject<Mix, CCTStartable>
 
 -(id)initWithTopping:(id<Topping>)topping;
 -(void)shovel;

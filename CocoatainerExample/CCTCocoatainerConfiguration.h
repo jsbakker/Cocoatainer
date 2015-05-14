@@ -54,4 +54,6 @@ typedef id (^CreationBlock5)(id, id, id, id, id);
 
 -(id)resolveComponent:(Protocol*)abstraction;
 
+-(void)start;
+
 @end

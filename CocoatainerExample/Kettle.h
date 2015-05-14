@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCTStartable.h"
 #import "HotWaterSource.h"
 
-@interface Kettle : NSObject<HotWaterSource>
+@interface Kettle : NSObject<HotWaterSource, CCTStartable>
 
+-(void)start;
 -(void)heat;
 -(NSInteger)pourCup;
 

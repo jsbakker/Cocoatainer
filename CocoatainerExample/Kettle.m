@@ -12,14 +12,9 @@
 
 @implementation Kettle
 
--(id)init
+-(void)start
 {
-    self = [super init];
-    if (self)
-    {
-        [self heat];
-    }
-    return self;
+    [self heat];
 }
 
 -(void)heat

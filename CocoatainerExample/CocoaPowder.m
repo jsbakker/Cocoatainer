@@ -22,12 +22,14 @@
     if (self)
     {
         _topping = topping;
-        NSLog(@"Creating cocoa mix with %@ topping",
-              NSStringFromClass([topping class]));
-              //NSStringFromClass([[topping self] class]));
-              //[topping description]);
     }
     return self;
+}
+
+-(void)start
+{
+    NSLog(@"Creating %@ mix with %@ topping",
+          NSStringFromClass([self class]), [_topping name]);
 }
 
 -(void)shovel
