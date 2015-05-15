@@ -7,14 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef id (^CreationBlock0)(void);
-typedef id (^CreationBlock1)(id);
-typedef id (^CreationBlock2)(id, id);
-typedef id (^CreationBlock3)(id, id, id);
-typedef id (^CreationBlock4)(id, id, id, id);
-typedef id (^CreationBlock5)(id, id, id, id, id);
-typedef id (^CreationBlock6)(id, id, id, id, id, id);
+#import "CCTConstructors.h"
 
 @interface CCTCocoatainerConfiguration : NSObject
 

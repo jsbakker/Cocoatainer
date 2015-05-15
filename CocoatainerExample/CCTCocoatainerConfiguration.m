@@ -8,6 +8,7 @@
 
 #import "CCTCocoatainerConfiguration.h"
 #import "CCTAbstractedComponent.h"
+#import "CCTAbstractResolution.h"
 #import "CCTStartable.h"
 
 @interface CCTCocoatainerConfiguration ()
@@ -21,8 +22,6 @@
 -(void)registerDependencies:(NSArray*)dependencies
                      forKey:(Protocol*)abstraction
                   withBlock:(id)block;
-
--(id)resolveDependencies:(NSArray*)dependencies usingBlock:(id)block;
 
 @end
 
@@ -153,29 +152,9 @@
 
 -(id)resolveComponent:(Protocol*)abstraction
 {
-    NSString *dependencyKey = NSStringFromProtocol(abstraction);
-
-    CCTAbstractedComponent* c = _componentsMap[dependencyKey];
-    id resolvedInstance = c.instance;
-    if (resolvedInstance)
-    {
-        return resolvedInstance;
-    }
-
-    id creationBlock = c.constructor;
-
-    if (!creationBlock)
-    {
-        return nil;
-    }
-
-    NSArray* dependencies = c.dependencies;
-    resolvedInstance =
-        [self resolveDependencies:dependencies usingBlock:creationBlock];
-
-    c.instance = resolvedInstance;
-
-    return resolvedInstance;
+    return
+        [CCTAbstractResolution resolveComponent:abstraction
+                                        fromMap:_componentsMap];
 }
 
 -(void)resolveAll
@@ -206,78 +185,6 @@
     c.constructor = block;
     c.dependencies = dependencies;
     [_componentsMap setObject:c forKey:dependencyKey];
-}
-
--(id)resolveDependencies:(NSArray*)dependencies usingBlock:(id)block
-{
-    switch (dependencies.count)
-    {
-        case 0:
-        {
-            return ((CreationBlock0)block)();
-        }
-        case 1:
-        {
-            id depInstance0 =
-            [self resolveComponent:NSProtocolFromString(dependencies[0])];
-            return ((CreationBlock1)block)(depInstance0);
-        }
-        case 2:
-        {
-            id depInstance0 =
-            [self resolveComponent:NSProtocolFromString(dependencies[0])];
-            id depInstance1 =
-            [self resolveComponent:NSProtocolFromString(dependencies[1])];
-            return ((CreationBlock2)block)(depInstance0,
-                                           depInstance1);
-        }
-        case 3:
-        {
-            id depInstance0 =
-            [self resolveComponent:NSProtocolFromString(dependencies[0])];
-            id depInstance1 =
-            [self resolveComponent:NSProtocolFromString(dependencies[1])];
-            id depInstance2 =
-            [self resolveComponent:NSProtocolFromString(dependencies[2])];
-            return ((CreationBlock3)block)(depInstance0,
-                                           depInstance1,
-                                           depInstance2);
-        }
-        case 4:
-        {
-            id depInstance0 =
-            [self resolveComponent:NSProtocolFromString(dependencies[0])];
-            id depInstance1 =
-            [self resolveComponent:NSProtocolFromString(dependencies[1])];
-            id depInstance2 =
-            [self resolveComponent:NSProtocolFromString(dependencies[2])];
-            id depInstance3 =
-            [self resolveComponent:NSProtocolFromString(dependencies[3])];
-            return ((CreationBlock4)block)(depInstance0,
-                                           depInstance1,
-                                           depInstance2,
-                                           depInstance3);
-        }
-        case 5:
-        {
-            id depInstance0 =
-            [self resolveComponent:NSProtocolFromString(dependencies[0])];
-            id depInstance1 =
-            [self resolveComponent:NSProtocolFromString(dependencies[1])];
-            id depInstance2 =
-            [self resolveComponent:NSProtocolFromString(dependencies[2])];
-            id depInstance3 =
-            [self resolveComponent:NSProtocolFromString(dependencies[3])];
-            id depInstance4 =
-            [self resolveComponent:NSProtocolFromString(dependencies[4])];
-            return ((CreationBlock5)block)(depInstance0,
-                                           depInstance1,
-                                           depInstance2,
-                                           depInstance3,
-                                           depInstance4);
-        }
-    }
-    return nil;
 }
 
 @end

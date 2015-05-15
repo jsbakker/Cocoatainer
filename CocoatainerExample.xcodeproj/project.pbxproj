@@ -20,6 +20,7 @@
 		D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764A81B0472EB00DE9E61 /* Kettle.m */; };
 		D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764AB1B0477A900DE9E61 /* CocoaPowder.m */; };
 		D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B11B04FD0300DE9E61 /* Marshmallow.m */; };
+		D29764B61B05A10500DE9E61 /* CCTAbstractResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B51B05A10500DE9E61 /* CCTAbstractResolution.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,9 @@
 		D29764AF1B04FCCA00DE9E61 /* Topping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topping.h; sourceTree = "<group>"; };
 		D29764B01B04FD0300DE9E61 /* Marshmallow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marshmallow.h; sourceTree = "<group>"; };
 		D29764B11B04FD0300DE9E61 /* Marshmallow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marshmallow.m; sourceTree = "<group>"; };
+		D29764B31B05A01E00DE9E61 /* CCTConstructors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCTConstructors.h; sourceTree = "<group>"; };
+		D29764B41B05A10500DE9E61 /* CCTAbstractResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractResolution.h; sourceTree = "<group>"; };
+		D29764B51B05A10500DE9E61 /* CCTAbstractResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractResolution.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,9 @@
 				D29764901B042C5200DE9E61 /* CCTCocoatainerConfiguration.m */,
 				D297649A1B04455B00DE9E61 /* CCTAbstractedComponent.h */,
 				D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */,
+				D29764B41B05A10500DE9E61 /* CCTAbstractResolution.h */,
+				D29764B51B05A10500DE9E61 /* CCTAbstractResolution.m */,
+				D29764B31B05A01E00DE9E61 /* CCTConstructors.h */,
 				D29764AE1B04F65C00DE9E61 /* CCTStartable.h */,
 				D297649D1B046C4800DE9E61 /* CocoaMug.h */,
 				D297649E1B046C4800DE9E61 /* CocoaMug.m */,
@@ -261,6 +268,7 @@
 			files = (
 				D29764721B042A0200DE9E61 /* ViewController.m in Sources */,
 				D297646F1B042A0200DE9E61 /* AppDelegate.m in Sources */,
+				D29764B61B05A10500DE9E61 /* CCTAbstractResolution.m in Sources */,
 				D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */,
 				D297649C1B04455B00DE9E61 /* CCTAbstractedComponent.m in Sources */,
 				D297646C1B042A0200DE9E61 /* main.m in Sources */,
@@ -464,6 +472,7 @@
 				D297648B1B042A0200DE9E61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D297648C1B042A0200DE9E61 /* Build configuration list for PBXNativeTarget "CocoatainerExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +481,7 @@
 				D297648E1B042A0200DE9E61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
