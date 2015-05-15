@@ -1,17 +1,17 @@
 //
-//  CocoatainerConfiguration.m
+//  CCTAbstractCocoatainer.m
 //  CocoatainerExample
 //
 //  Created by Jeffrey Bakker on 2015-05-13.
 //  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
 //
 
-#import "CCTCocoatainerConfiguration.h"
+#import "CCTAbstractCocoatainer.h"
 #import "CCTAbstractedComponent.h"
 #import "CCTAbstractResolution.h"
 #import "CCTStartable.h"
 
-@interface CCTCocoatainerConfiguration ()
+@interface CCTAbstractCocoatainer ()
 {
 @private
     NSMutableDictionary *_componentsMap;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation CCTCocoatainerConfiguration
+@implementation CCTAbstractCocoatainer
 
 -(id)init
 {

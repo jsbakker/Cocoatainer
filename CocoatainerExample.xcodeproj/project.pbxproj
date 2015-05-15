@@ -14,7 +14,7 @@
 		D29764771B042A0200DE9E61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29764761B042A0200DE9E61 /* Images.xcassets */; };
 		D297647A1B042A0200DE9E61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29764781B042A0200DE9E61 /* LaunchScreen.xib */; };
 		D29764861B042A0200DE9E61 /* CocoatainerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764851B042A0200DE9E61 /* CocoatainerExampleTests.m */; };
-		D29764911B042C5200DE9E61 /* CCTCocoatainerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764901B042C5200DE9E61 /* CCTCocoatainerConfiguration.m */; };
+		D29764911B042C5200DE9E61 /* CCTAbstractCocoatainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764901B042C5200DE9E61 /* CCTAbstractCocoatainer.m */; };
 		D297649C1B04455B00DE9E61 /* CCTAbstractedComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */; };
 		D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649E1B046C4800DE9E61 /* CocoaMug.m */; };
 		D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764A81B0472EB00DE9E61 /* Kettle.m */; };
@@ -47,8 +47,8 @@
 		D297647F1B042A0200DE9E61 /* CocoatainerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoatainerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29764841B042A0200DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29764851B042A0200DE9E61 /* CocoatainerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoatainerExampleTests.m; sourceTree = "<group>"; };
-		D297648F1B042C5200DE9E61 /* CCTCocoatainerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTCocoatainerConfiguration.h; sourceTree = "<group>"; };
-		D29764901B042C5200DE9E61 /* CCTCocoatainerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTCocoatainerConfiguration.m; sourceTree = "<group>"; };
+		D297648F1B042C5200DE9E61 /* CCTAbstractCocoatainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractCocoatainer.h; sourceTree = "<group>"; };
+		D29764901B042C5200DE9E61 /* CCTAbstractCocoatainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractCocoatainer.m; sourceTree = "<group>"; };
 		D297649A1B04455B00DE9E61 /* CCTAbstractedComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractedComponent.h; sourceTree = "<group>"; };
 		D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractedComponent.m; sourceTree = "<group>"; };
 		D297649D1B046C4800DE9E61 /* CocoaMug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaMug.h; sourceTree = "<group>"; };
@@ -116,8 +116,8 @@
 				D29764761B042A0200DE9E61 /* Images.xcassets */,
 				D29764781B042A0200DE9E61 /* LaunchScreen.xib */,
 				D29764691B042A0200DE9E61 /* Supporting Files */,
-				D297648F1B042C5200DE9E61 /* CCTCocoatainerConfiguration.h */,
-				D29764901B042C5200DE9E61 /* CCTCocoatainerConfiguration.m */,
+				D297648F1B042C5200DE9E61 /* CCTAbstractCocoatainer.h */,
+				D29764901B042C5200DE9E61 /* CCTAbstractCocoatainer.m */,
 				D297649A1B04455B00DE9E61 /* CCTAbstractedComponent.h */,
 				D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */,
 				D29764B41B05A10500DE9E61 /* CCTAbstractResolution.h */,
@@ -272,7 +272,7 @@
 				D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */,
 				D297649C1B04455B00DE9E61 /* CCTAbstractedComponent.m in Sources */,
 				D297646C1B042A0200DE9E61 /* main.m in Sources */,
-				D29764911B042C5200DE9E61 /* CCTCocoatainerConfiguration.m in Sources */,
+				D29764911B042C5200DE9E61 /* CCTAbstractCocoatainer.m in Sources */,
 				D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */,
 				D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */,
 				D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */,

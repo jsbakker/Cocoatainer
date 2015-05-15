@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "CCTCocoatainerConfiguration.h"
+#import "CCTAbstractCocoatainer.h"
 
 #import "CocoaMug.h"
 #import "Kettle.h"
@@ -24,8 +24,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    CCTCocoatainerConfiguration* config =
-        [[CCTCocoatainerConfiguration alloc] init];
+    CCTAbstractCocoatainer* config =
+        [[CCTAbstractCocoatainer alloc] init];
 
     [config registerComponent:@protocol(HotWaterSource) withBlock:
      ^{

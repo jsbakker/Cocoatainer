@@ -1,5 +1,5 @@
 //
-//  CocoatainerConfiguration.h
+//  CCTAbstractCocoatainer.h
 //  CocoatainerExample
 //
 //  Created by Jeffrey Bakker on 2015-05-13.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CCTConstructors.h"
 
-@interface CCTCocoatainerConfiguration : NSObject
+@interface CCTAbstractCocoatainer : NSObject
 
 -(void)registerComponent:(Protocol*)abstraction withInstance:(id)object;
 
