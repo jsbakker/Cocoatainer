@@ -10,9 +10,10 @@
 
 @interface CCTAbstractedComponent : NSObject
 
+@property (nonatomic) BOOL resolution;
 @property (nonatomic) Protocol *abstracion;
 @property (nonatomic) NSArray *dependencies;
-@property (nonatomic) BOOL resolution;
 @property (nonatomic) id constructor;
+@property (nonatomic) id instance;
 
 @end

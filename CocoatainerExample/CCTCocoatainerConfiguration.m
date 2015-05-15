@@ -7,14 +7,13 @@
 //
 
 #import "CCTCocoatainerConfiguration.h"
+#import "CCTAbstractedComponent.h"
 #import "CCTStartable.h"
 
 @interface CCTCocoatainerConfiguration ()
 {
 @private
-    NSMutableDictionary *_abstractionInstanceMap;
-    NSMutableDictionary *_instantiationBlockMap;
-    NSMutableDictionary *_instanceDependencies;
+    NSMutableDictionary *_componentsMap;
 }
 
 -(void)resolveAll;
@@ -34,11 +33,8 @@
     self = [super init];
     if(self)
     {
-        _abstractionInstanceMap = [NSMutableDictionary dictionary];
-        _instantiationBlockMap = [NSMutableDictionary dictionary];
-        _instanceDependencies = [NSMutableDictionary dictionary];
+        _componentsMap = [NSMutableDictionary dictionary];
     }
-    
     return self;
 }
 
@@ -49,9 +45,10 @@
         [self resolveAll];
     }
 
-    for (NSString* key in _abstractionInstanceMap)
+    for (NSString* key in _componentsMap)
     {
-        id instance = _abstractionInstanceMap[key];
+        CCTAbstractedComponent* component = _componentsMap[key];
+        id instance = component.instance;
         if ([instance conformsToProtocol:@protocol(CCTStartable)])
         {
             [instance start];
@@ -62,19 +59,18 @@
 -(void)registerComponent:(Protocol*)abstraction withInstance:(id)object
 {
     NSString *dependencyKey = NSStringFromProtocol(abstraction);
-    [_abstractionInstanceMap setObject:object forKey:dependencyKey];
+    CCTAbstractedComponent* c = [[CCTAbstractedComponent alloc] init];
+    c.abstracion = abstraction;
+    c.instance = object;
+    c.constructor = nil;
+    c.dependencies = @[];
+    [_componentsMap setObject:c forKey:dependencyKey];
 }
 
 -(void)registerComponent:(Protocol*)abstraction
                withBlock:(CreationBlock0)block
 {
-    NSString *dependencyKey = NSStringFromProtocol(abstraction);
-
-    if (_instantiationBlockMap[dependencyKey])
-    {
-        return;
-    }
-    [_instantiationBlockMap setObject:block forKey:dependencyKey];
+    [self registerDependencies:@[] forKey:abstraction withBlock:block];
 }
 
 -(void)registerComponent:(Protocol*)abstraction
@@ -159,33 +155,35 @@
 {
     NSString *dependencyKey = NSStringFromProtocol(abstraction);
 
-    id resolvedInstance = _abstractionInstanceMap[dependencyKey];
+    CCTAbstractedComponent* c = _componentsMap[dependencyKey];
+    id resolvedInstance = c.instance;
     if (resolvedInstance)
     {
         return resolvedInstance;
     }
 
-    id creationBlock = _instantiationBlockMap[dependencyKey];
+    id creationBlock = c.constructor;
 
     if (!creationBlock)
     {
         return nil;
     }
 
-    NSArray* dependencies = (NSArray*)_instanceDependencies[dependencyKey];
+    NSArray* dependencies = c.dependencies;
     resolvedInstance =
         [self resolveDependencies:dependencies usingBlock:creationBlock];
 
-    [_abstractionInstanceMap setObject:resolvedInstance forKey:dependencyKey];
+    c.instance = resolvedInstance;
 
     return resolvedInstance;
 }
 
 -(void)resolveAll
 {
-    for (NSString* key in _instantiationBlockMap)
+    for (NSString* key in _componentsMap)
     {
-        if (!_abstractionInstanceMap[key])
+        CCTAbstractedComponent* c = _componentsMap[key];
+        if (!c.instance)
         {
             [self resolveComponent:NSProtocolFromString(key)];
         }
@@ -198,12 +196,16 @@
 {
     NSString *dependencyKey = NSStringFromProtocol(abstraction);
 
-    if (_instantiationBlockMap[dependencyKey])
+    if (_componentsMap[dependencyKey])
     {
         return;
     }
-    [_instantiationBlockMap setObject:block forKey:dependencyKey];
-    [_instanceDependencies setObject:dependencies forKey:dependencyKey];
+
+    CCTAbstractedComponent* c = [[CCTAbstractedComponent alloc] init];
+    c.abstracion = abstraction;
+    c.constructor = block;
+    c.dependencies = dependencies;
+    [_componentsMap setObject:c forKey:dependencyKey];
 }
 
 -(id)resolveDependencies:(NSArray*)dependencies usingBlock:(id)block
