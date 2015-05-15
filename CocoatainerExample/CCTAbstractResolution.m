@@ -13,11 +13,11 @@
 @implementation CCTAbstractResolution
 
 +(id)resolveComponent:(Protocol*)abstraction
-              fromMap:(NSDictionary*)components
+              fromMap:(CCTAbstractRegistry*)registry
 {
     NSString *dependencyKey = NSStringFromProtocol(abstraction);
 
-    CCTAbstractedComponent* c = components[dependencyKey];
+    CCTAbstractedComponent* c = [registry getComponentRegistry:dependencyKey];
     id resolvedInstance = c.instance;
     if (resolvedInstance)
     {
@@ -34,7 +34,7 @@
     NSArray* dependencies = c.dependencies;
     resolvedInstance =
     [self resolveDependencies:dependencies
-                      fromMap:components
+                      fromMap:registry
                    usingBlock:creationBlock];
 
     c.instance = resolvedInstance;
@@ -43,7 +43,7 @@
 }
 
 +(id)resolveDependencies:(NSArray*)dependencies
-                 fromMap:(NSDictionary*)components
+                 fromMap:(CCTAbstractRegistry*)registry
               usingBlock:(id)block
 {
     switch (dependencies.count)
@@ -56,17 +56,17 @@
         {
             id depInstance0 =
                 [self resolveComponent:NSProtocolFromString(dependencies[0])
-                               fromMap:components];
+                               fromMap:registry];
             return ((CreationBlock1)block)(depInstance0);
         }
         case 2:
         {
             id depInstance0 =
                 [self resolveComponent:NSProtocolFromString(dependencies[0])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance1 =
                 [self resolveComponent:NSProtocolFromString(dependencies[1])
-                               fromMap:components];
+                               fromMap:registry];
             return ((CreationBlock2)block)(depInstance0,
                                            depInstance1);
         }
@@ -74,13 +74,13 @@
         {
             id depInstance0 =
                 [self resolveComponent:NSProtocolFromString(dependencies[0])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance1 =
                 [self resolveComponent:NSProtocolFromString(dependencies[1])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance2 =
                 [self resolveComponent:NSProtocolFromString(dependencies[2])
-                               fromMap:components];
+                               fromMap:registry];
             return ((CreationBlock3)block)(depInstance0,
                                            depInstance1,
                                            depInstance2);
@@ -89,16 +89,16 @@
         {
             id depInstance0 =
                 [self resolveComponent:NSProtocolFromString(dependencies[0])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance1 =
                 [self resolveComponent:NSProtocolFromString(dependencies[1])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance2 =
                 [self resolveComponent:NSProtocolFromString(dependencies[2])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance3 =
                 [self resolveComponent:NSProtocolFromString(dependencies[3])
-                               fromMap:components];
+                               fromMap:registry];
             return ((CreationBlock4)block)(depInstance0,
                                            depInstance1,
                                            depInstance2,
@@ -108,19 +108,19 @@
         {
             id depInstance0 =
                 [self resolveComponent:NSProtocolFromString(dependencies[0])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance1 =
                 [self resolveComponent:NSProtocolFromString(dependencies[1])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance2 =
                 [self resolveComponent:NSProtocolFromString(dependencies[2])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance3 =
                 [self resolveComponent:NSProtocolFromString(dependencies[3])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance4 =
                 [self resolveComponent:NSProtocolFromString(dependencies[4])
-                               fromMap:components];
+                               fromMap:registry];
             return ((CreationBlock5)block)(depInstance0,
                                            depInstance1,
                                            depInstance2,
@@ -131,22 +131,22 @@
         {
             id depInstance0 =
                 [self resolveComponent:NSProtocolFromString(dependencies[0])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance1 =
                 [self resolveComponent:NSProtocolFromString(dependencies[1])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance2 =
                 [self resolveComponent:NSProtocolFromString(dependencies[2])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance3 =
                 [self resolveComponent:NSProtocolFromString(dependencies[3])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance4 =
                 [self resolveComponent:NSProtocolFromString(dependencies[4])
-                               fromMap:components];
+                               fromMap:registry];
             id depInstance5 =
                 [self resolveComponent:NSProtocolFromString(dependencies[5])
-                               fromMap:components];
+                               fromMap:registry];
             return ((CreationBlock6)block)(depInstance0,
                                            depInstance1,
                                            depInstance2,

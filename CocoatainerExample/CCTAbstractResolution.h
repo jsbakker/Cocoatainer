@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CCTAbstractRegistry.h"
+
 @interface CCTAbstractResolution : NSObject
 
 +(id)resolveComponent:(Protocol*)abstraction
-              fromMap:(NSDictionary*)components;
+              fromMap:(CCTAbstractRegistry*)registry;
 
 +(id)resolveDependencies:(NSArray*)dependencies
-                 fromMap:(NSDictionary*)components
+                 fromMap:(CCTAbstractRegistry*)registry
               usingBlock:(id)block;
 @end

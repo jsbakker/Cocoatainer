@@ -21,6 +21,7 @@
 		D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764AB1B0477A900DE9E61 /* CocoaPowder.m */; };
 		D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B11B04FD0300DE9E61 /* Marshmallow.m */; };
 		D29764B61B05A10500DE9E61 /* CCTAbstractResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B51B05A10500DE9E61 /* CCTAbstractResolution.m */; };
+		D29764B91B05D52B00DE9E61 /* CCTAbstractRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B81B05D52B00DE9E61 /* CCTAbstractRegistry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		D29764B31B05A01E00DE9E61 /* CCTConstructors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCTConstructors.h; sourceTree = "<group>"; };
 		D29764B41B05A10500DE9E61 /* CCTAbstractResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractResolution.h; sourceTree = "<group>"; };
 		D29764B51B05A10500DE9E61 /* CCTAbstractResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractResolution.m; sourceTree = "<group>"; };
+		D29764B71B05D52B00DE9E61 /* CCTAbstractRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractRegistry.h; sourceTree = "<group>"; };
+		D29764B81B05D52B00DE9E61 /* CCTAbstractRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractRegistry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				D29764901B042C5200DE9E61 /* CCTAbstractCocoatainer.m */,
 				D297649A1B04455B00DE9E61 /* CCTAbstractedComponent.h */,
 				D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */,
+				D29764B71B05D52B00DE9E61 /* CCTAbstractRegistry.h */,
+				D29764B81B05D52B00DE9E61 /* CCTAbstractRegistry.m */,
 				D29764B41B05A10500DE9E61 /* CCTAbstractResolution.h */,
 				D29764B51B05A10500DE9E61 /* CCTAbstractResolution.m */,
 				D29764B31B05A01E00DE9E61 /* CCTConstructors.h */,
@@ -270,6 +275,7 @@
 				D297646F1B042A0200DE9E61 /* AppDelegate.m in Sources */,
 				D29764B61B05A10500DE9E61 /* CCTAbstractResolution.m in Sources */,
 				D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */,
+				D29764B91B05D52B00DE9E61 /* CCTAbstractRegistry.m in Sources */,
 				D297649C1B04455B00DE9E61 /* CCTAbstractedComponent.m in Sources */,
 				D297646C1B042A0200DE9E61 /* main.m in Sources */,
 				D29764911B042C5200DE9E61 /* CCTAbstractCocoatainer.m in Sources */,

@@ -9,19 +9,16 @@
 #import "CCTAbstractCocoatainer.h"
 #import "CCTAbstractedComponent.h"
 #import "CCTAbstractResolution.h"
+#import "CCTAbstractRegistry.h"
 #import "CCTStartable.h"
 
 @interface CCTAbstractCocoatainer ()
 {
 @private
-    NSMutableDictionary *_componentsMap;
+    CCTAbstractRegistry* _model;
 }
 
 -(void)resolveAll;
-
--(void)registerDependencies:(NSArray*)dependencies
-                     forKey:(Protocol*)abstraction
-                  withBlock:(id)block;
 
 @end
 
@@ -32,7 +29,7 @@
     self = [super init];
     if(self)
     {
-        _componentsMap = [NSMutableDictionary dictionary];
+        _model = [[CCTAbstractRegistry alloc] init];
     }
     return self;
 }
@@ -44,32 +41,25 @@
         [self resolveAll];
     }
 
-    for (NSString* key in _componentsMap)
-    {
-        CCTAbstractedComponent* component = _componentsMap[key];
-        id instance = component.instance;
-        if ([instance conformsToProtocol:@protocol(CCTStartable)])
-        {
-            [instance start];
-        }
-    }
+    [_model traverseAndExecute:^(CCTAbstractedComponent* c)
+     {
+         id instance = c.instance;
+         if ([instance conformsToProtocol:@protocol(CCTStartable)])
+         {
+             [instance start];
+         }
+     }];
 }
 
 -(void)registerComponent:(Protocol*)abstraction withInstance:(id)object
 {
-    NSString *dependencyKey = NSStringFromProtocol(abstraction);
-    CCTAbstractedComponent* c = [[CCTAbstractedComponent alloc] init];
-    c.abstracion = abstraction;
-    c.instance = object;
-    c.constructor = nil;
-    c.dependencies = @[];
-    [_componentsMap setObject:c forKey:dependencyKey];
+    [_model addComponent:abstraction withInstance:object];
 }
 
 -(void)registerComponent:(Protocol*)abstraction
                withBlock:(CreationBlock0)block
 {
-    [self registerDependencies:@[] forKey:abstraction withBlock:block];
+    [_model addComponent:abstraction withDependencies:@[] andConstructor:block];
 }
 
 -(void)registerComponent:(Protocol*)abstraction
@@ -77,7 +67,9 @@
                withBlock:(CreationBlock1)block
 {
     NSArray* dependencies = @[NSStringFromProtocol(d1)];
-    [self registerDependencies:dependencies forKey:abstraction withBlock:block];
+    [_model addComponent:abstraction
+        withDependencies:dependencies
+          andConstructor:block];
 }
 
 -(void)registerComponent:(Protocol*)abstraction
@@ -87,7 +79,9 @@
 {
     NSArray* dependencies = @[NSStringFromProtocol(d1),
                               NSStringFromProtocol(d2)];
-    [self registerDependencies:dependencies forKey:abstraction withBlock:block];
+    [_model addComponent:abstraction
+        withDependencies:dependencies
+          andConstructor:block];
 }
 
 -(void)registerComponent:(Protocol*)abstraction
@@ -99,7 +93,9 @@
     NSArray* dependencies = @[NSStringFromProtocol(d1),
                               NSStringFromProtocol(d2),
                               NSStringFromProtocol(d3)];
-    [self registerDependencies:dependencies forKey:abstraction withBlock:block];
+    [_model addComponent:abstraction
+        withDependencies:dependencies
+          andConstructor:block];
 }
 
 -(void)registerComponent:(Protocol*)abstraction
@@ -113,7 +109,9 @@
                               NSStringFromProtocol(d2),
                               NSStringFromProtocol(d3),
                               NSStringFromProtocol(d4)];
-    [self registerDependencies:dependencies forKey:abstraction withBlock:block];
+    [_model addComponent:abstraction
+        withDependencies:dependencies
+          andConstructor:block];
 }
 
 -(void)registerComponent:(Protocol*)abstraction
@@ -129,7 +127,9 @@
                               NSStringFromProtocol(d3),
                               NSStringFromProtocol(d4),
                               NSStringFromProtocol(d5)];
-    [self registerDependencies:dependencies forKey:abstraction withBlock:block];
+    [_model addComponent:abstraction
+        withDependencies:dependencies
+          andConstructor:block];
 }
 
 -(void)registerComponent:(Protocol*)abstraction
@@ -147,44 +147,26 @@
                               NSStringFromProtocol(d4),
                               NSStringFromProtocol(d5),
                               NSStringFromProtocol(d6)];
-    [self registerDependencies:dependencies forKey:abstraction withBlock:block];
+    [_model addComponent:abstraction
+        withDependencies:dependencies
+          andConstructor:block];
 }
 
 -(id)resolveComponent:(Protocol*)abstraction
 {
     return
-        [CCTAbstractResolution resolveComponent:abstraction
-                                        fromMap:_componentsMap];
+        [CCTAbstractResolution resolveComponent:abstraction fromMap:_model];
 }
 
 -(void)resolveAll
 {
-    for (NSString* key in _componentsMap)
-    {
-        CCTAbstractedComponent* c = _componentsMap[key];
-        if (!c.instance)
-        {
-            [self resolveComponent:NSProtocolFromString(key)];
-        }
-    }
-}
-
--(void)registerDependencies:(NSArray*)dependencies
-                     forKey:(Protocol*)abstraction
-                  withBlock:(id)block
-{
-    NSString *dependencyKey = NSStringFromProtocol(abstraction);
-
-    if (_componentsMap[dependencyKey])
-    {
-        return;
-    }
-
-    CCTAbstractedComponent* c = [[CCTAbstractedComponent alloc] init];
-    c.abstracion = abstraction;
-    c.constructor = block;
-    c.dependencies = dependencies;
-    [_componentsMap setObject:c forKey:dependencyKey];
+    [_model traverseAndExecute:^(CCTAbstractedComponent* c)
+     {
+         if (!c.instance)
+         {
+             [self resolveComponent:c.abstracion];
+         }
+     }];
 }
 
 @end
