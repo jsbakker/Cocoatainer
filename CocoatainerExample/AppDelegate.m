@@ -63,10 +63,9 @@
 //         return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
 //     }];
 
-    id<LiquidVessel> myMug = [config resolveComponent:@protocol(LiquidVessel)];
-    [config start];
+    [config start:YES];
 
-    [myMug fill];
+    id<LiquidVessel> myMug = [config resolveComponent:@protocol(LiquidVessel)];
     [myMug drink:20];
     [myMug checkAmount];
     [myMug drink:30];

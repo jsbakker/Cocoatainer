@@ -14,6 +14,7 @@ typedef id (^CreationBlock2)(id, id);
 typedef id (^CreationBlock3)(id, id, id);
 typedef id (^CreationBlock4)(id, id, id, id);
 typedef id (^CreationBlock5)(id, id, id, id, id);
+typedef id (^CreationBlock6)(id, id, id, id, id, id);
 
 @interface CCTCocoatainerConfiguration : NSObject
 
@@ -52,8 +53,17 @@ typedef id (^CreationBlock5)(id, id, id, id, id);
                     and5:(Protocol*)d5
                withBlock:(CreationBlock5)block;
 
+-(void)registerComponent:(Protocol*)abstraction
+            dependentOn1:(Protocol*)d1
+                    and2:(Protocol*)d2
+                    and3:(Protocol*)d3
+                    and4:(Protocol*)d4
+                    and5:(Protocol*)d5
+                    and6:(Protocol*)d6
+               withBlock:(CreationBlock6)block;
+
 -(id)resolveComponent:(Protocol*)abstraction;
 
--(void)start;
+-(void)start:(BOOL)autoResolve;
 
 @end

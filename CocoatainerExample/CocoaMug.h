@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCTStartable.h"
 #import "LiquidVessel.h"
 #import "HotWaterSource.h"
 #import "Mix.h"
 
-@interface CocoaMug : NSObject<LiquidVessel>
+@interface CocoaMug : NSObject<LiquidVessel, CCTStartable>
 
 -(id)initWithHotWater:(id<HotWaterSource>)source
            andMixture:(id<Mix>)cocoaMix;
+-(void)start;
 -(void)fill;
 -(void)drink:(NSInteger)amount;
 -(void)checkAmount;

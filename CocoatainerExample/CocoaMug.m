@@ -32,6 +32,11 @@
     return self;
 }
 
+-(void)start
+{
+    [self fill];
+}
+
 -(void)fill
 {
     [_cocoaMix shovel];

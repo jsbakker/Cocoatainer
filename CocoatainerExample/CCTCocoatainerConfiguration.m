@@ -17,6 +17,8 @@
     NSMutableDictionary *_instanceDependencies;
 }
 
+-(void)resolveAll;
+
 -(void)registerDependencies:(NSArray*)dependencies
                      forKey:(Protocol*)abstraction
                   withBlock:(id)block;
@@ -38,6 +40,23 @@
     }
     
     return self;
+}
+
+-(void)start:(BOOL)autoResolve
+{
+    if (autoResolve)
+    {
+        [self resolveAll];
+    }
+
+    for (NSString* key in _abstractionInstanceMap)
+    {
+        id instance = _abstractionInstanceMap[key];
+        if ([instance conformsToProtocol:@protocol(CCTStartable)])
+        {
+            [instance start];
+        }
+    }
 }
 
 -(void)registerComponent:(Protocol*)abstraction withInstance:(id)object
@@ -118,6 +137,24 @@
     [self registerDependencies:dependencies forKey:abstraction withBlock:block];
 }
 
+-(void)registerComponent:(Protocol*)abstraction
+            dependentOn1:(Protocol*)d1
+                    and2:(Protocol*)d2
+                    and3:(Protocol*)d3
+                    and4:(Protocol*)d4
+                    and5:(Protocol*)d5
+                    and6:(Protocol*)d6
+               withBlock:(CreationBlock6)block
+{
+    NSArray* dependencies = @[NSStringFromProtocol(d1),
+                              NSStringFromProtocol(d2),
+                              NSStringFromProtocol(d3),
+                              NSStringFromProtocol(d4),
+                              NSStringFromProtocol(d5),
+                              NSStringFromProtocol(d6)];
+    [self registerDependencies:dependencies forKey:abstraction withBlock:block];
+}
+
 -(id)resolveComponent:(Protocol*)abstraction
 {
     NSString *dependencyKey = NSStringFromProtocol(abstraction);
@@ -142,6 +179,17 @@
     [_abstractionInstanceMap setObject:resolvedInstance forKey:dependencyKey];
 
     return resolvedInstance;
+}
+
+-(void)resolveAll
+{
+    for (NSString* key in _instantiationBlockMap)
+    {
+        if (!_abstractionInstanceMap[key])
+        {
+            [self resolveComponent:NSProtocolFromString(key)];
+        }
+    }
 }
 
 -(void)registerDependencies:(NSArray*)dependencies
@@ -228,18 +276,6 @@
         }
     }
     return nil;
-}
-
--(void)start
-{
-    for (NSString* key in _abstractionInstanceMap)
-    {
-        id instance = _abstractionInstanceMap[key];
-        if ([instance conformsToProtocol:@protocol(CCTStartable)])
-        {
-            [instance start];
-        }
-    }
 }
 
 @end
