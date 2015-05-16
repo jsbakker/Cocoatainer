@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Cocoatainer/Cocoatainer.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CocoatainerExample/CocoatainerExample.xcodeproj">
    </FileRef>
 </Workspace>

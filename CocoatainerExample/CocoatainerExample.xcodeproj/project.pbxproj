@@ -18,7 +18,7 @@
 		D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764A81B0472EB00DE9E61 /* Kettle.m */; };
 		D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764AB1B0477A900DE9E61 /* CocoaPowder.m */; };
 		D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B11B04FD0300DE9E61 /* Marshmallow.m */; };
-		D29765701B06D5E800DE9E61 /* libCocoatainer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D297656B1B06D56200DE9E61 /* libCocoatainer.a */; };
+		D29765BE1B06DBCC00DE9E61 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,27 +28,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = D29764651B042A0200DE9E61;
 			remoteInfo = CocoatainerExample;
-		};
-		D297656A1B06D56200DE9E61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D29765651B06D56200DE9E61 /* Cocoatainer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D297651B1B06CC1200DE9E61;
-			remoteInfo = Cocoatainer;
-		};
-		D297656C1B06D56200DE9E61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D29765651B06D56200DE9E61 /* Cocoatainer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D29765261B06CC1200DE9E61;
-			remoteInfo = CocoatainerTests;
-		};
-		D297656E1B06D58500DE9E61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D29765651B06D56200DE9E61 /* Cocoatainer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D297651A1B06CC1200DE9E61;
-			remoteInfo = Cocoatainer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -78,7 +57,7 @@
 		D29764AF1B04FCCA00DE9E61 /* Topping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topping.h; sourceTree = "<group>"; };
 		D29764B01B04FD0300DE9E61 /* Marshmallow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marshmallow.h; sourceTree = "<group>"; };
 		D29764B11B04FD0300DE9E61 /* Marshmallow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marshmallow.m; sourceTree = "<group>"; };
-		D29765651B06D56200DE9E61 /* Cocoatainer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cocoatainer.xcodeproj; path = ../Cocoatainer/Cocoatainer.xcodeproj; sourceTree = "<group>"; };
+		D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoatainer.framework; path = "../Cocoatainer/build/Debug-iphoneos/Cocoatainer.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D29765701B06D5E800DE9E61 /* libCocoatainer.a in Frameworks */,
+				D29765BE1B06DBCC00DE9E61 /* Cocoatainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +82,7 @@
 		D297645D1B042A0200DE9E61 = {
 			isa = PBXGroup;
 			children = (
-				D29765651B06D56200DE9E61 /* Cocoatainer.xcodeproj */,
+				D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */,
 				D29764681B042A0200DE9E61 /* CocoatainerExample */,
 				D29764821B042A0200DE9E61 /* CocoatainerExampleTests */,
 				D29764671B042A0200DE9E61 /* Products */,
@@ -172,15 +151,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D29765661B06D56200DE9E61 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D297656B1B06D56200DE9E61 /* libCocoatainer.a */,
-				D297656D1B06D56200DE9E61 /* CocoatainerTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,7 +165,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D297656F1B06D58500DE9E61 /* PBXTargetDependency */,
 			);
 			name = CocoatainerExample;
 			productName = CocoatainerExample;
@@ -249,12 +218,6 @@
 			mainGroup = D297645D1B042A0200DE9E61;
 			productRefGroup = D29764671B042A0200DE9E61 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D29765661B06D56200DE9E61 /* Products */;
-					ProjectRef = D29765651B06D56200DE9E61 /* Cocoatainer.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D29764651B042A0200DE9E61 /* CocoatainerExample */,
@@ -262,23 +225,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D297656B1B06D56200DE9E61 /* libCocoatainer.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCocoatainer.a;
-			remoteRef = D297656A1B06D56200DE9E61 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D297656D1B06D56200DE9E61 /* CocoatainerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CocoatainerTests.xctest;
-			remoteRef = D297656C1B06D56200DE9E61 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D29764641B042A0200DE9E61 /* Resources */ = {
@@ -330,11 +276,6 @@
 			isa = PBXTargetDependency;
 			target = D29764651B042A0200DE9E61 /* CocoatainerExample */;
 			targetProxy = D29764801B042A0200DE9E61 /* PBXContainerItemProxy */;
-		};
-		D297656F1B06D58500DE9E61 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Cocoatainer;
-			targetProxy = D297656E1B06D58500DE9E61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -447,7 +388,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(ProjectDir)../Cocoatainer/Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -462,7 +402,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(ProjectDir)../Cocoatainer/Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
