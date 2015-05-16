@@ -1,19 +1,18 @@
 //
-//  CocoatainerTests.m
+//  AbstractCocoatainerTests.m
 //  CocoatainerTests
 //
 //  Created by Jeffrey Bakker on 2015-05-15.
 //  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
 #import "CCTAbstractCocoatainer.h"
+
 #import "TestTypes/NoDeps.h"
 #import "TestTypes/DependsOn1.h"
 #import "TestTypes/DependsOn2.h"
-
 
 @interface AbstractCocoatainerTests : XCTestCase
 

@@ -23,6 +23,9 @@
 		D29765C31B06F09100DE9E61 /* NoDeps.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765C21B06F09100DE9E61 /* NoDeps.m */; };
 		D29765C81B07106200DE9E61 /* DependsOn1.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765C71B07106200DE9E61 /* DependsOn1.m */; };
 		D29765CB1B0710C300DE9E61 /* DependsOn2.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765CA1B0710C300DE9E61 /* DependsOn2.m */; };
+		D29765D21B079EA100DE9E61 /* ArrayLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765D11B079EA100DE9E61 /* ArrayLog.m */; };
+		D29765D51B07A00F00DE9E61 /* StartupLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765D41B07A00F00DE9E61 /* StartupLogger.m */; };
+		D29765D81B07C1D600DE9E61 /* AbstractStartableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765D71B07C1D600DE9E61 /* AbstractStartableTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,13 @@
 		D29765C91B0710C300DE9E61 /* DependsOn2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependsOn2.h; sourceTree = "<group>"; };
 		D29765CA1B0710C300DE9E61 /* DependsOn2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependsOn2.m; sourceTree = "<group>"; };
 		D29765CC1B07110D00DE9E61 /* IDependsOn2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDependsOn2.h; sourceTree = "<group>"; };
+		D29765CF1B079E3600DE9E61 /* ILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILog.h; sourceTree = "<group>"; };
+		D29765D01B079EA100DE9E61 /* ArrayLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayLog.h; sourceTree = "<group>"; };
+		D29765D11B079EA100DE9E61 /* ArrayLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayLog.m; sourceTree = "<group>"; };
+		D29765D31B07A00F00DE9E61 /* StartupLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupLogger.h; sourceTree = "<group>"; };
+		D29765D41B07A00F00DE9E61 /* StartupLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupLogger.m; sourceTree = "<group>"; };
+		D29765D61B07A34300DE9E61 /* ILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILogger.h; sourceTree = "<group>"; };
+		D29765D71B07C1D600DE9E61 /* AbstractStartableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractStartableTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +133,10 @@
 		D297658A1B06D9D800DE9E61 /* CocoatainerTests */ = {
 			isa = PBXGroup;
 			children = (
+				D29765CE1B079E1D00DE9E61 /* Logging */,
 				D29765C01B06F05D00DE9E61 /* TestTypes */,
 				D297658D1B06D9D800DE9E61 /* AbstractCocoatainerTests.m */,
+				D29765D71B07C1D600DE9E61 /* AbstractStartableTests.m */,
 				D297658B1B06D9D800DE9E61 /* Supporting Files */,
 			);
 			path = CocoatainerTests;
@@ -165,8 +177,21 @@
 				D29765CC1B07110D00DE9E61 /* IDependsOn2.h */,
 				D29765C91B0710C300DE9E61 /* DependsOn2.h */,
 				D29765CA1B0710C300DE9E61 /* DependsOn2.m */,
+				D29765D31B07A00F00DE9E61 /* StartupLogger.h */,
+				D29765D41B07A00F00DE9E61 /* StartupLogger.m */,
 			);
 			path = TestTypes;
+			sourceTree = "<group>";
+		};
+		D29765CE1B079E1D00DE9E61 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				D29765CF1B079E3600DE9E61 /* ILog.h */,
+				D29765D01B079EA100DE9E61 /* ArrayLog.h */,
+				D29765D11B079EA100DE9E61 /* ArrayLog.m */,
+				D29765D61B07A34300DE9E61 /* ILogger.h */,
+			);
+			path = Logging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,9 +319,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29765C81B07106200DE9E61 /* DependsOn1.m in Sources */,
+				D29765D51B07A00F00DE9E61 /* StartupLogger.m in Sources */,
 				D29765CB1B0710C300DE9E61 /* DependsOn2.m in Sources */,
 				D29765C31B06F09100DE9E61 /* NoDeps.m in Sources */,
+				D29765D81B07C1D600DE9E61 /* AbstractStartableTests.m in Sources */,
 				D297658E1B06D9D800DE9E61 /* AbstractCocoatainerTests.m in Sources */,
+				D29765D21B079EA100DE9E61 /* ArrayLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

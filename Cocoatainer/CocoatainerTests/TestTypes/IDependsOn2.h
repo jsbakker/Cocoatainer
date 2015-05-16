@@ -16,3 +16,12 @@
 
 @protocol IDependsOn2C <NSObject>
 @end
+
+@protocol IDependsOn2Startables <NSObject>
+@end
+
+@protocol IDependsOn2StartablesAB <NSObject>
+@end
+
+@protocol IDependsOn2StartablesBA <NSObject>
+@end

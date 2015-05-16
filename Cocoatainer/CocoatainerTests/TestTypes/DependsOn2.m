@@ -46,3 +46,42 @@
     return self;
 }
 @end
+
+@implementation DependsOn2Startables
+-(id)initWithD1:(id<ILoggerA>)d1 and2:(id<ILoggerB>)d2
+{
+    self = [super init];
+    if (self)
+    {
+        self.dependency1 = d1;
+        self.dependency2 = d2;
+    }
+    return self;
+}
+@end
+
+@implementation DependsOn2StartablesAB
+-(id)initWithD1:(id<ILoggerA>)d1 and2:(id<ILoggerB>)d2
+{
+    self = [super init];
+    if (self)
+    {
+        self.dependency1 = d1;
+        self.dependency2 = d2;
+    }
+    return self;
+}
+@end
+
+@implementation DependsOn2StartablesBA
+-(id)initWithD1:(id<ILoggerB>)d1 and2:(id<ILoggerA>)d2
+{
+    self = [super init];
+    if (self)
+    {
+        self.dependency1 = d1;
+        self.dependency2 = d2;
+    }
+    return self;
+}
+@end
