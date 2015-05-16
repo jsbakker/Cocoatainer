@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4F6FA443-2819-4CE6-B0CB-756837BE7D32</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CocoatainerExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6C1057CFA2CC3D1E7887E4BE5E7B4112243C77DD</key>
+		<string>bitbucket.org:staeryatz/cocoatainer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CocoatainerExample.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6C1057CFA2CC3D1E7887E4BE5E7B4112243C77DD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>bitbucket.org:staeryatz/cocoatainer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6C1057CFA2CC3D1E7887E4BE5E7B4112243C77DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6C1057CFA2CC3D1E7887E4BE5E7B4112243C77DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CocoatainerExample</string>
+		</dict>
+	</array>
+</dict>
+</plist>
