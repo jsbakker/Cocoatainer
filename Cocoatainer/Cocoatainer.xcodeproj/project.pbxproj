@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D297651F1B06CC1200DE9E61 /* Cocoatainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D297651E1B06CC1200DE9E61 /* Cocoatainer.h */; };
-		D29765211B06CC1200DE9E61 /* Cocoatainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765201B06CC1200DE9E61 /* Cocoatainer.m */; };
 		D29765271B06CC1200DE9E61 /* libCocoatainer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D297651B1B06CC1200DE9E61 /* libCocoatainer.a */; };
+		D297655A1B06D3BD00DE9E61 /* CCTAbstractedComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765521B06D3BD00DE9E61 /* CCTAbstractedComponent.m */; };
+		D297655B1B06D3BD00DE9E61 /* CCTAbstractRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765541B06D3BD00DE9E61 /* CCTAbstractRegistry.m */; };
+		D297655C1B06D3BD00DE9E61 /* CCTAbstractResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765561B06D3BD00DE9E61 /* CCTAbstractResolution.m */; };
+		D297655D1B06D40D00DE9E61 /* CCTAbstractCocoatainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765501B06D3BD00DE9E61 /* CCTAbstractCocoatainer.m */; };
+		D297655E1B06D40F00DE9E61 /* CCTAbstractCocoatainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765501B06D3BD00DE9E61 /* CCTAbstractCocoatainer.m */; };
+		D297655F1B06D41500DE9E61 /* CCTAbstractedComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765521B06D3BD00DE9E61 /* CCTAbstractedComponent.m */; };
+		D29765601B06D41900DE9E61 /* CCTAbstractRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765541B06D3BD00DE9E61 /* CCTAbstractRegistry.m */; };
+		D29765611B06D41C00DE9E61 /* CCTAbstractResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765561B06D3BD00DE9E61 /* CCTAbstractResolution.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +35,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				D297651F1B06CC1200DE9E61 /* Cocoatainer.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,10 +42,18 @@
 
 /* Begin PBXFileReference section */
 		D297651B1B06CC1200DE9E61 /* libCocoatainer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoatainer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D297651E1B06CC1200DE9E61 /* Cocoatainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cocoatainer.h; sourceTree = "<group>"; };
-		D29765201B06CC1200DE9E61 /* Cocoatainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cocoatainer.m; sourceTree = "<group>"; };
 		D29765261B06CC1200DE9E61 /* CocoatainerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoatainerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D297652C1B06CC1200DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D297654F1B06D3BD00DE9E61 /* CCTAbstractCocoatainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractCocoatainer.h; sourceTree = "<group>"; };
+		D29765501B06D3BD00DE9E61 /* CCTAbstractCocoatainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractCocoatainer.m; sourceTree = "<group>"; };
+		D29765511B06D3BD00DE9E61 /* CCTAbstractedComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractedComponent.h; sourceTree = "<group>"; };
+		D29765521B06D3BD00DE9E61 /* CCTAbstractedComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractedComponent.m; sourceTree = "<group>"; };
+		D29765531B06D3BD00DE9E61 /* CCTAbstractRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractRegistry.h; sourceTree = "<group>"; };
+		D29765541B06D3BD00DE9E61 /* CCTAbstractRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractRegistry.m; sourceTree = "<group>"; };
+		D29765551B06D3BD00DE9E61 /* CCTAbstractResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractResolution.h; sourceTree = "<group>"; };
+		D29765561B06D3BD00DE9E61 /* CCTAbstractResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractResolution.m; sourceTree = "<group>"; };
+		D29765571B06D3BD00DE9E61 /* CCTConstructors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTConstructors.h; sourceTree = "<group>"; };
+		D29765581B06D3BD00DE9E61 /* CCTStartable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTStartable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +78,7 @@
 		D29765121B06CC1200DE9E61 = {
 			isa = PBXGroup;
 			children = (
-				D297651D1B06CC1200DE9E61 /* Cocoatainer */,
+				D297654E1B06D3BD00DE9E61 /* Cocoatainer */,
 				D297652A1B06CC1200DE9E61 /* CocoatainerTests */,
 				D297651C1B06CC1200DE9E61 /* Products */,
 			);
@@ -78,15 +91,6 @@
 				D29765261B06CC1200DE9E61 /* CocoatainerTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D297651D1B06CC1200DE9E61 /* Cocoatainer */ = {
-			isa = PBXGroup;
-			children = (
-				D297651E1B06CC1200DE9E61 /* Cocoatainer.h */,
-				D29765201B06CC1200DE9E61 /* Cocoatainer.m */,
-			);
-			path = Cocoatainer;
 			sourceTree = "<group>";
 		};
 		D297652A1B06CC1200DE9E61 /* CocoatainerTests */ = {
@@ -103,6 +107,23 @@
 				D297652C1B06CC1200DE9E61 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D297654E1B06D3BD00DE9E61 /* Cocoatainer */ = {
+			isa = PBXGroup;
+			children = (
+				D297654F1B06D3BD00DE9E61 /* CCTAbstractCocoatainer.h */,
+				D29765501B06D3BD00DE9E61 /* CCTAbstractCocoatainer.m */,
+				D29765511B06D3BD00DE9E61 /* CCTAbstractedComponent.h */,
+				D29765521B06D3BD00DE9E61 /* CCTAbstractedComponent.m */,
+				D29765531B06D3BD00DE9E61 /* CCTAbstractRegistry.h */,
+				D29765541B06D3BD00DE9E61 /* CCTAbstractRegistry.m */,
+				D29765551B06D3BD00DE9E61 /* CCTAbstractResolution.h */,
+				D29765561B06D3BD00DE9E61 /* CCTAbstractResolution.m */,
+				D29765571B06D3BD00DE9E61 /* CCTConstructors.h */,
+				D29765581B06D3BD00DE9E61 /* CCTStartable.h */,
+			);
+			path = Cocoatainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D29765211B06CC1200DE9E61 /* Cocoatainer.m in Sources */,
+				D29765611B06D41C00DE9E61 /* CCTAbstractResolution.m in Sources */,
+				D297655D1B06D40D00DE9E61 /* CCTAbstractCocoatainer.m in Sources */,
+				D29765601B06D41900DE9E61 /* CCTAbstractRegistry.m in Sources */,
+				D297655F1B06D41500DE9E61 /* CCTAbstractedComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D297655C1B06D3BD00DE9E61 /* CCTAbstractResolution.m in Sources */,
+				D297655E1B06D40F00DE9E61 /* CCTAbstractCocoatainer.m in Sources */,
+				D297655B1B06D3BD00DE9E61 /* CCTAbstractRegistry.m in Sources */,
+				D297655A1B06D3BD00DE9E61 /* CCTAbstractedComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +390,7 @@
 				D29765311B06CC1200DE9E61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D29765321B06CC1200DE9E61 /* Build configuration list for PBXNativeTarget "CocoatainerTests" */ = {
 			isa = XCConfigurationList;
@@ -370,6 +399,7 @@
 				D29765341B06CC1200DE9E61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
