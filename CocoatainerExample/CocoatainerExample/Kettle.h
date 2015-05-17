@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCTStartable.h"
+#import <Cocoatainer/CCTStartable.h>
 #import "HotWaterSource.h"
 
 @interface Kettle : NSObject<HotWaterSource, CCTStartable>

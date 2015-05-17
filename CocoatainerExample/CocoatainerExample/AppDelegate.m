@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "CCTAbstractCocoatainer.h"
+
+#import <Cocoatainer/Cocoatainer.h>
 
 #import "CocoaMug.h"
 #import "Kettle.h"

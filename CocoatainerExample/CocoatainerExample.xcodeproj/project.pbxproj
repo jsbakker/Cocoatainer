@@ -14,14 +14,11 @@
 		D29764771B042A0200DE9E61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29764761B042A0200DE9E61 /* Images.xcassets */; };
 		D297647A1B042A0200DE9E61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29764781B042A0200DE9E61 /* LaunchScreen.xib */; };
 		D29764861B042A0200DE9E61 /* CocoatainerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764851B042A0200DE9E61 /* CocoatainerExampleTests.m */; };
-		D29764911B042C5200DE9E61 /* CCTAbstractCocoatainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764901B042C5200DE9E61 /* CCTAbstractCocoatainer.m */; };
-		D297649C1B04455B00DE9E61 /* CCTAbstractedComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */; };
 		D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649E1B046C4800DE9E61 /* CocoaMug.m */; };
 		D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764A81B0472EB00DE9E61 /* Kettle.m */; };
 		D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764AB1B0477A900DE9E61 /* CocoaPowder.m */; };
 		D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B11B04FD0300DE9E61 /* Marshmallow.m */; };
-		D29764B61B05A10500DE9E61 /* CCTAbstractResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B51B05A10500DE9E61 /* CCTAbstractResolution.m */; };
-		D29764B91B05D52B00DE9E61 /* CCTAbstractRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B81B05D52B00DE9E61 /* CCTAbstractRegistry.m */; };
+		D29765BE1B06DBCC00DE9E61 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +45,6 @@
 		D297647F1B042A0200DE9E61 /* CocoatainerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoatainerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29764841B042A0200DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29764851B042A0200DE9E61 /* CocoatainerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoatainerExampleTests.m; sourceTree = "<group>"; };
-		D297648F1B042C5200DE9E61 /* CCTAbstractCocoatainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractCocoatainer.h; sourceTree = "<group>"; };
-		D29764901B042C5200DE9E61 /* CCTAbstractCocoatainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractCocoatainer.m; sourceTree = "<group>"; };
-		D297649A1B04455B00DE9E61 /* CCTAbstractedComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractedComponent.h; sourceTree = "<group>"; };
-		D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractedComponent.m; sourceTree = "<group>"; };
 		D297649D1B046C4800DE9E61 /* CocoaMug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaMug.h; sourceTree = "<group>"; };
 		D297649E1B046C4800DE9E61 /* CocoaMug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaMug.m; sourceTree = "<group>"; };
 		D29764A01B046CB300DE9E61 /* LiquidVessel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiquidVessel.h; sourceTree = "<group>"; };
@@ -61,15 +54,10 @@
 		D29764AA1B0477A900DE9E61 /* CocoaPowder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaPowder.h; sourceTree = "<group>"; };
 		D29764AB1B0477A900DE9E61 /* CocoaPowder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaPowder.m; sourceTree = "<group>"; };
 		D29764AD1B04798500DE9E61 /* Mix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mix.h; sourceTree = "<group>"; };
-		D29764AE1B04F65C00DE9E61 /* CCTStartable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTStartable.h; sourceTree = "<group>"; };
 		D29764AF1B04FCCA00DE9E61 /* Topping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topping.h; sourceTree = "<group>"; };
 		D29764B01B04FD0300DE9E61 /* Marshmallow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marshmallow.h; sourceTree = "<group>"; };
 		D29764B11B04FD0300DE9E61 /* Marshmallow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marshmallow.m; sourceTree = "<group>"; };
-		D29764B31B05A01E00DE9E61 /* CCTConstructors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCTConstructors.h; sourceTree = "<group>"; };
-		D29764B41B05A10500DE9E61 /* CCTAbstractResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractResolution.h; sourceTree = "<group>"; };
-		D29764B51B05A10500DE9E61 /* CCTAbstractResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractResolution.m; sourceTree = "<group>"; };
-		D29764B71B05D52B00DE9E61 /* CCTAbstractRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractRegistry.h; sourceTree = "<group>"; };
-		D29764B81B05D52B00DE9E61 /* CCTAbstractRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractRegistry.m; sourceTree = "<group>"; };
+		D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoatainer.framework; path = "../Cocoatainer/build/Debug-iphoneos/Cocoatainer.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D29765BE1B06DBCC00DE9E61 /* Cocoatainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +82,7 @@
 		D297645D1B042A0200DE9E61 = {
 			isa = PBXGroup;
 			children = (
+				D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */,
 				D29764681B042A0200DE9E61 /* CocoatainerExample */,
 				D29764821B042A0200DE9E61 /* CocoatainerExampleTests */,
 				D29764671B042A0200DE9E61 /* Products */,
@@ -119,16 +109,6 @@
 				D29764761B042A0200DE9E61 /* Images.xcassets */,
 				D29764781B042A0200DE9E61 /* LaunchScreen.xib */,
 				D29764691B042A0200DE9E61 /* Supporting Files */,
-				D297648F1B042C5200DE9E61 /* CCTAbstractCocoatainer.h */,
-				D29764901B042C5200DE9E61 /* CCTAbstractCocoatainer.m */,
-				D297649A1B04455B00DE9E61 /* CCTAbstractedComponent.h */,
-				D297649B1B04455B00DE9E61 /* CCTAbstractedComponent.m */,
-				D29764B71B05D52B00DE9E61 /* CCTAbstractRegistry.h */,
-				D29764B81B05D52B00DE9E61 /* CCTAbstractRegistry.m */,
-				D29764B41B05A10500DE9E61 /* CCTAbstractResolution.h */,
-				D29764B51B05A10500DE9E61 /* CCTAbstractResolution.m */,
-				D29764B31B05A01E00DE9E61 /* CCTConstructors.h */,
-				D29764AE1B04F65C00DE9E61 /* CCTStartable.h */,
 				D297649D1B046C4800DE9E61 /* CocoaMug.h */,
 				D297649E1B046C4800DE9E61 /* CocoaMug.m */,
 				D29764A71B0472EA00DE9E61 /* Kettle.h */,
@@ -273,12 +253,8 @@
 			files = (
 				D29764721B042A0200DE9E61 /* ViewController.m in Sources */,
 				D297646F1B042A0200DE9E61 /* AppDelegate.m in Sources */,
-				D29764B61B05A10500DE9E61 /* CCTAbstractResolution.m in Sources */,
 				D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */,
-				D29764B91B05D52B00DE9E61 /* CCTAbstractRegistry.m in Sources */,
-				D297649C1B04455B00DE9E61 /* CCTAbstractedComponent.m in Sources */,
 				D297646C1B042A0200DE9E61 /* main.m in Sources */,
-				D29764911B042C5200DE9E61 /* CCTAbstractCocoatainer.m in Sources */,
 				D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */,
 				D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */,
 				D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */,
@@ -409,6 +385,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = CocoatainerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -419,6 +399,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = CocoatainerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
