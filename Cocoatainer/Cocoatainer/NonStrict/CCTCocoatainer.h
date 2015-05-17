@@ -55,6 +55,10 @@
                     and6:(id)d6
                withBlock:(Initializer6)block;
 
+-(void)registerComponent:(id)abstraction
+             dependentOn:(NSArray*)dependencies
+               withBlock:(Initializer)block;
+
 -(id)resolveComponent:(id)abstraction;
 
 -(void)start:(BOOL)autoResolve;

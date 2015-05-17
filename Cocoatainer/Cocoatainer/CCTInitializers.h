@@ -15,3 +15,4 @@ typedef id (^Initializer3)(id, id, id);
 typedef id (^Initializer4)(id, id, id, id);
 typedef id (^Initializer5)(id, id, id, id, id);
 typedef id (^Initializer6)(id, id, id, id, id, id);
+typedef id (^Initializer)(NSArray*);

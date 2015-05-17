@@ -136,6 +136,15 @@
           andConstructor:block];
 }
 
+-(void)registerComponent:(id)abstraction
+             dependentOn:(NSArray*)dependencies
+               withBlock:(Initializer)block
+{
+    [_model addComponent:abstraction
+        withDependencies:dependencies
+          andConstructor:block];
+}
+
 -(id)resolveComponent:(id)abstraction
 {
     id instance = [CCTResolution resolveComponent:abstraction fromMap:_model];

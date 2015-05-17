@@ -135,6 +135,19 @@
                                          depInstance4,
                                          depInstance5);
         }
+        default:
+        {
+            NSMutableArray* depInstances =
+                [NSMutableArray arrayWithCapacity:dependencies.count];
+
+            for (id dep in dependencies)
+            {
+                id instance =
+                    [self resolveComponent:dep fromMap:registry];
+                [depInstances addObject:instance];
+            }
+            return ((Initializer)block)(depInstances);
+        }
     }
     return nil;
 }
