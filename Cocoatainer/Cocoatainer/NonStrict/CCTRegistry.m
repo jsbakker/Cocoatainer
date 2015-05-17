@@ -67,6 +67,12 @@
      andConstructor:(id)constructor
         andInstance:(id)instance
 {
+    if (self.strict && [abstraction isConcrete])
+    {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"Cannot register concrete types in abstract mode."];
+    }
+
     NSString *dependencyKey = [abstraction isConcrete] ?
         NSStringFromClass(abstraction) : NSStringFromProtocol(abstraction);
 

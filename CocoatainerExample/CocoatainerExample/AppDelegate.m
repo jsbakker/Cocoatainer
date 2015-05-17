@@ -64,27 +64,13 @@
 //         return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
 //     }];
 
-//    [config start:YES];
-//
-//    id<LiquidVessel> myMug = [config resolveComponent:@protocol(LiquidVessel)];
-//    [myMug drink:20];
-//    [myMug checkAmount];
-//    [myMug drink:30];
-//    [myMug checkAmount];
+    [config start:YES];
 
-    id p = @protocol(Mix);
-    if ([p isConcrete])
-    {
-        NSLog(@"p Is concrete.");
-    }
-    else NSLog(@"p Is not concrete.");
-
-    id c = [CocoaPowder class];
-    if ([c isConcrete])
-    {
-        NSLog(@"c Is concrete");
-    }
-    else NSLog(@"c Is not concrete.");
+    id<LiquidVessel> myMug = [config resolveComponent:@protocol(LiquidVessel)];
+    [myMug drink:20];
+    [myMug checkAmount];
+    [myMug drink:30];
+    [myMug checkAmount];
 
     return YES;
 }

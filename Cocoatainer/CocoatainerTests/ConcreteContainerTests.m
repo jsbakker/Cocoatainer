@@ -1,5 +1,5 @@
 //
-//  ContainerTests.m
+//  ConcreteContainerTests.m
 //  Cocoatainer
 //
 //  Created by Jeffrey Bakker on 2015-05-16.
@@ -14,11 +14,11 @@
 #import "TestTypes/DependsOn1.h"
 #import "TestTypes/DependsOn2.h"
 
-@interface ContainerTests : XCTestCase
+@interface ConcreteContainerTests : XCTestCase
 
 @end
 
-@implementation ContainerTests
+@implementation ConcreteContainerTests
 
 - (void)setUp {
     [super setUp];
@@ -28,6 +28,14 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)testResolveUnregisteredClassThrows
+{
+    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
+
+    XCTAssertThrows([config resolveComponent:[NoDepsA class]],
+                    @"Cannot resolve unregistered component.");
 }
 
 - (void)testResolveInjectedInstanceByInterface

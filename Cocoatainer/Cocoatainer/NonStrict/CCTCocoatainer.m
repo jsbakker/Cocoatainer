@@ -14,10 +14,9 @@
 
 @interface CCTCocoatainer ()
 {
-@private
+@protected
     CCTRegistry* _model;
 }
-
 -(void)resolveAll;
 
 @end
@@ -139,8 +138,14 @@
 
 -(id)resolveComponent:(id)abstraction
 {
-    return
-        [CCTResolution resolveComponent:abstraction fromMap:_model];
+    id instance = [CCTResolution resolveComponent:abstraction fromMap:_model];
+
+    if (instance == nil)
+    {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"Cannot resolve unregistered component."];
+    }
+    return instance;
 }
 
 -(void)resolveAll

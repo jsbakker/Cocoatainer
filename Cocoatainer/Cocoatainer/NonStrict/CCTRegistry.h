@@ -13,6 +13,8 @@ typedef void (^TraverseComponents)(CCTComponent*);
 
 @interface CCTRegistry : NSObject
 
+@property (nonatomic) BOOL strict;
+
 -(CCTComponent*)getComponentRegistry:(NSString*)key;
 
 -(void)traverseAndExecute:(TraverseComponents)action;

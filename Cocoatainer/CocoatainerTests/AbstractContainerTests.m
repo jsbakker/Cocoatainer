@@ -14,11 +14,11 @@
 #import "TestTypes/DependsOn1.h"
 #import "TestTypes/DependsOn2.h"
 
-@interface AbstractCocoatainerTests : XCTestCase
+@interface AbstractContainerTests : XCTestCase
 
 @end
 
-@implementation AbstractCocoatainerTests
+@implementation AbstractContainerTests
 
 - (void)setUp
 {
@@ -28,6 +28,25 @@
 - (void)tearDown
 {
     [super tearDown];
+}
+
+- (void)testRestrictResolveConcreteTypes
+{
+    CCTAbstractCocoatainer* config = [[CCTAbstractCocoatainer alloc] init];
+
+    [config registerComponent:@protocol(INoDepsA)
+                 withInstance:[[NoDepsA alloc] init]];
+
+    XCTAssertThrows([config resolveComponent:[NoDepsA class]],
+                    @"Cannot resolve concrete types in abstract container.");
+}
+
+- (void)testResolveUnregisteredProtocolThrows
+{
+    CCTAbstractCocoatainer* config = [[CCTAbstractCocoatainer alloc] init];
+
+    XCTAssertThrows([config resolveComponent:@protocol(INoDepsA)],
+                    @"Cannot resolve unregistered component.");
 }
 
 - (void)testResolveInjectedInstance

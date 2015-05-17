@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D29765811B06D9D800DE9E61 /* Cocoatainer.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765801B06D9D800DE9E61 /* Cocoatainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D29765871B06D9D800DE9E61 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D297657B1B06D9D800DE9E61 /* Cocoatainer.framework */; };
-		D297658E1B06D9D800DE9E61 /* AbstractCocoatainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D297658D1B06D9D800DE9E61 /* AbstractCocoatainerTests.m */; };
+		D297658E1B06D9D800DE9E61 /* AbstractContainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D297658D1B06D9D800DE9E61 /* AbstractContainerTests.m */; };
 		D29765991B06DAE300DE9E61 /* CCTConstructors.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765971B06DAE300DE9E61 /* CCTConstructors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D297659A1B06DAE300DE9E61 /* CCTStartable.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765981B06DAE300DE9E61 /* CCTStartable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D29765C31B06F09100DE9E61 /* NoDeps.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765C21B06F09100DE9E61 /* NoDeps.m */; };
@@ -28,13 +28,7 @@
 		D29765E91B07CE0700DE9E61 /* CCTResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765E11B07CE0700DE9E61 /* CCTResolution.m */; };
 		D29765F31B07CE1100DE9E61 /* CCTAbstractCocoatainer.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765EB1B07CE1100DE9E61 /* CCTAbstractCocoatainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D29765F41B07CE1100DE9E61 /* CCTAbstractCocoatainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765EC1B07CE1100DE9E61 /* CCTAbstractCocoatainer.m */; };
-		D29765F51B07CE1100DE9E61 /* CCTAbstractedComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765ED1B07CE1100DE9E61 /* CCTAbstractedComponent.h */; };
-		D29765F61B07CE1100DE9E61 /* CCTAbstractedComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765EE1B07CE1100DE9E61 /* CCTAbstractedComponent.m */; };
-		D29765F71B07CE1100DE9E61 /* CCTAbstractRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765EF1B07CE1100DE9E61 /* CCTAbstractRegistry.h */; };
-		D29765F81B07CE1100DE9E61 /* CCTAbstractRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765F01B07CE1100DE9E61 /* CCTAbstractRegistry.m */; };
-		D29765F91B07CE1100DE9E61 /* CCTAbstractResolution.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765F11B07CE1100DE9E61 /* CCTAbstractResolution.h */; };
-		D29765FA1B07CE1100DE9E61 /* CCTAbstractResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765F21B07CE1100DE9E61 /* CCTAbstractResolution.m */; };
-		D29765FC1B07D46A00DE9E61 /* ContainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765FB1B07D46A00DE9E61 /* ContainerTests.m */; };
+		D29765FC1B07D46A00DE9E61 /* ConcreteContainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765FB1B07D46A00DE9E61 /* ConcreteContainerTests.m */; };
 		D29766011B0826BA00DE9E61 /* NSObject+TypeDeduction.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765FF1B0826BA00DE9E61 /* NSObject+TypeDeduction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D29766021B0826BA00DE9E61 /* NSObject+TypeDeduction.m in Sources */ = {isa = PBXBuildFile; fileRef = D29766001B0826BA00DE9E61 /* NSObject+TypeDeduction.m */; };
 /* End PBXBuildFile section */
@@ -55,7 +49,7 @@
 		D29765801B06D9D800DE9E61 /* Cocoatainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cocoatainer.h; sourceTree = "<group>"; };
 		D29765861B06D9D800DE9E61 /* CocoatainerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoatainerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D297658C1B06D9D800DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D297658D1B06D9D800DE9E61 /* AbstractCocoatainerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractCocoatainerTests.m; sourceTree = "<group>"; };
+		D297658D1B06D9D800DE9E61 /* AbstractContainerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractContainerTests.m; sourceTree = "<group>"; };
 		D29765971B06DAE300DE9E61 /* CCTConstructors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTConstructors.h; sourceTree = "<group>"; };
 		D29765981B06DAE300DE9E61 /* CCTStartable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTStartable.h; sourceTree = "<group>"; };
 		D29765C11B06F09100DE9E61 /* NoDeps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoDeps.h; sourceTree = "<group>"; };
@@ -84,13 +78,7 @@
 		D29765E11B07CE0700DE9E61 /* CCTResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTResolution.m; sourceTree = "<group>"; };
 		D29765EB1B07CE1100DE9E61 /* CCTAbstractCocoatainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractCocoatainer.h; sourceTree = "<group>"; };
 		D29765EC1B07CE1100DE9E61 /* CCTAbstractCocoatainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractCocoatainer.m; sourceTree = "<group>"; };
-		D29765ED1B07CE1100DE9E61 /* CCTAbstractedComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractedComponent.h; sourceTree = "<group>"; };
-		D29765EE1B07CE1100DE9E61 /* CCTAbstractedComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractedComponent.m; sourceTree = "<group>"; };
-		D29765EF1B07CE1100DE9E61 /* CCTAbstractRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractRegistry.h; sourceTree = "<group>"; };
-		D29765F01B07CE1100DE9E61 /* CCTAbstractRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractRegistry.m; sourceTree = "<group>"; };
-		D29765F11B07CE1100DE9E61 /* CCTAbstractResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractResolution.h; sourceTree = "<group>"; };
-		D29765F21B07CE1100DE9E61 /* CCTAbstractResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractResolution.m; sourceTree = "<group>"; };
-		D29765FB1B07D46A00DE9E61 /* ContainerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerTests.m; sourceTree = "<group>"; };
+		D29765FB1B07D46A00DE9E61 /* ConcreteContainerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcreteContainerTests.m; sourceTree = "<group>"; };
 		D29765FF1B0826BA00DE9E61 /* NSObject+TypeDeduction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TypeDeduction.h"; sourceTree = "<group>"; };
 		D29766001B0826BA00DE9E61 /* NSObject+TypeDeduction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TypeDeduction.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,9 +148,9 @@
 			children = (
 				D29765CE1B079E1D00DE9E61 /* Logging */,
 				D29765C01B06F05D00DE9E61 /* TestTypes */,
-				D297658D1B06D9D800DE9E61 /* AbstractCocoatainerTests.m */,
+				D297658D1B06D9D800DE9E61 /* AbstractContainerTests.m */,
 				D29765D71B07C1D600DE9E61 /* AbstractStartableTests.m */,
-				D29765FB1B07D46A00DE9E61 /* ContainerTests.m */,
+				D29765FB1B07D46A00DE9E61 /* ConcreteContainerTests.m */,
 				D297658B1B06D9D800DE9E61 /* Supporting Files */,
 			);
 			path = CocoatainerTests;
@@ -225,12 +213,6 @@
 			children = (
 				D29765EB1B07CE1100DE9E61 /* CCTAbstractCocoatainer.h */,
 				D29765EC1B07CE1100DE9E61 /* CCTAbstractCocoatainer.m */,
-				D29765ED1B07CE1100DE9E61 /* CCTAbstractedComponent.h */,
-				D29765EE1B07CE1100DE9E61 /* CCTAbstractedComponent.m */,
-				D29765EF1B07CE1100DE9E61 /* CCTAbstractRegistry.h */,
-				D29765F01B07CE1100DE9E61 /* CCTAbstractRegistry.m */,
-				D29765F11B07CE1100DE9E61 /* CCTAbstractResolution.h */,
-				D29765F21B07CE1100DE9E61 /* CCTAbstractResolution.m */,
 			);
 			path = Strict;
 			sourceTree = "<group>";
@@ -245,15 +227,12 @@
 				D29765E41B07CE0700DE9E61 /* CCTComponent.h in Headers */,
 				D29765E21B07CE0700DE9E61 /* CCTCocoatainer.h in Headers */,
 				D29766011B0826BA00DE9E61 /* NSObject+TypeDeduction.h in Headers */,
-				D29765F71B07CE1100DE9E61 /* CCTAbstractRegistry.h in Headers */,
 				D29765991B06DAE300DE9E61 /* CCTConstructors.h in Headers */,
 				D297659A1B06DAE300DE9E61 /* CCTStartable.h in Headers */,
-				D29765F91B07CE1100DE9E61 /* CCTAbstractResolution.h in Headers */,
 				D29765F31B07CE1100DE9E61 /* CCTAbstractCocoatainer.h in Headers */,
 				D29765E61B07CE0700DE9E61 /* CCTRegistry.h in Headers */,
 				D29765811B06D9D800DE9E61 /* Cocoatainer.h in Headers */,
 				D29765E81B07CE0700DE9E61 /* CCTResolution.h in Headers */,
-				D29765F51B07CE1100DE9E61 /* CCTAbstractedComponent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +335,6 @@
 				D29765F41B07CE1100DE9E61 /* CCTAbstractCocoatainer.m in Sources */,
 				D29765E91B07CE0700DE9E61 /* CCTResolution.m in Sources */,
 				D29765E31B07CE0700DE9E61 /* CCTCocoatainer.m in Sources */,
-				D29765F61B07CE1100DE9E61 /* CCTAbstractedComponent.m in Sources */,
-				D29765FA1B07CE1100DE9E61 /* CCTAbstractResolution.m in Sources */,
-				D29765F81B07CE1100DE9E61 /* CCTAbstractRegistry.m in Sources */,
 				D29766021B0826BA00DE9E61 /* NSObject+TypeDeduction.m in Sources */,
 				D29765E71B07CE0700DE9E61 /* CCTRegistry.m in Sources */,
 				D29765E51B07CE0700DE9E61 /* CCTComponent.m in Sources */,
@@ -370,12 +346,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29765C81B07106200DE9E61 /* DependsOn1.m in Sources */,
-				D29765FC1B07D46A00DE9E61 /* ContainerTests.m in Sources */,
+				D29765FC1B07D46A00DE9E61 /* ConcreteContainerTests.m in Sources */,
 				D29765D51B07A00F00DE9E61 /* StartupLogger.m in Sources */,
 				D29765CB1B0710C300DE9E61 /* DependsOn2.m in Sources */,
 				D29765C31B06F09100DE9E61 /* NoDeps.m in Sources */,
 				D29765D81B07C1D600DE9E61 /* AbstractStartableTests.m in Sources */,
-				D297658E1B06D9D800DE9E61 /* AbstractCocoatainerTests.m in Sources */,
+				D297658E1B06D9D800DE9E61 /* AbstractContainerTests.m in Sources */,
 				D29765D21B079EA100DE9E61 /* ArrayLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
