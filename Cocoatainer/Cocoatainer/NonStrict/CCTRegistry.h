@@ -1,0 +1,32 @@
+//
+//  CCTAbstractRegistry.h
+//  CocoatainerExample
+//
+//  Created by Jeffrey Bakker on 2015-05-15.
+//  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "CCTComponent.h"
+
+typedef void (^TraverseComponents)(CCTComponent*);
+
+@interface CCTRegistry : NSObject
+
+-(CCTComponent*)getComponentRegistry:(NSString*)key;
+
+-(void)traverseAndExecute:(TraverseComponents)action;
+
+-(void)addComponent:(Class)abstraction
+       withInstance:(id)object;
+
+-(void)addComponent:(Class)abstraction
+   withDependencies:(NSArray*)dependencies
+     andConstructor:(id)constructor;
+
+-(void)addComponent:(Class)abstraction
+   withDependencies:(NSArray*)dependencies
+     andConstructor:(id)constructor
+        andInstance:(id)instance;
+
+@end

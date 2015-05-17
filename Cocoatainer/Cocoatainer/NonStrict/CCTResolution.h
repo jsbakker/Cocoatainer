@@ -1,0 +1,21 @@
+//
+//  CCTAbstractResolution.h
+//  CocoatainerExample
+//
+//  Created by Jeffrey Bakker on 2015-05-14.
+//  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#import "CCTRegistry.h"
+
+@interface CCTResolution : NSObject
+
++(id)resolveComponent:(Class)abstraction
+              fromMap:(CCTRegistry*)registry;
+
++(id)resolveDependencies:(NSArray*)dependencies
+                 fromMap:(CCTRegistry*)registry
+              usingBlock:(id)block;
+@end

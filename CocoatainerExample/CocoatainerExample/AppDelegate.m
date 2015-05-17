@@ -15,6 +15,21 @@
 #import "CocoaPowder.h"
 #import "Marshmallow.h"
 
+#import "Mix.h"
+
+#define T(x) 
+
+@interface NSObject (TypeDeduction)
+-(BOOL)isConcrete;
+@end
+
+@implementation NSObject (TypeDeduction)
+-(BOOL)isConcrete
+{
+    return [self respondsToSelector:@selector(alloc)];
+}
+@end
+
 @interface AppDelegate ()
 
 @end
@@ -64,13 +79,36 @@
 //         return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
 //     }];
 
-    [config start:YES];
+//    [config start:YES];
+//
+//    id<LiquidVessel> myMug = [config resolveComponent:@protocol(LiquidVessel)];
+//    [myMug drink:20];
+//    [myMug checkAmount];
+//    [myMug drink:30];
+//    [myMug checkAmount];
 
-    id<LiquidVessel> myMug = [config resolveComponent:@protocol(LiquidVessel)];
-    [myMug drink:20];
-    [myMug checkAmount];
-    [myMug drink:30];
-    [myMug checkAmount];
+    //[[Marshmallow class] s]
+    id p = @protocol(Mix);
+    //if ([p respondsToSelector:@selector(alloc)])
+    if ([p isConcrete])
+    {
+        NSLog(@"p Is concrete.");
+    }
+    else NSLog(@"p Is not concrete.");
+
+    id c = [CocoaPowder class];
+    //if ([c respondsToSelector:@selector(alloc)])
+    if ([c isConcrete])
+    {
+        NSLog(@"c Is concrete");
+    }
+    else NSLog(@"c Is not concrete.");
+
+    //NSLog(@"%@", p);
+    //[p isProxy];
+    //NSLog(@"Class: %@", [id<Mix> class]);
+    //NSLog(@"Class: %@", [@protocol(Mix) class]);
+    //NSLog(@"Protocol: %@", NSStringFromProtocol(@protocol(Mix)));
 
     return YES;
 }
