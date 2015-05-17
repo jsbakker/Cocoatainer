@@ -19,6 +19,7 @@
 		D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764AB1B0477A900DE9E61 /* CocoaPowder.m */; };
 		D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B11B04FD0300DE9E61 /* Marshmallow.m */; };
 		D29765BE1B06DBCC00DE9E61 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */; };
+		D29766181B0958D000DE9E61 /* _ExampleCodeLivesHere.m in Sources */ = {isa = PBXBuildFile; fileRef = D29766171B0958D000DE9E61 /* _ExampleCodeLivesHere.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		D29764B01B04FD0300DE9E61 /* Marshmallow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marshmallow.h; sourceTree = "<group>"; };
 		D29764B11B04FD0300DE9E61 /* Marshmallow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marshmallow.m; sourceTree = "<group>"; };
 		D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoatainer.framework; path = "../Cocoatainer/build/Debug-iphoneos/Cocoatainer.framework"; sourceTree = "<group>"; };
+		D29766161B0958D000DE9E61 /* _ExampleCodeLivesHere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _ExampleCodeLivesHere.h; sourceTree = "<group>"; };
+		D29766171B0958D000DE9E61 /* _ExampleCodeLivesHere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _ExampleCodeLivesHere.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		D29764681B042A0200DE9E61 /* CocoatainerExample */ = {
 			isa = PBXGroup;
 			children = (
+				D29766161B0958D000DE9E61 /* _ExampleCodeLivesHere.h */,
+				D29766171B0958D000DE9E61 /* _ExampleCodeLivesHere.m */,
 				D297646D1B042A0200DE9E61 /* AppDelegate.h */,
 				D297646E1B042A0200DE9E61 /* AppDelegate.m */,
 				D29764701B042A0200DE9E61 /* ViewController.h */,
@@ -258,6 +263,7 @@
 				D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */,
 				D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */,
 				D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */,
+				D29766181B0958D000DE9E61 /* _ExampleCodeLivesHere.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
