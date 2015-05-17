@@ -88,7 +88,7 @@
 
     XCTAssertNotNil([testObject dependency1], "Dependency 1 is not nil.");
     XCTAssertTrue([[testObject dependency1] conformsToProtocol:@protocol(INoDepsA)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency1 conforms to TestProtocol.");
 }
 
 - (void)testResolveDependsOn1InjectedInstance
@@ -113,7 +113,7 @@
 
     XCTAssertNotNil([testObject dependency1], "Dependency 1 is not nil.");
     XCTAssertTrue([[testObject dependency1] conformsToProtocol:@protocol(INoDepsA)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency1 conforms to TestProtocol.");
 }
 
 - (void)testResolveDependsOn2
@@ -146,11 +146,11 @@
 
     XCTAssertNotNil([testObject dependency1], "Dependency 1 is not nil.");
     XCTAssertTrue([[testObject dependency1] conformsToProtocol:@protocol(INoDepsA)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency1 conforms to TestProtocol.");
 
     XCTAssertNotNil([testObject dependency2], "Dependency 2 is not nil.");
     XCTAssertTrue([[testObject dependency2] conformsToProtocol:@protocol(INoDepsB)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency2 conforms to TestProtocol.");
 }
 
 - (void)testResolveDependsOn2InjectedInstanceD1
@@ -181,11 +181,11 @@
 
     XCTAssertNotNil([testObject dependency1], "Dependency 1 is not nil.");
     XCTAssertTrue([[testObject dependency1] conformsToProtocol:@protocol(INoDepsA)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency1 conforms to TestProtocol.");
 
     XCTAssertNotNil([testObject dependency2], "Dependency 2 is not nil.");
     XCTAssertTrue([[testObject dependency2] conformsToProtocol:@protocol(INoDepsB)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency2 conforms to TestProtocol.");
 }
 
 - (void)testResolveNestedDependencies
@@ -275,11 +275,11 @@
 
     XCTAssertNotNil([testObject dependency1], "Dependency 1 is not nil.");
     XCTAssertTrue([[testObject dependency1] conformsToProtocol:@protocol(IDependsOn1A)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency1 conforms to TestProtocol.");
 
     XCTAssertNotNil([testObject dependency2], "Dependency 2 is not nil.");
     XCTAssertTrue([[testObject dependency2] conformsToProtocol:@protocol(INoDepsB)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency2 conforms to TestProtocol.");
 }
 
 - (void)testResolveNestedSharedDependencies
@@ -314,11 +314,11 @@
 
     XCTAssertNotNil([testObject dependency1], "Dependency 1 is not nil.");
     XCTAssertTrue([[testObject dependency1] conformsToProtocol:@protocol(IDependsOn1A)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency1 conforms to TestProtocol.");
 
     XCTAssertNotNil([testObject dependency2], "Dependency 2 is not nil.");
     XCTAssertTrue([[testObject dependency2] conformsToProtocol:@protocol(INoDepsA)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency2 conforms to TestProtocol.");
 }
 
 - (void)testResolveNestedSharedDependenciesInjectedInstance
@@ -348,11 +348,11 @@
 
     XCTAssertNotNil([testObject dependency1], "Dependency 1 is not nil.");
     XCTAssertTrue([[testObject dependency1] conformsToProtocol:@protocol(IDependsOn1A)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency1 conforms to TestProtocol.");
 
     XCTAssertNotNil([testObject dependency2], "Dependency 2 is not nil.");
     XCTAssertTrue([[testObject dependency2] conformsToProtocol:@protocol(INoDepsA)],
-                  "testObject conforms to TestProtocol.");
+                  "dependency2 conforms to TestProtocol.");
 }
 
 @end
