@@ -18,7 +18,7 @@
     CCTRegistry* _model;
 }
 -(void)resolveAll;
-
+-(void)setAbstract;
 @end
 
 @implementation CCTCocoatainer
@@ -157,6 +157,11 @@
              [self resolveComponent:c.abstracion];
          }
      }];
+}
+
+-(void)setAbstract
+{
+    _model.strict = YES;
 }
 
 @end

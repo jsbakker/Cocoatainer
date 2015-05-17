@@ -30,6 +30,15 @@
     [super tearDown];
 }
 
+- (void)testRestrictRegisterConcreteTypes
+{
+    CCTAbstractCocoatainer* config = [[CCTAbstractCocoatainer alloc] init];
+
+    XCTAssertThrows([config registerComponent:[NoDepsA class]
+                                 withInstance:[[NoDepsA alloc] init]],
+                    @"Cannot register concrete types in abstract mode.");
+}
+
 - (void)testRestrictResolveConcreteTypes
 {
     CCTAbstractCocoatainer* config = [[CCTAbstractCocoatainer alloc] init];

@@ -9,17 +9,21 @@
 #import "CCTAbstractCocoatainer.h"
 #import "NSObject+TypeDeduction.h"
 
+@interface CCTCocoatainer (Protected)
+-(void)setAbstract;
+@end
+
 @implementation CCTAbstractCocoatainer
 
-//-(id)init
-//{
-//    self = [super init];
-//    if(self)
-//    {
-//        _model.strict = YES;
-//    }
-//    return self;
-//}
+-(id)init
+{
+    self = [super init];
+    if(self)
+    {
+        [self setAbstract];
+    }
+    return self;
+}
 
 -(id)resolveComponent:(id)abstraction
 {
