@@ -1,14 +1,15 @@
 //
 //  CCTAbstractRegistry.m
-//  CocoatainerExample
+//  Cocoatainer
 //
 //  Created by Jeffrey Bakker on 2015-05-15.
 //  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
 //
 
-#import "CCTAbstractRegistry.h"
+#import "CCTRegistry.h"
+#import "NSObject+TypeDeduction.h"
 
-@interface CCTAbstractRegistry ()
+@interface CCTRegistry ()
 {
 @private
     NSMutableDictionary *_componentsMap;
@@ -16,7 +17,7 @@
 
 @end
 
-@implementation CCTAbstractRegistry
+@implementation CCTRegistry
 
 -(id)init
 {
@@ -28,7 +29,7 @@
     return self;
 }
 
--(CCTAbstractedComponent*)getComponentRegistry:(NSString*)key
+-(CCTComponent*)getComponentRegistry:(NSString*)key
 {
     return _componentsMap[key];
 }
@@ -37,12 +38,12 @@
 {
     for (NSString* key in _componentsMap)
     {
-        CCTAbstractedComponent* component = _componentsMap[key];
+        CCTComponent* component = _componentsMap[key];
         action(component);
     }
 }
 
--(void)addComponent:(Protocol*)abstraction
+-(void)addComponent:(id)abstraction
        withInstance:(id)object
 {
     [self addComponent:abstraction
@@ -51,7 +52,7 @@
            andInstance:object];
 }
 
--(void)addComponent:(Protocol*)abstraction
+-(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
      andConstructor:(id)constructor
 {
@@ -61,19 +62,26 @@
            andInstance:nil];
 }
 
--(void)addComponent:(Protocol*)abstraction
+-(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
      andConstructor:(id)constructor
         andInstance:(id)instance
 {
-    NSString *dependencyKey = NSStringFromProtocol(abstraction);
+    if (self.strict && [abstraction isConcrete])
+    {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"Cannot register concrete types in abstract mode."];
+    }
+
+    NSString *dependencyKey = [abstraction isConcrete] ?
+        NSStringFromClass(abstraction) : NSStringFromProtocol(abstraction);
 
     if (_componentsMap[dependencyKey])
     {
         return;
     }
 
-    CCTAbstractedComponent* c = [[CCTAbstractedComponent alloc] init];
+    CCTComponent* c = [[CCTComponent alloc] init];
     c.abstracion = abstraction;
     c.instance = instance;
     c.constructor = constructor;

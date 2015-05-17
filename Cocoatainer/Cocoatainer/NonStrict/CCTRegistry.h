@@ -1,30 +1,32 @@
 //
 //  CCTAbstractRegistry.h
-//  CocoatainerExample
+//  Cocoatainer
 //
 //  Created by Jeffrey Bakker on 2015-05-15.
 //  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "CCTAbstractedComponent.h"
+#import "CCTComponent.h"
 
-typedef void (^TraverseComponents)(CCTAbstractedComponent*);
+typedef void (^TraverseComponents)(CCTComponent*);
 
-@interface CCTAbstractRegistry : NSObject
+@interface CCTRegistry : NSObject
 
--(CCTAbstractedComponent*)getComponentRegistry:(NSString*)key;
+@property (nonatomic) BOOL strict;
+
+-(CCTComponent*)getComponentRegistry:(NSString*)key;
 
 -(void)traverseAndExecute:(TraverseComponents)action;
 
--(void)addComponent:(Protocol*)abstraction
+-(void)addComponent:(id)abstraction
        withInstance:(id)object;
 
--(void)addComponent:(Protocol*)abstraction
+-(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
      andConstructor:(id)constructor;
 
--(void)addComponent:(Protocol*)abstraction
+-(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
      andConstructor:(id)constructor
         andInstance:(id)instance;

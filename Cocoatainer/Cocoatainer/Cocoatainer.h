@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "NSObject+TypeDeduction.h"
 #import "CCTAbstractCocoatainer.h"
+#import "CCTCocoatainer.h"
 #import "CCTStartable.h"
 
 //! Project version number for Cocoatainer.
