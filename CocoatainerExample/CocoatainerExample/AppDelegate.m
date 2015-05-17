@@ -28,19 +28,19 @@
     CCTAbstractCocoatainer* config =
         [[CCTAbstractCocoatainer alloc] init];
 
-    [config registerComponent:@protocol(HotWaterSource) withBlock:
+    [config registerComponent:@protocol(HotWaterSource) initsWith:
      ^{
          return [[Kettle alloc] init];
      }];
 
-    [config registerComponent:@protocol(Topping) withBlock:
+    [config registerComponent:@protocol(Topping) initsWith:
      ^{
          return [[Marshmallow alloc] init];
      }];
 
     [config registerComponent:@protocol(Mix)
                  dependentOn1:@protocol(Topping)
-                    withBlock:
+                    initsWith:
      ^(id<Topping> topping){
          return [[CocoaPowder alloc] initWithTopping:topping];
      }];
@@ -48,7 +48,7 @@
     [config registerComponent:@protocol(LiquidVessel)
                  dependentOn1:@protocol(HotWaterSource)
                          and2:@protocol(Mix)
-                    withBlock:
+                    initsWith:
      ^(id<HotWaterSource> source, id<Mix> mix){
          return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
      }];

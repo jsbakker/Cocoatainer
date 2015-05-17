@@ -31,12 +31,12 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
 
-    [config registerComponent:[NSNumber class] withBlock:
+    [config registerComponent:[NSNumber class] initsWith:
      ^{
          return @1000;
      }];
@@ -44,7 +44,7 @@
     [config registerComponent:@protocol(IDependsOnMultiple)
                  dependentOn1:[NSString class]
                          and2:[NSNumber class]
-                    withBlock:
+                    initsWith:
      ^(NSString* d1, NSNumber* d2)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:d1, d2, nil];
@@ -53,7 +53,7 @@
     [config registerComponent:[DependsOnMultiple class]
                  dependentOn1:[NSString class]
                          and2:[NSString class]
-                    withBlock:
+                    initsWith:
      ^(NSString* d1, NSString* d2)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:d1, d2, nil];
@@ -95,12 +95,12 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
 
-    [config registerComponent:[NSNumber class] withBlock:
+    [config registerComponent:[NSNumber class] initsWith:
      ^{
          return @1000;
      }];
@@ -108,7 +108,7 @@
     [config registerComponent:@protocol(IDependsOnMultiple)
                  dependentOn1:[NSString class]
                          and2:[NSNumber class]
-                    withBlock:
+                    initsWith:
      ^(NSString* d1, NSNumber* d2)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:d1, d2, nil];
@@ -134,7 +134,7 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
@@ -143,7 +143,7 @@
                  dependentOn1:[NSString class]
                          and2:[NSString class]
                          and3:[NSString class]
-                    withBlock:
+                    initsWith:
      ^(NSString* d1, NSString* d2, NSString* d3)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:
@@ -165,7 +165,7 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
@@ -175,7 +175,7 @@
                          and2:[NSString class]
                          and3:[NSString class]
                          and4:[NSString class]
-                    withBlock:
+                    initsWith:
      ^(NSString* d1, NSString* d2, NSString* d3, NSString* d4)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:
@@ -197,7 +197,7 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
@@ -208,7 +208,7 @@
                          and3:[NSString class]
                          and4:[NSString class]
                          and5:[NSString class]
-                    withBlock:
+                    initsWith:
      ^(NSString* d1, NSString* d2, NSString* d3, NSString* d4, NSString* d5)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:
@@ -230,7 +230,7 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
@@ -242,7 +242,7 @@
                          and4:[NSString class]
                          and5:[NSString class]
                          and6:[NSString class]
-                    withBlock:
+                    initsWith:
      ^(NSString* d1, NSString* d2, NSString* d3,
        NSString* d4, NSString* d5, NSString* d6)
      {
@@ -265,7 +265,7 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
@@ -278,7 +278,7 @@
                                 [NSString class],
                                 [NSString class],
                                 [NSString class]]
-                    withBlock:^(NSArray* dependencies)
+                    initsWith:^(NSArray* dependencies)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:
                  dependencies[0],
@@ -306,7 +306,7 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
@@ -320,7 +320,7 @@
                                 [NSString class],
                                 [NSString class],
                                 [NSString class]]
-                    withBlock:^(NSArray* dependencies)
+                    initsWith:^(NSArray* dependencies)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:
                  dependencies[0],
@@ -349,7 +349,7 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
@@ -364,7 +364,7 @@
                                 [NSString class],
                                 [NSString class],
                                 [NSString class]]
-                    withBlock:^(NSArray* dependencies)
+                    initsWith:^(NSArray* dependencies)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:
                  dependencies[0],
@@ -394,7 +394,7 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NSString class] withBlock:
+    [config registerComponent:[NSString class] initsWith:
      ^{
          return @"Injected";
      }];
@@ -410,7 +410,7 @@
                                 [NSString class],
                                 [NSString class],
                                 [NSString class]]
-                    withBlock:^(NSArray* dependencies)
+                    initsWith:^(NSArray* dependencies)
      {
          return [[DependsOnMultiple alloc] initWithDependencies:
                  dependencies[0],

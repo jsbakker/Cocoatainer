@@ -74,7 +74,7 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NoDepsA class] withBlock:
+    [config registerComponent:[NoDepsA class] initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
@@ -92,14 +92,14 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NoDepsA class] withBlock:
+    [config registerComponent:[NoDepsA class] initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
 
     [config registerComponent:[DependsOn1A class]
                  dependentOn1:[NoDepsA class]
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
@@ -124,7 +124,7 @@
 
     [config registerComponent:[DependsOn1A class]
                  dependentOn1:[NoDepsA class]
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
@@ -144,12 +144,12 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NoDepsA class] withBlock:
+    [config registerComponent:[NoDepsA class] initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
 
-    [config registerComponent:[NoDepsB class] withBlock:
+    [config registerComponent:[NoDepsB class] initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
@@ -157,7 +157,7 @@
     [config registerComponent:[DependsOn2A class]
                  dependentOn1:[NoDepsA class]
                          and2:[NoDepsB class]
-                    withBlock:^(id<INoDepsA> d1, id<INoDepsB> d2)
+                    initsWith:^(id<INoDepsA> d1, id<INoDepsB> d2)
      {
          return [[DependsOn2A alloc] initWithD1:d1 and2:d2];
      }];
@@ -184,7 +184,7 @@
     [config registerComponent:[NoDepsA class]
                  withInstance:[[NoDepsA alloc] init]];
 
-    [config registerComponent:[NoDepsB class] withBlock:
+    [config registerComponent:[NoDepsB class] initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
@@ -192,7 +192,7 @@
     [config registerComponent:[DependsOn2A class]
                  dependentOn1:[NoDepsA class]
                          and2:[NoDepsB class]
-                    withBlock:^(id<INoDepsA> d1, id<INoDepsB> d2)
+                    initsWith:^(id<INoDepsA> d1, id<INoDepsB> d2)
      {
          return [[DependsOn2A alloc] initWithD1:d1 and2:d2];
      }];
@@ -216,24 +216,24 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NoDepsA class] withBlock:
+    [config registerComponent:[NoDepsA class] initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
 
-    [config registerComponent:[NoDepsB class] withBlock:
+    [config registerComponent:[NoDepsB class] initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
 
     [config registerComponent:[DependsOn1A class]
                  dependentOn1:[NoDepsA class]
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
 
-    [config registerComponent:[NoDepsB class] withBlock:
+    [config registerComponent:[NoDepsB class] initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
@@ -241,7 +241,7 @@
     [config registerComponent:[DependsOn2B class]
                  dependentOn1:[DependsOn1A class]
                          and2:[NoDepsB class]
-                    withBlock:^(id<IDependsOn1A> d1, id<INoDepsB> d2)
+                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsB> d2)
      {
          return [[DependsOn2B alloc] initWithD1:d1 and2:d2];
      }];
@@ -273,12 +273,12 @@
 
     [config registerComponent:[DependsOn1A class]
                  dependentOn1:[NoDepsA class]
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
 
-    [config registerComponent:[NoDepsB class] withBlock:
+    [config registerComponent:[NoDepsB class] initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
@@ -286,7 +286,7 @@
     [config registerComponent:[DependsOn2B class]
                  dependentOn1:[DependsOn1A class]
                          and2:[NoDepsB class]
-                    withBlock:^(id<IDependsOn1A> d1, id<INoDepsB> d2)
+                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsB> d2)
      {
          return [[DependsOn2B alloc] initWithD1:d1 and2:d2];
      }];
@@ -310,14 +310,14 @@
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:[NoDepsA class] withBlock:
+    [config registerComponent:[NoDepsA class] initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
 
     [config registerComponent:[DependsOn1A class]
                  dependentOn1:[NoDepsA class]
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
@@ -325,7 +325,7 @@
     [config registerComponent:[DependsOn2C class]
                  dependentOn1:[DependsOn1A class]
                          and2:[NoDepsA class]
-                    withBlock:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
+                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
      {
          return [[DependsOn2C alloc] initWithD1:d1 and2:d2];
      }];
@@ -359,7 +359,7 @@
     [config registerComponent:[DependsOn2C class]
                  dependentOn1:[DependsOn1A class]
                          and2:[NoDepsA class]
-                    withBlock:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
+                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
      {
          return [[DependsOn2C alloc] initWithD1:d1 and2:d2];
      }];

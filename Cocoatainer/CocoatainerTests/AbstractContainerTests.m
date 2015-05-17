@@ -78,7 +78,7 @@
 {
     CCTAbstractCocoatainer* config = [[CCTAbstractCocoatainer alloc] init];
 
-    [config registerComponent:@protocol(INoDepsA) withBlock:
+    [config registerComponent:@protocol(INoDepsA) initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
@@ -96,14 +96,14 @@
 {
     CCTAbstractCocoatainer* config = [[CCTAbstractCocoatainer alloc] init];
 
-    [config registerComponent:@protocol(INoDepsA) withBlock:
+    [config registerComponent:@protocol(INoDepsA) initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
 
     [config registerComponent:@protocol(IDependsOn1A)
                  dependentOn1:@protocol(INoDepsA)
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
@@ -128,7 +128,7 @@
 
     [config registerComponent:@protocol(IDependsOn1A)
                  dependentOn1:@protocol(INoDepsA)
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
@@ -148,12 +148,12 @@
 {
     CCTAbstractCocoatainer* config = [[CCTAbstractCocoatainer alloc] init];
 
-    [config registerComponent:@protocol(INoDepsA) withBlock:
+    [config registerComponent:@protocol(INoDepsA) initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
 
-    [config registerComponent:@protocol(INoDepsB) withBlock:
+    [config registerComponent:@protocol(INoDepsB) initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
@@ -161,7 +161,7 @@
     [config registerComponent:@protocol(IDependsOn2A)
                  dependentOn1:@protocol(INoDepsA)
                          and2:@protocol(INoDepsB)
-                    withBlock:^(id<INoDepsA> d1, id<INoDepsB> d2)
+                    initsWith:^(id<INoDepsA> d1, id<INoDepsB> d2)
      {
          return [[DependsOn2A alloc] initWithD1:d1 and2:d2];
      }];
@@ -188,7 +188,7 @@
     [config registerComponent:@protocol(INoDepsA)
                  withInstance:[[NoDepsA alloc] init]];
 
-    [config registerComponent:@protocol(INoDepsB) withBlock:
+    [config registerComponent:@protocol(INoDepsB) initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
@@ -196,7 +196,7 @@
     [config registerComponent:@protocol(IDependsOn2A)
                  dependentOn1:@protocol(INoDepsA)
                          and2:@protocol(INoDepsB)
-                    withBlock:^(id<INoDepsA> d1, id<INoDepsB> d2)
+                    initsWith:^(id<INoDepsA> d1, id<INoDepsB> d2)
      {
          return [[DependsOn2A alloc] initWithD1:d1 and2:d2];
      }];
@@ -220,24 +220,24 @@
 {
     CCTAbstractCocoatainer* config = [[CCTAbstractCocoatainer alloc] init];
 
-    [config registerComponent:@protocol(INoDepsA) withBlock:
+    [config registerComponent:@protocol(INoDepsA) initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
 
-    [config registerComponent:@protocol(INoDepsB) withBlock:
+    [config registerComponent:@protocol(INoDepsB) initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
 
     [config registerComponent:@protocol(IDependsOn1A)
                  dependentOn1:@protocol(INoDepsA)
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
 
-    [config registerComponent:@protocol(INoDepsB) withBlock:
+    [config registerComponent:@protocol(INoDepsB) initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
@@ -245,7 +245,7 @@
     [config registerComponent:@protocol(IDependsOn2B)
                  dependentOn1:@protocol(IDependsOn1A)
                          and2:@protocol(INoDepsB)
-                    withBlock:^(id<IDependsOn1A> d1, id<INoDepsB> d2)
+                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsB> d2)
      {
          return [[DependsOn2B alloc] initWithD1:d1 and2:d2];
      }];
@@ -277,12 +277,12 @@
 
     [config registerComponent:@protocol(IDependsOn1A)
                  dependentOn1:@protocol(INoDepsA)
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
 
-    [config registerComponent:@protocol(INoDepsB) withBlock:
+    [config registerComponent:@protocol(INoDepsB) initsWith:
      ^{
          return [[NoDepsB alloc] init];
      }];
@@ -290,7 +290,7 @@
     [config registerComponent:@protocol(IDependsOn2B)
                  dependentOn1:@protocol(IDependsOn1A)
                          and2:@protocol(INoDepsB)
-                    withBlock:^(id<IDependsOn1A> d1, id<INoDepsB> d2)
+                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsB> d2)
      {
          return [[DependsOn2B alloc] initWithD1:d1 and2:d2];
      }];
@@ -314,14 +314,14 @@
 {
     CCTAbstractCocoatainer* config = [[CCTAbstractCocoatainer alloc] init];
 
-    [config registerComponent:@protocol(INoDepsA) withBlock:
+    [config registerComponent:@protocol(INoDepsA) initsWith:
      ^{
          return [[NoDepsA alloc] init];
      }];
 
     [config registerComponent:@protocol(IDependsOn1A)
                  dependentOn1:@protocol(INoDepsA)
-                    withBlock:^(id<INoDepsA> d1)
+                    initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
@@ -329,7 +329,7 @@
     [config registerComponent:@protocol(IDependsOn2C)
                  dependentOn1:@protocol(IDependsOn1A)
                          and2:@protocol(INoDepsA)
-                    withBlock:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
+                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
      {
          return [[DependsOn2C alloc] initWithD1:d1 and2:d2];
      }];
@@ -363,7 +363,7 @@
     [config registerComponent:@protocol(IDependsOn2C)
                  dependentOn1:@protocol(IDependsOn1A)
                          and2:@protocol(INoDepsA)
-                    withBlock:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
+                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
      {
          return [[DependsOn2C alloc] initWithD1:d1 and2:d2];
      }];

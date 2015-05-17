@@ -42,14 +42,14 @@
 
     [config registerComponent:@protocol(ILoggerA)
                  dependentOn1:@protocol(ILog)
-                    withBlock:
+                    initsWith:
      ^(id<ILog> log){
          return [[StartupLoggerA alloc] initWithLog:log];
      }];
 
     [config registerComponent:@protocol(ILoggerB)
                  dependentOn1:@protocol(ILog)
-                    withBlock:
+                    initsWith:
      ^(id<ILog> log){
          return [[StartupLoggerB alloc] initWithLog:log];
      }];
@@ -57,7 +57,7 @@
     [config registerComponent:@protocol(IDependsOn2Startables)
                  dependentOn1:@protocol(ILoggerA)
                          and2:@protocol(ILoggerB)
-                    withBlock:^(id<ILoggerA> d1, id<ILoggerB> d2)
+                    initsWith:^(id<ILoggerA> d1, id<ILoggerB> d2)
      {
          return [[DependsOn2Startables alloc] initWithD1:d1 and2:d2];
      }];
@@ -81,14 +81,14 @@
 
     [config registerComponent:@protocol(ILoggerA)
                  dependentOn1:@protocol(ILog)
-                    withBlock:
+                    initsWith:
      ^(id<ILog> log){
          return [[StartupLoggerA alloc] initWithLog:log];
      }];
 
     [config registerComponent:@protocol(ILoggerB)
                  dependentOn1:@protocol(ILog)
-                    withBlock:
+                    initsWith:
      ^(id<ILog> log){
          return [[StartupLoggerB alloc] initWithLog:log];
      }];
@@ -96,7 +96,7 @@
     [config registerComponent:@protocol(IDependsOn2Startables)
                  dependentOn1:@protocol(ILoggerA)
                          and2:@protocol(ILoggerB)
-                    withBlock:^(id<ILoggerA> d1, id<ILoggerB> d2)
+                    initsWith:^(id<ILoggerA> d1, id<ILoggerB> d2)
      {
          return [[DependsOn2Startables alloc] initWithD1:d1 and2:d2];
      }];
@@ -121,14 +121,14 @@
 
     [config registerComponent:@protocol(ILoggerA)
                  dependentOn1:@protocol(ILog)
-                    withBlock:
+                    initsWith:
      ^(id<ILog> log){
          return [[StartupLoggerA alloc] initWithLog:log];
      }];
 
     [config registerComponent:@protocol(ILoggerB)
                  dependentOn1:@protocol(ILog)
-                    withBlock:
+                    initsWith:
      ^(id<ILog> log){
          return [[StartupLoggerB alloc] initWithLog:log];
      }];
@@ -136,7 +136,7 @@
     [config registerComponent:@protocol(IDependsOn2Startables)
                  dependentOn1:@protocol(ILoggerA)
                          and2:@protocol(ILoggerB)
-                    withBlock:^(id<ILoggerA> d1, id<ILoggerB> d2)
+                    initsWith:^(id<ILoggerA> d1, id<ILoggerB> d2)
      {
          return [[DependsOn2Startables alloc] initWithD1:d1 and2:d2];
      }];
@@ -179,14 +179,14 @@
 
     [config registerComponent:@protocol(ILoggerA)
                  dependentOn1:@protocol(ILog)
-                    withBlock:
+                    initsWith:
      ^(id<ILog> log){
          return [[StartupLoggerA alloc] initWithLog:log];
      }];
 
     [config registerComponent:@protocol(ILoggerB)
                  dependentOn1:@protocol(ILog)
-                    withBlock:
+                    initsWith:
      ^(id<ILog> log){
          return [[StartupLoggerB alloc] initWithLog:log];
      }];
@@ -194,7 +194,7 @@
     [config registerComponent:@protocol(IDependsOn2Startables)
                  dependentOn1:@protocol(ILoggerB)
                          and2:@protocol(ILoggerA)
-                    withBlock:^(id<ILoggerB> d1, id<ILoggerA> d2)
+                    initsWith:^(id<ILoggerB> d1, id<ILoggerA> d2)
      {
          return [[DependsOn2Startables alloc] initWithD1:d2 and2:d1];
      }];
