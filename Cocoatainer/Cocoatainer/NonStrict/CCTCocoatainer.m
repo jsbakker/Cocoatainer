@@ -36,6 +36,11 @@
     return self;
 }
 
+-(void)dealloc
+{
+    _model = nil;
+}
+
 -(void)start:(BOOL)autoResolve
 {
     if (autoResolve)

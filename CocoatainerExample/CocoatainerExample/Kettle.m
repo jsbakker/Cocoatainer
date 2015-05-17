@@ -12,6 +12,11 @@
 
 @implementation Kettle
 
+-(void)dealloc
+{
+    NSLog(@"This water got cold and looks old. I willl dump it out.");
+}
+
 -(void)start
 {
     [self heat];

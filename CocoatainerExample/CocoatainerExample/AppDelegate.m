@@ -72,6 +72,8 @@
     [myMug drink:30];
     [myMug checkAmount];
 
+    NSLog(@"Before application finished launching scope end.");
+
     return YES;
 }
 

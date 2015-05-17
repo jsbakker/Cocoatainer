@@ -32,6 +32,15 @@
     return self;
 }
 
+-(void)dealloc
+{
+    NSLog(@"Someone left this %ld ml full mug here. I will just pour it out.",
+          _millilitres);
+
+    _hotWaterSource = nil;
+    _cocoaMix = nil;
+}
+
 -(void)start
 {
     [self fill];

@@ -32,6 +32,12 @@
     return self;
 }
 
+-(void)dealloc
+{
+    [_componentsMap removeAllObjects];
+    _componentsMap = nil;
+}
+
 -(CCTComponent*)getComponentRegistry:(NSString*)key
 {
     return _componentsMap[key];
