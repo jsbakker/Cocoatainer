@@ -7,36 +7,36 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCTConstructors.h"
+#import "CCTInitializers.h"
 
 @interface CCTCocoatainer : NSObject
 
 -(void)registerComponent:(id)abstraction withInstance:(id)object;
 
 -(void)registerComponent:(id)abstraction
-               withBlock:(CreationBlock0)block;
+               withBlock:(Initializer0)block;
 
 -(void)registerComponent:(id)abstraction
             dependentOn1:(id)d1
-               withBlock:(CreationBlock1)block;
+               withBlock:(Initializer1)block;
 
 -(void)registerComponent:(id)abstraction
             dependentOn1:(id)d1
                     and2:(id)d2
-               withBlock:(CreationBlock2)block;
+               withBlock:(Initializer2)block;
 
 -(void)registerComponent:(id)abstraction
             dependentOn1:(id)d1
                     and2:(id)d2
                     and3:(id)d3
-               withBlock:(CreationBlock3)block;
+               withBlock:(Initializer3)block;
 
 -(void)registerComponent:(id)abstraction
             dependentOn1:(id)d1
                     and2:(id)d2
                     and3:(id)d3
                     and4:(id)d4
-               withBlock:(CreationBlock4)block;
+               withBlock:(Initializer4)block;
 
 -(void)registerComponent:(id)abstraction
             dependentOn1:(id)d1
@@ -44,7 +44,7 @@
                     and3:(id)d3
                     and4:(id)d4
                     and5:(id)d5
-               withBlock:(CreationBlock5)block;
+               withBlock:(Initializer5)block;
 
 -(void)registerComponent:(id)abstraction
             dependentOn1:(id)d1
@@ -53,7 +53,7 @@
                     and4:(id)d4
                     and5:(id)d5
                     and6:(id)d6
-               withBlock:(CreationBlock6)block;
+               withBlock:(Initializer6)block;
 
 -(id)resolveComponent:(id)abstraction;
 

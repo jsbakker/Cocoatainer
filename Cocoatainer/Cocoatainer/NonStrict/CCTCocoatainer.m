@@ -56,14 +56,14 @@
 }
 
 -(void)registerComponent:(id)abstraction
-               withBlock:(CreationBlock0)block
+               withBlock:(Initializer0)block
 {
     [_model addComponent:abstraction withDependencies:@[] andConstructor:block];
 }
 
 -(void)registerComponent:(id)abstraction
             dependentOn1:(id)d1
-               withBlock:(CreationBlock1)block
+               withBlock:(Initializer1)block
 {
     NSArray* dependencies = @[d1];
     [_model addComponent:abstraction
@@ -74,7 +74,7 @@
 -(void)registerComponent:(id)abstraction
             dependentOn1:(id)d1
                     and2:(id)d2
-               withBlock:(CreationBlock2)block
+               withBlock:(Initializer2)block
 {
     NSArray* dependencies = @[d1, d2];
     [_model addComponent:abstraction
@@ -86,7 +86,7 @@
             dependentOn1:(id)d1
                     and2:(id)d2
                     and3:(id)d3
-               withBlock:(CreationBlock3)block
+               withBlock:(Initializer3)block
 {
     NSArray* dependencies = @[d1, d2, d3];
     [_model addComponent:abstraction
@@ -99,7 +99,7 @@
                     and2:(id)d2
                     and3:(id)d3
                     and4:(id)d4
-               withBlock:(CreationBlock4)block
+               withBlock:(Initializer4)block
 {
     NSArray* dependencies = @[d1, d2, d3, d4];
     [_model addComponent:abstraction
@@ -113,7 +113,7 @@
                     and3:(id)d3
                     and4:(id)d4
                     and5:(id)d5
-               withBlock:(CreationBlock5)block
+               withBlock:(Initializer5)block
 {
     NSArray* dependencies = @[d1, d2, d3, d4, d5];
     [_model addComponent:abstraction
@@ -128,7 +128,7 @@
                     and4:(id)d4
                     and5:(id)d5
                     and6:(id)d6
-               withBlock:(CreationBlock6)block
+               withBlock:(Initializer6)block
 {
     NSArray* dependencies = @[d1, d2, d3, d4, d5, d6];
     [_model addComponent:abstraction

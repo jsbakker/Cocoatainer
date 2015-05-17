@@ -8,7 +8,7 @@
 
 #import "CCTResolution.h"
 #import "CCTComponent.h"
-#import "CCTConstructors.h"
+#import "CCTInitializers.h"
 #import "NSObject+TypeDeduction.h"
 
 @implementation CCTResolution
@@ -52,13 +52,13 @@
     {
         case 0:
         {
-            return ((CreationBlock0)block)();
+            return ((Initializer0)block)();
         }
         case 1:
         {
             id depInstance0 =
                 [self resolveComponent:dependencies[0] fromMap:registry];
-            return ((CreationBlock1)block)(depInstance0);
+            return ((Initializer1)block)(depInstance0);
         }
         case 2:
         {
@@ -66,8 +66,8 @@
                 [self resolveComponent:dependencies[0] fromMap:registry];
             id depInstance1 =
                 [self resolveComponent:dependencies[1] fromMap:registry];
-            return ((CreationBlock2)block)(depInstance0,
-                                           depInstance1);
+            return ((Initializer2)block)(depInstance0,
+                                         depInstance1);
         }
         case 3:
         {
@@ -77,9 +77,9 @@
                 [self resolveComponent:dependencies[1] fromMap:registry];
             id depInstance2 =
                 [self resolveComponent:dependencies[2] fromMap:registry];
-            return ((CreationBlock3)block)(depInstance0,
-                                           depInstance1,
-                                           depInstance2);
+            return ((Initializer3)block)(depInstance0,
+                                         depInstance1,
+                                         depInstance2);
         }
         case 4:
         {
@@ -91,10 +91,10 @@
                 [self resolveComponent:dependencies[2] fromMap:registry];
             id depInstance3 =
                 [self resolveComponent:dependencies[3] fromMap:registry];
-            return ((CreationBlock4)block)(depInstance0,
-                                           depInstance1,
-                                           depInstance2,
-                                           depInstance3);
+            return ((Initializer4)block)(depInstance0,
+                                         depInstance1,
+                                         depInstance2,
+                                         depInstance3);
         }
         case 5:
         {
@@ -108,11 +108,11 @@
                 [self resolveComponent:dependencies[3] fromMap:registry];
             id depInstance4 =
                 [self resolveComponent:dependencies[4] fromMap:registry];
-            return ((CreationBlock5)block)(depInstance0,
-                                           depInstance1,
-                                           depInstance2,
-                                           depInstance3,
-                                           depInstance4);
+            return ((Initializer5)block)(depInstance0,
+                                         depInstance1,
+                                         depInstance2,
+                                         depInstance3,
+                                         depInstance4);
         }
         case 6:
         {
@@ -128,12 +128,12 @@
                 [self resolveComponent:dependencies[4] fromMap:registry];
             id depInstance5 =
                 [self resolveComponent:dependencies[5] fromMap:registry];
-            return ((CreationBlock6)block)(depInstance0,
-                                           depInstance1,
-                                           depInstance2,
-                                           depInstance3,
-                                           depInstance4,
-                                           depInstance5);
+            return ((Initializer6)block)(depInstance0,
+                                         depInstance1,
+                                         depInstance2,
+                                         depInstance3,
+                                         depInstance4,
+                                         depInstance5);
         }
     }
     return nil;

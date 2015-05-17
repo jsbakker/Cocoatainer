@@ -10,7 +10,7 @@
 		D29765811B06D9D800DE9E61 /* Cocoatainer.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765801B06D9D800DE9E61 /* Cocoatainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D29765871B06D9D800DE9E61 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D297657B1B06D9D800DE9E61 /* Cocoatainer.framework */; };
 		D297658E1B06D9D800DE9E61 /* AbstractContainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D297658D1B06D9D800DE9E61 /* AbstractContainerTests.m */; };
-		D29765991B06DAE300DE9E61 /* CCTConstructors.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765971B06DAE300DE9E61 /* CCTConstructors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D29765991B06DAE300DE9E61 /* CCTInitializers.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765971B06DAE300DE9E61 /* CCTInitializers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D297659A1B06DAE300DE9E61 /* CCTStartable.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765981B06DAE300DE9E61 /* CCTStartable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D29765C31B06F09100DE9E61 /* NoDeps.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765C21B06F09100DE9E61 /* NoDeps.m */; };
 		D29765C81B07106200DE9E61 /* DependsOn1.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765C71B07106200DE9E61 /* DependsOn1.m */; };
@@ -50,7 +50,7 @@
 		D29765861B06D9D800DE9E61 /* CocoatainerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoatainerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D297658C1B06D9D800DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D297658D1B06D9D800DE9E61 /* AbstractContainerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractContainerTests.m; sourceTree = "<group>"; };
-		D29765971B06DAE300DE9E61 /* CCTConstructors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTConstructors.h; sourceTree = "<group>"; };
+		D29765971B06DAE300DE9E61 /* CCTInitializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTInitializers.h; sourceTree = "<group>"; };
 		D29765981B06DAE300DE9E61 /* CCTStartable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTStartable.h; sourceTree = "<group>"; };
 		D29765C11B06F09100DE9E61 /* NoDeps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoDeps.h; sourceTree = "<group>"; };
 		D29765C21B06F09100DE9E61 /* NoDeps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoDeps.m; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				D29765EA1B07CE1100DE9E61 /* Strict */,
 				D29765D91B07CE0700DE9E61 /* NonStrict */,
 				D29765801B06D9D800DE9E61 /* Cocoatainer.h */,
-				D29765971B06DAE300DE9E61 /* CCTConstructors.h */,
+				D29765971B06DAE300DE9E61 /* CCTInitializers.h */,
 				D29765981B06DAE300DE9E61 /* CCTStartable.h */,
 				D29765FF1B0826BA00DE9E61 /* NSObject+TypeDeduction.h */,
 				D29766001B0826BA00DE9E61 /* NSObject+TypeDeduction.m */,
@@ -227,7 +227,7 @@
 				D29765E41B07CE0700DE9E61 /* CCTComponent.h in Headers */,
 				D29765E21B07CE0700DE9E61 /* CCTCocoatainer.h in Headers */,
 				D29766011B0826BA00DE9E61 /* NSObject+TypeDeduction.h in Headers */,
-				D29765991B06DAE300DE9E61 /* CCTConstructors.h in Headers */,
+				D29765991B06DAE300DE9E61 /* CCTInitializers.h in Headers */,
 				D297659A1B06DAE300DE9E61 /* CCTStartable.h in Headers */,
 				D29765F31B07CE1100DE9E61 /* CCTAbstractCocoatainer.h in Headers */,
 				D29765E61B07CE0700DE9E61 /* CCTRegistry.h in Headers */,
