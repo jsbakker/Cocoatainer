@@ -46,6 +46,22 @@
                   "testObject is of type TestClass.");
 }
 
+- (void)testResolveInjectedInstanceByInterface
+{
+    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
+
+    [config registerComponent:@protocol(INoDepsA)
+                 withInstance:[[NoDepsA alloc] init]];
+
+    id testObject = [config resolveComponent:@protocol(INoDepsA)];
+
+    XCTAssertNotNil(testObject, "testObject is not nil.");
+    XCTAssertTrue([testObject conformsToProtocol:@protocol(INoDepsA)],
+                  "testObject conforms to TestProtocol.");
+    XCTAssertTrue([testObject isKindOfClass:[NoDepsA class]],
+                  "testObject is of type TestClass.");
+}
+
 - (void)testResolveNoDeps
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];

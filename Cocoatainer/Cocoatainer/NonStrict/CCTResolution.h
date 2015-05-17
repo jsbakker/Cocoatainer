@@ -12,7 +12,7 @@
 
 @interface CCTResolution : NSObject
 
-+(id)resolveComponent:(Class)abstraction
++(id)resolveComponent:(id)abstraction
               fromMap:(CCTRegistry*)registry;
 
 +(id)resolveDependencies:(NSArray*)dependencies

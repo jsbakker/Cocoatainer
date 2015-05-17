@@ -9,13 +9,15 @@
 #import "CCTResolution.h"
 #import "CCTComponent.h"
 #import "CCTConstructors.h"
+#import "NSObject+TypeDeduction.h"
 
 @implementation CCTResolution
 
-+(id)resolveComponent:(Class)abstraction
++(id)resolveComponent:(id)abstraction
               fromMap:(CCTRegistry*)registry
 {
-    NSString *dependencyKey = NSStringFromClass(abstraction);
+    NSString *dependencyKey = [abstraction isConcrete] ?
+        NSStringFromClass(abstraction) : NSStringFromProtocol(abstraction);
 
     CCTComponent* c = [registry getComponentRegistry:dependencyKey];
     id resolvedInstance = c.instance;
@@ -55,32 +57,26 @@
         case 1:
         {
             id depInstance0 =
-                [self resolveComponent:NSClassFromString(dependencies[0])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[0] fromMap:registry];
             return ((CreationBlock1)block)(depInstance0);
         }
         case 2:
         {
             id depInstance0 =
-                [self resolveComponent:NSClassFromString(dependencies[0])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[0] fromMap:registry];
             id depInstance1 =
-                [self resolveComponent:NSClassFromString(dependencies[1])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[1] fromMap:registry];
             return ((CreationBlock2)block)(depInstance0,
                                            depInstance1);
         }
         case 3:
         {
             id depInstance0 =
-                [self resolveComponent:NSClassFromString(dependencies[0])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[0] fromMap:registry];
             id depInstance1 =
-                [self resolveComponent:NSClassFromString(dependencies[1])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[1] fromMap:registry];
             id depInstance2 =
-                [self resolveComponent:NSClassFromString(dependencies[2])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[2] fromMap:registry];
             return ((CreationBlock3)block)(depInstance0,
                                            depInstance1,
                                            depInstance2);
@@ -88,17 +84,13 @@
         case 4:
         {
             id depInstance0 =
-                [self resolveComponent:NSClassFromString(dependencies[0])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[0] fromMap:registry];
             id depInstance1 =
-                [self resolveComponent:NSClassFromString(dependencies[1])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[1] fromMap:registry];
             id depInstance2 =
-                [self resolveComponent:NSClassFromString(dependencies[2])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[2] fromMap:registry];
             id depInstance3 =
-                [self resolveComponent:NSClassFromString(dependencies[3])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[3] fromMap:registry];
             return ((CreationBlock4)block)(depInstance0,
                                            depInstance1,
                                            depInstance2,
@@ -107,20 +99,15 @@
         case 5:
         {
             id depInstance0 =
-                [self resolveComponent:NSClassFromString(dependencies[0])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[0] fromMap:registry];
             id depInstance1 =
-                [self resolveComponent:NSClassFromString(dependencies[1])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[1] fromMap:registry];
             id depInstance2 =
-                [self resolveComponent:NSClassFromString(dependencies[2])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[2] fromMap:registry];
             id depInstance3 =
-                [self resolveComponent:NSClassFromString(dependencies[3])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[3] fromMap:registry];
             id depInstance4 =
-                [self resolveComponent:NSClassFromString(dependencies[4])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[4] fromMap:registry];
             return ((CreationBlock5)block)(depInstance0,
                                            depInstance1,
                                            depInstance2,
@@ -130,23 +117,17 @@
         case 6:
         {
             id depInstance0 =
-                [self resolveComponent:NSClassFromString(dependencies[0])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[0] fromMap:registry];
             id depInstance1 =
-                [self resolveComponent:NSClassFromString(dependencies[1])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[1] fromMap:registry];
             id depInstance2 =
-                [self resolveComponent:NSClassFromString(dependencies[2])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[2] fromMap:registry];
             id depInstance3 =
-                [self resolveComponent:NSClassFromString(dependencies[3])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[3] fromMap:registry];
             id depInstance4 =
-                [self resolveComponent:NSClassFromString(dependencies[4])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[4] fromMap:registry];
             id depInstance5 =
-                [self resolveComponent:NSClassFromString(dependencies[5])
-                               fromMap:registry];
+                [self resolveComponent:dependencies[5] fromMap:registry];
             return ((CreationBlock6)block)(depInstance0,
                                            depInstance1,
                                            depInstance2,

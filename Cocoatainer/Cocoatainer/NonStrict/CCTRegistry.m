@@ -1,12 +1,13 @@
 //
 //  CCTAbstractRegistry.m
-//  CocoatainerExample
+//  Cocoatainer
 //
 //  Created by Jeffrey Bakker on 2015-05-15.
 //  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
 //
 
 #import "CCTRegistry.h"
+#import "NSObject+TypeDeduction.h"
 
 @interface CCTRegistry ()
 {
@@ -42,7 +43,7 @@
     }
 }
 
--(void)addComponent:(Class)abstraction
+-(void)addComponent:(id)abstraction
        withInstance:(id)object
 {
     [self addComponent:abstraction
@@ -51,7 +52,7 @@
            andInstance:object];
 }
 
--(void)addComponent:(Class)abstraction
+-(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
      andConstructor:(id)constructor
 {
@@ -61,12 +62,13 @@
            andInstance:nil];
 }
 
--(void)addComponent:(Class)abstraction
+-(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
      andConstructor:(id)constructor
         andInstance:(id)instance
 {
-    NSString *dependencyKey = NSStringFromClass(abstraction);
+    NSString *dependencyKey = [abstraction isConcrete] ?
+        NSStringFromClass(abstraction) : NSStringFromProtocol(abstraction);
 
     if (_componentsMap[dependencyKey])
     {

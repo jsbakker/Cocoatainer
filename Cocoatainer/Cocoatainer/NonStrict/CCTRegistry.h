@@ -1,6 +1,6 @@
 //
 //  CCTAbstractRegistry.h
-//  CocoatainerExample
+//  Cocoatainer
 //
 //  Created by Jeffrey Bakker on 2015-05-15.
 //  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
@@ -17,14 +17,14 @@ typedef void (^TraverseComponents)(CCTComponent*);
 
 -(void)traverseAndExecute:(TraverseComponents)action;
 
--(void)addComponent:(Class)abstraction
+-(void)addComponent:(id)abstraction
        withInstance:(id)object;
 
--(void)addComponent:(Class)abstraction
+-(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
      andConstructor:(id)constructor;
 
--(void)addComponent:(Class)abstraction
+-(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
      andConstructor:(id)constructor
         andInstance:(id)instance;
