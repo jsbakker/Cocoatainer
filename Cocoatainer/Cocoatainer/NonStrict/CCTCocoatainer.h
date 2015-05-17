@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject+TypeDeduction.h"
 #import "CCTConstructors.h"
 
 @interface CCTCocoatainer : NSObject

@@ -35,6 +35,8 @@
 		D29765F91B07CE1100DE9E61 /* CCTAbstractResolution.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765F11B07CE1100DE9E61 /* CCTAbstractResolution.h */; };
 		D29765FA1B07CE1100DE9E61 /* CCTAbstractResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765F21B07CE1100DE9E61 /* CCTAbstractResolution.m */; };
 		D29765FC1B07D46A00DE9E61 /* ContainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29765FB1B07D46A00DE9E61 /* ContainerTests.m */; };
+		D29766011B0826BA00DE9E61 /* NSObject+TypeDeduction.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765FF1B0826BA00DE9E61 /* NSObject+TypeDeduction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D29766021B0826BA00DE9E61 /* NSObject+TypeDeduction.m in Sources */ = {isa = PBXBuildFile; fileRef = D29766001B0826BA00DE9E61 /* NSObject+TypeDeduction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		D29765F11B07CE1100DE9E61 /* CCTAbstractResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTAbstractResolution.h; sourceTree = "<group>"; };
 		D29765F21B07CE1100DE9E61 /* CCTAbstractResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTAbstractResolution.m; sourceTree = "<group>"; };
 		D29765FB1B07D46A00DE9E61 /* ContainerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerTests.m; sourceTree = "<group>"; };
+		D29765FF1B0826BA00DE9E61 /* NSObject+TypeDeduction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TypeDeduction.h"; sourceTree = "<group>"; };
+		D29766001B0826BA00DE9E61 /* NSObject+TypeDeduction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TypeDeduction.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +137,11 @@
 			children = (
 				D29765EA1B07CE1100DE9E61 /* Strict */,
 				D29765D91B07CE0700DE9E61 /* NonStrict */,
+				D29765801B06D9D800DE9E61 /* Cocoatainer.h */,
 				D29765971B06DAE300DE9E61 /* CCTConstructors.h */,
 				D29765981B06DAE300DE9E61 /* CCTStartable.h */,
-				D29765801B06D9D800DE9E61 /* Cocoatainer.h */,
+				D29765FF1B0826BA00DE9E61 /* NSObject+TypeDeduction.h */,
+				D29766001B0826BA00DE9E61 /* NSObject+TypeDeduction.m */,
 				D297657E1B06D9D800DE9E61 /* Supporting Files */,
 			);
 			path = Cocoatainer;
@@ -238,6 +244,7 @@
 			files = (
 				D29765E41B07CE0700DE9E61 /* CCTComponent.h in Headers */,
 				D29765E21B07CE0700DE9E61 /* CCTCocoatainer.h in Headers */,
+				D29766011B0826BA00DE9E61 /* NSObject+TypeDeduction.h in Headers */,
 				D29765F71B07CE1100DE9E61 /* CCTAbstractRegistry.h in Headers */,
 				D29765991B06DAE300DE9E61 /* CCTConstructors.h in Headers */,
 				D297659A1B06DAE300DE9E61 /* CCTStartable.h in Headers */,
@@ -352,6 +359,7 @@
 				D29765F61B07CE1100DE9E61 /* CCTAbstractedComponent.m in Sources */,
 				D29765FA1B07CE1100DE9E61 /* CCTAbstractResolution.m in Sources */,
 				D29765F81B07CE1100DE9E61 /* CCTAbstractRegistry.m in Sources */,
+				D29766021B0826BA00DE9E61 /* NSObject+TypeDeduction.m in Sources */,
 				D29765E71B07CE0700DE9E61 /* CCTRegistry.m in Sources */,
 				D29765E51B07CE0700DE9E61 /* CCTComponent.m in Sources */,
 			);
