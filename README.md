@@ -46,18 +46,24 @@ If you wanted some hot cocoa, first you'd need [some sort of mug](https://bitbuc
      }];
 
     [config start:YES]; // Yes for auto-resolve when starting
-
-    // The above might happen inside of some cocoa configuration module,
-    // and the below could be happening in some client code.
-
+```
+The above might happen inside of some cocoa configuration module, and the below could be happening in some client code.
+```objective-c
     id<LiquidVessel> myMug =
         [config resolveComponent:@protocol(LiquidVessel)];
+
+    // Pass myMug to a CocoaDrinker
+
+...
+
+    // Later on inside of CocoaDrinker
 
     [myMug drink:20];
     [myMug checkAmount];
     [myMug drink:30];
     [myMug checkAmount];
 ```
+
 ### Examples By the Block ###
 
 To create a Cocoatainer container
