@@ -23,12 +23,36 @@ To create a Cocoatainer container
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 ```
 
-To register a class (concrete) with no dependencies
+To register a class (concrete) with no dependencies to a block
 ```objective-c
-    [config registerComponent:[MyClass class]
-                 withInstance:[[MyClass alloc] init]];
+    [config registerComponent:[MyClass class] initsWith:
+     ^{
+         return [[MyClass alloc] init];
+     }];
 ```
 
+To register an pre-allocated instance of a class
+```objective-c
+    MyClass* myClass = [[MyClass alloc] init];
+    [config registerComponent:[MyClass class]
+                 withInstance:myClass];
+```
+
+To resolve an instance of a registered class
+```objective-c
+    MyClass* testObject = [config resolveComponent:[MyClass class]];
+```
+
+To register a protocol (abstract) with dependencies to a block
+```objective-c
+    [config registerComponent:@protocol(MyProtoc)
+                 dependentOn1:@protocol(IDependsOn1A)
+                         and2:@protocol(INoDepsA)
+                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
+     {
+         return [[DependsOn2C alloc] initWithD1:d1 and2:d2];
+     }];
+```
 ### Getting Familiar ###
 
 Before using Cocoatainer in your own project, you may want to familiarize yourself with the framework. The following will help getting the Cocoatainer test harness and example code running.
