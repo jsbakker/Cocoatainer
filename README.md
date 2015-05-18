@@ -69,7 +69,7 @@ To resolve a component by protocol
         [config resolveComponent:@protocol(MyProtocol)];
 ```
 
-A class' dependents can be protocols, and a protocol's dependents can be classes. Here's what 6 dependencies
+A class' dependents can be protocols, and a protocol's dependents can be classes. Here's what 6 dependencies looks like
 ```objective-c
     [config registerComponent:@protocol(IDependsOnMultiple)
                  dependentOn1:[MyClassA class]
@@ -82,6 +82,7 @@ A class' dependents can be protocols, and a protocol's dependents can be classes
      ^(MyClassA* d1, MyClassB* d2, MyClassC* d3,
        MyClassD* d4, MyClassE* d5, MyClassF* d6)
      {
+         // This init takes nil-terminated VA args
          return [[DependsOnMultiple alloc] initWithDependencies:
                  d1, d2, d3, d4, d5, d6, nil];
      }];
