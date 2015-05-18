@@ -16,7 +16,7 @@ The Cocoatainer framework code is covered by literally dozens of tests around al
 ### Example Usages ###
 
 To create a Cocoatainer container
-```
+```objective-c
 #import "CCTCocoatainer.h"
 ...
 
@@ -24,7 +24,7 @@ To create a Cocoatainer container
 ```
 
 To register a class (concrete) with no dependencies
-```
+```objective-c
     [config registerComponent:[MyClass class]
                  withInstance:[[MyClass alloc] init]];
 ```
