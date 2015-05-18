@@ -2,7 +2,7 @@
 
 Welcome to the Cocoatainer project. This project is aimed at providing Objective-C developers with an iOS framework for [Inversion of Control](http://en.wikipedia.org/wiki/Inversion_of_control). 
  
-Cocoatainer provides an IoC container via constructor injection. It supports 
+Cocoatainer provides an IoC container via constructor injection. The container supports adding components by instance or adding components by block (anonymous function) with dependencies. multiple dependencies, nested dependencies, s. 
  
 ### How do I get set up? ###
 
