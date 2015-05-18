@@ -19,7 +19,9 @@
 {
 @protected
     CCTRegistry* _model;
+    CCTCocoatainer* _parent;
 }
+-(CCTRegistry*)getModel;
 -(void)resolveAll;
 -(void)setAbstract;
 @end
@@ -32,6 +34,7 @@
     if(self)
     {
         _model = [[CCTRegistry alloc] init];
+        _parent = nil;
     }
     return self;
 }
@@ -39,6 +42,13 @@
 -(void)dealloc
 {
     _model = nil;
+    _parent = nil;
+}
+
+-(void)addParent:(CCTCocoatainer*)parent
+{
+    _parent = parent;
+    [_model addParent:[parent getModel]];
 }
 
 -(void)start:(BOOL)autoResolve
@@ -156,13 +166,30 @@
 -(id)resolveComponent:(id)abstraction
 {
     id instance = [CCTResolution resolveComponent:abstraction fromMap:_model];
-
-    if (instance == nil)
+    if (instance)
     {
-        [NSException raise:NSInvalidArgumentException
-                    format:@"Cannot resolve unregistered component."];
+        return instance;
     }
-    return instance;
+
+    if (_parent)
+    {
+        instance = [_parent resolveComponent:abstraction];
+    }
+
+    if (instance)
+    {
+        return instance;
+    }
+
+    [NSException raise:NSInvalidArgumentException
+                format:@"Cannot resolve unregistered component."];
+
+    return nil;
+}
+
+-(CCTRegistry*)getModel
+{
+    return _model;
 }
 
 -(void)resolveAll

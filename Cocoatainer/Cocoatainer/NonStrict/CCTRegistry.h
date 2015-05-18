@@ -18,6 +18,8 @@ typedef void (^TraverseComponents)(CCTComponent*);
 
 @property (nonatomic) BOOL strict;
 
+-(void)addParent:(CCTRegistry*)parent;
+
 -(CCTComponent*)getComponentRegistry:(NSString*)key;
 
 -(void)traverseAndExecute:(TraverseComponents)action;
