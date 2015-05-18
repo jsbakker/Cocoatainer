@@ -13,22 +13,20 @@ Cocoatainer provides an IoC container with constructor injection. What makes it 
 
 The Cocoatainer framework code is covered by literally dozens of tests around all of the above scenarios. 
 
-### How do I get set up? ###
+### Getting Started ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Before using Cocoatainer in your own project, you may want to familiarize yourself with the framework. The following will help getting the Cocoatainer test harness and example code running.
 
-### Contribution guidelines ###
+* Download the repo
+* In the root folder, open the Cocoatainer.xxworkspace file in XCode.
+* Under the CocoatainerExample project, the example code is called my the AppDelegate's application:didFinisLaunching: method. Look at the CocoaMug example for practical uses of the container.
+* Under the Cocoatainer project, in the CocoatainerTests folder there are several files, each containing several unit tests on the container. Many of the types are only setup for the purpose of testing the container, and may not be setup with the best practices in mind.
 
-* Writing tests
-* Code review
-* Other guidelines
+### License ###
 
-### Who do I talk to? ###
+Copyright (C)2015 Jeffrey Bakker. All rights reserved.  
+Released under the MIT license (see LICENSE.md for full text).
 
-* Repo owner or admin
-* Other community or team contact
+### Contact ###
+
+Jeffrey Bakker <jeffrey at seatoskyware dot com>
