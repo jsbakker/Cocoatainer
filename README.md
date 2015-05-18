@@ -13,7 +13,49 @@ Cocoatainer provides an IoC container with constructor injection. What makes it 
 
 The Cocoatainer framework code is covered by literally dozens of tests around all of the above scenarios. 
 
-### Example Usages ###
+### CocoaMug Example ###
+
+If you wanted some hot cocoa, first you'd need [some sort of mug](https://bitbucket.org/staeryatz/cocoatainer/src/778730c058715f5e9727353bd4aa5c0351fe575d/CocoatainerExample/CocoatainerExample/CocoaMug.h?at=master) to put it in, get hot water from [somewhere](https://bitbucket.org/staeryatz/cocoatainer/src/778730c058715f5e9727353bd4aa5c0351fe575d/CocoatainerExample/CocoatainerExample/Kettle.h?at=master), and of course some [mixture](https://bitbucket.org/staeryatz/cocoatainer/src/778730c058715f5e9727353bd4aa5c0351fe575d/CocoatainerExample/CocoatainerExample/CocoaPowder.h?at=master), which may also contain [toppings](https://bitbucket.org/staeryatz/cocoatainer/src/778730c058715f5e9727353bd4aa5c0351fe575d/CocoatainerExample/CocoatainerExample/Marshmallow.h?at=master). Maybe it would place out like this.
+
+```objective-c
+    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
+
+    [config registerComponent:@protocol(HotWaterSource) initsWith:
+     ^{
+         return [[Kettle alloc] init];
+     }];
+
+    [config registerComponent:@protocol(Topping) initsWith:
+     ^{
+         return [[Marshmallow alloc] init];
+     }];
+
+    [config registerComponent:@protocol(Mix)
+                 dependentOn1:@protocol(Topping)
+                    initsWith:
+     ^(id<Topping> topping){
+         return [[CocoaPowder alloc] initWithTopping:topping];
+     }];
+
+    [config registerComponent:@protocol(LiquidVessel)
+                 dependentOn1:@protocol(HotWaterSource)
+                         and2:@protocol(Mix)
+                    initsWith:
+     ^(id<HotWaterSource> source, id<Mix> mix){
+         return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
+     }];
+
+    [config start:YES]; // Yes for auto-resolve when starting
+
+    id<LiquidVessel> myMug =
+        [config resolveComponent:@protocol(LiquidVessel)];
+
+    [myMug drink:20];
+    [myMug checkAmount];
+    [myMug drink:30];
+    [myMug checkAmount];
+```
+### Examples By the Block ###
 
 To create a Cocoatainer container
 ```objective-c
