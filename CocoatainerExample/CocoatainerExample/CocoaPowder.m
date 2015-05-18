@@ -26,6 +26,11 @@
     return self;
 }
 
+-(void)dealloc
+{
+    NSLog(@"This cocoa powder has coagulated at the bottom.");
+}
+
 -(void)start
 {
     NSLog(@"Creating %@ mix with %@ topping",

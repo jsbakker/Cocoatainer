@@ -16,6 +16,7 @@
 {
 @private
     NSMutableDictionary *_componentsMap;
+    CCTRegistry* _parent;
 }
 
 @end
@@ -28,13 +29,31 @@
     if(self)
     {
         _componentsMap = [NSMutableDictionary dictionary];
+        _parent = nil;
     }
     return self;
 }
 
+-(void)dealloc
+{
+    [_componentsMap removeAllObjects];
+    _componentsMap = nil;
+    _parent = nil;
+}
+
+-(void)addParent:(CCTRegistry*)parent
+{
+    _parent = parent;
+}
+
 -(CCTComponent*)getComponentRegistry:(NSString*)key
 {
-    return _componentsMap[key];
+    CCTComponent* component = _componentsMap[key];
+    if (component)
+    {
+        return component;
+    }
+    return [_parent getComponentRegistry:key];
 }
 
 -(void)traverseAndExecute:(TraverseComponents)action

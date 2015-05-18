@@ -38,6 +38,28 @@
                     @"Cannot resolve unregistered component.");
 }
 
+- (void)testRegisterAbstractResolveConcreteThrows
+{
+    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
+
+    [config registerComponent:@protocol(INoDepsA)
+                 withInstance:[[NoDepsA alloc] init]];
+
+    XCTAssertThrows([config resolveComponent:[NoDepsA class]],
+                    @"Cannot resolve unregistered component.");
+}
+
+- (void)testRegisterConcreteResolveAbstractThrows
+{
+    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
+
+    [config registerComponent:[NoDepsA class]
+                 withInstance:[[NoDepsA alloc] init]];
+
+    XCTAssertThrows([config resolveComponent:@protocol(INoDepsA)],
+                    @"Cannot resolve unregistered component.");
+}
+
 - (void)testResolveInjectedInstanceByInterface
 {
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];

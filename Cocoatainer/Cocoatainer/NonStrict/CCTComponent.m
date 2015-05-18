@@ -13,4 +13,12 @@
 
 @implementation CCTComponent
 
+-(void)dealloc
+{
+    self.abstracion = nil;
+    self.dependencies = nil;
+    self.constructor = nil;
+    self.instance = nil;
+}
+
 @end

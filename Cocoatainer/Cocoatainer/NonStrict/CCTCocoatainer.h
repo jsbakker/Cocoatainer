@@ -14,6 +14,8 @@
 
 @interface CCTCocoatainer : NSObject
 
+-(void)addParent:(CCTCocoatainer*)parent;
+
 -(void)registerComponent:(id)abstraction withInstance:(id)object;
 
 -(void)registerComponent:(id)abstraction

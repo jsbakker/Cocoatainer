@@ -8,12 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import <Cocoatainer/Cocoatainer.h>
-
-#import "CocoaMug.h"
-#import "Kettle.h"
-#import "CocoaPowder.h"
-#import "Marshmallow.h"
+#import "_ExampleCodeLivesHere.h"
 
 @interface AppDelegate ()
 
@@ -25,52 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    CCTAbstractCocoatainer* config =
-        [[CCTAbstractCocoatainer alloc] init];
-
-    [config registerComponent:@protocol(HotWaterSource) initsWith:
-     ^{
-         return [[Kettle alloc] init];
-     }];
-
-    [config registerComponent:@protocol(Topping) initsWith:
-     ^{
-         return [[Marshmallow alloc] init];
-     }];
-
-    [config registerComponent:@protocol(Mix)
-                 dependentOn1:@protocol(Topping)
-                    initsWith:
-     ^(id<Topping> topping){
-         return [[CocoaPowder alloc] initWithTopping:topping];
-     }];
-
-    [config registerComponent:@protocol(LiquidVessel)
-                 dependentOn1:@protocol(HotWaterSource)
-                         and2:@protocol(Mix)
-                    initsWith:
-     ^(id<HotWaterSource> source, id<Mix> mix){
-         return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
-     }];
-
-    // Comment the above registry and uncomment below to change the order
-    // of dependencies. Notice the order of which the -(void)start methods
-    // are called between the Mix and the HotWaterSource.
-//    [config registerComponent:@protocol(LiquidVessel)
-//                 dependentOn1:@protocol(Mix)
-//                         and2:@protocol(HotWaterSource)
-//                    withBlock:
-//     ^(id<Mix> mix, id<HotWaterSource> source){
-//         return [[CocoaMug alloc] initWithHotWater:source andMixture:mix];
-//     }];
-
-    [config start:YES];
-
-    id<LiquidVessel> myMug = [config resolveComponent:@protocol(LiquidVessel)];
-    [myMug drink:20];
-    [myMug checkAmount];
-    [myMug drink:30];
-    [myMug checkAmount];
+    [_ExampleCodeLivesHere runCocoaMugExample1];
 
     return YES;
 }

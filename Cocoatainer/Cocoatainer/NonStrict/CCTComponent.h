@@ -13,7 +13,6 @@
 
 @interface CCTComponent : NSObject
 
-@property (nonatomic) BOOL resolution;
 @property (strong, nonatomic) id abstracion;
 @property (strong, nonatomic) NSArray *dependencies;
 @property (strong, nonatomic) id constructor;

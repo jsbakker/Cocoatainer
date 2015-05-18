@@ -10,6 +10,11 @@
 
 @implementation Marshmallow
 
+-(void)dealloc
+{
+    NSLog(@"This marshmallow is so soggy that it has nearly turned into liquid.");
+}
+
 -(NSString*)name
 {
     return NSStringFromClass([self class]);
