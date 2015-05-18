@@ -69,6 +69,23 @@ To resolve a component by protocol
         [config resolveComponent:@protocol(MyProtocol)];
 ```
 
+A class' dependents can be protocols, and a protocol's dependents can be classes. Here's what 6 dependencies
+```objective-c
+    [config registerComponent:@protocol(IDependsOnMultiple)
+                 dependentOn1:[MyClassA class]
+                         and2:[MyClassB class]
+                         and3:[MyClassC class]
+                         and4:[MyClassD class]
+                         and5:[MyClassE class]
+                         and6:[MyClassF class]
+                    initsWith:
+     ^(MyClassA* d1, MyClassB* d2, MyClassC* d3,
+       MyClassD* d4, MyClassE* d5, MyClassF* d6)
+     {
+         return [[DependsOnMultiple alloc] initWithDependencies:
+                 d1, d2, d3, d4, d5, d6, nil];
+     }];
+```
 ### Getting Familiar ###
 
 Before using Cocoatainer in your own project, you may want to familiarize yourself with the framework. The following will help getting the Cocoatainer test harness and example code running.
