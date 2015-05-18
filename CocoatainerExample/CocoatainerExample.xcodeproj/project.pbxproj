@@ -13,7 +13,6 @@
 		D29764751B042A0200DE9E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29764731B042A0200DE9E61 /* Main.storyboard */; };
 		D29764771B042A0200DE9E61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29764761B042A0200DE9E61 /* Images.xcassets */; };
 		D297647A1B042A0200DE9E61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29764781B042A0200DE9E61 /* LaunchScreen.xib */; };
-		D29764861B042A0200DE9E61 /* CocoatainerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764851B042A0200DE9E61 /* CocoatainerExampleTests.m */; };
 		D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649E1B046C4800DE9E61 /* CocoaMug.m */; };
 		D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764A81B0472EB00DE9E61 /* Kettle.m */; };
 		D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764AB1B0477A900DE9E61 /* CocoaPowder.m */; };
@@ -21,16 +20,6 @@
 		D29765BE1B06DBCC00DE9E61 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */; };
 		D29766181B0958D000DE9E61 /* _ExampleCodeLivesHere.m in Sources */ = {isa = PBXBuildFile; fileRef = D29766171B0958D000DE9E61 /* _ExampleCodeLivesHere.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D29764801B042A0200DE9E61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D297645E1B042A0200DE9E61 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D29764651B042A0200DE9E61;
-			remoteInfo = CocoatainerExample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D29764661B042A0200DE9E61 /* CocoatainerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoatainerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,9 +32,6 @@
 		D29764741B042A0200DE9E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D29764761B042A0200DE9E61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D29764791B042A0200DE9E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D297647F1B042A0200DE9E61 /* CocoatainerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoatainerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D29764841B042A0200DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D29764851B042A0200DE9E61 /* CocoatainerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoatainerExampleTests.m; sourceTree = "<group>"; };
 		D297649D1B046C4800DE9E61 /* CocoaMug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaMug.h; sourceTree = "<group>"; };
 		D297649E1B046C4800DE9E61 /* CocoaMug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaMug.m; sourceTree = "<group>"; };
 		D29764A01B046CB300DE9E61 /* LiquidVessel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiquidVessel.h; sourceTree = "<group>"; };
@@ -72,13 +58,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D297647C1B042A0200DE9E61 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,7 +66,6 @@
 			children = (
 				D29765BD1B06DBCC00DE9E61 /* Cocoatainer.framework */,
 				D29764681B042A0200DE9E61 /* CocoatainerExample */,
-				D29764821B042A0200DE9E61 /* CocoatainerExampleTests */,
 				D29764671B042A0200DE9E61 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				D29764661B042A0200DE9E61 /* CocoatainerExample.app */,
-				D297647F1B042A0200DE9E61 /* CocoatainerExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,23 +116,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D29764821B042A0200DE9E61 /* CocoatainerExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				D29764851B042A0200DE9E61 /* CocoatainerExampleTests.m */,
-				D29764831B042A0200DE9E61 /* Supporting Files */,
-			);
-			path = CocoatainerExampleTests;
-			sourceTree = "<group>";
-		};
-		D29764831B042A0200DE9E61 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D29764841B042A0200DE9E61 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,24 +136,6 @@
 			productReference = D29764661B042A0200DE9E61 /* CocoatainerExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D297647E1B042A0200DE9E61 /* CocoatainerExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D297648C1B042A0200DE9E61 /* Build configuration list for PBXNativeTarget "CocoatainerExampleTests" */;
-			buildPhases = (
-				D297647B1B042A0200DE9E61 /* Sources */,
-				D297647C1B042A0200DE9E61 /* Frameworks */,
-				D297647D1B042A0200DE9E61 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D29764811B042A0200DE9E61 /* PBXTargetDependency */,
-			);
-			name = CocoatainerExampleTests;
-			productName = CocoatainerExampleTests;
-			productReference = D297647F1B042A0200DE9E61 /* CocoatainerExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,10 +147,6 @@
 				TargetAttributes = {
 					D29764651B042A0200DE9E61 = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					D297647E1B042A0200DE9E61 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = D29764651B042A0200DE9E61;
 					};
 				};
 			};
@@ -226,7 +164,6 @@
 			projectRoot = "";
 			targets = (
 				D29764651B042A0200DE9E61 /* CocoatainerExample */,
-				D297647E1B042A0200DE9E61 /* CocoatainerExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,13 +176,6 @@
 				D29764751B042A0200DE9E61 /* Main.storyboard in Resources */,
 				D297647A1B042A0200DE9E61 /* LaunchScreen.xib in Resources */,
 				D29764771B042A0200DE9E61 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D297647D1B042A0200DE9E61 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,23 +197,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D297647B1B042A0200DE9E61 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D29764861B042A0200DE9E61 /* CocoatainerExampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D29764811B042A0200DE9E61 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D29764651B042A0200DE9E61 /* CocoatainerExample */;
-			targetProxy = D29764801B042A0200DE9E61 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D29764731B042A0200DE9E61 /* Main.storyboard */ = {
@@ -415,40 +329,6 @@
 			};
 			name = Release;
 		};
-		D297648D1B042A0200DE9E61 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CocoatainerExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CocoatainerExample.app/CocoatainerExample";
-			};
-			name = Debug;
-		};
-		D297648E1B042A0200DE9E61 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CocoatainerExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CocoatainerExample.app/CocoatainerExample";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -466,15 +346,6 @@
 			buildConfigurations = (
 				D297648A1B042A0200DE9E61 /* Debug */,
 				D297648B1B042A0200DE9E61 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D297648C1B042A0200DE9E61 /* Build configuration list for PBXNativeTarget "CocoatainerExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D297648D1B042A0200DE9E61 /* Debug */,
-				D297648E1B042A0200DE9E61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
