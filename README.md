@@ -4,12 +4,13 @@ Welcome to the Cocoatainer project. This project is aimed at providing Objective
  
 Cocoatainer provides an IoC container with constructor injection. What makes it different is that it supports registering components either by abstract (protocol) or by concrete type (class), although there is also a strict, abstract-only version as well. The container also supports:
 
-* Adding components by instance or adding components by block (anonymous function) with dependencies
-* Multiple dependencies
-* Nested dependencies
-* Nested containers
+* Adding components by block (anonymous function) with dependencies
+* Adding components by pre-allocated instance
+* Multiple dependencies, which auto-resolve when needed
+* Nested dependencies, auto-resolving
+* Nested containers, with auto-resolution
 * Startable
-* Auto-resolution
+* Auto-resolution of objects not referenced outside the container
 
 The Cocoatainer framework code is covered by literally dozens of tests around all of the above scenarios. 
 
