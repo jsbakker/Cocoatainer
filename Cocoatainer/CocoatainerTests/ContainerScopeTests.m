@@ -340,7 +340,7 @@
     } // End of middle scope
 }
 
-- (void)testDeallocationOfGrandchildAndParentScopes
+- (void)testDeallocationOfChildAndGrandchildScopes
 {
     NSString* expected1 = @"dealloc in DescopeLoggerA";
     NSString* expected2 = @"dealloc in DescopeLoggerB";
@@ -371,7 +371,74 @@
         @autoreleasepool
         {
             CCTCocoatainer* innerScope = [[CCTCocoatainer alloc] init];
-            [innerScope addParent:middleScope];
+                [innerScope addParent:middleScope];
+
+            [innerScope registerComponent:@protocol(ILoggerB)
+                              dependentOn1:@protocol(ILog)
+                                 initsWith:^(id<ILog> log){
+                                     return [[DescopeLoggerB alloc] initWithLog:log];
+                                 }];
+
+            [innerScope registerComponent:@protocol(IDependsOnMultiple)
+                             dependentOn1:@protocol(ILoggerA)
+                                     and2:@protocol(ILoggerB)
+                                initsWith:
+             ^(id<ILoggerA> d1, id<ILoggerB> d2){
+                 return [[DependsOnMultiple alloc]
+                         initWithDependencies:d1, d2, nil];
+             }];
+
+            id<IDependsOnMultiple> testObject =
+                [innerScope resolveComponent:@protocol(IDependsOnMultiple)];
+
+            XCTAssertNotNil(testObject, "testObject is not nil.");
+            XCTAssertTrue([testObject conformsToProtocol:
+                           @protocol(IDependsOnMultiple)],
+                          "testObject conforms to TestProtocol.");
+        } // End of inner scope
+
+        NSArray* logLines1 = [log getLines];
+        XCTAssertTrue(logLines1.count == 1, @"Dealloc on 1 objects logged.");
+    } // End of middle scope
+
+    NSArray* logLines2 = [log getLines];
+    XCTAssertTrue(logLines2.count == 2, @"Dealloc on 2 objects logged.");
+    XCTAssertTrue([logLines2 containsObject:expected1]);
+    XCTAssertTrue([logLines2 containsObject:expected2]);
+}
+
+- (void)testRegisterToParentInsideChildScopeObjectOutlastsChildScope
+{
+    NSString* expected1 = @"dealloc in DescopeLoggerA";
+    NSString* expected2 = @"dealloc in DescopeLoggerB";
+
+    CCTCocoatainer* outerScope = [[CCTCocoatainer alloc] init];
+
+    [outerScope registerComponent:@protocol(ILog)
+                        initsWith:^{
+                            return [[ArrayLog alloc] init];
+                        }];
+
+    id<ILog> log = [outerScope resolveComponent:@protocol(ILog)];
+
+    @autoreleasepool
+    {
+        CCTCocoatainer* middleScope = [[CCTCocoatainer alloc] init];
+        [middleScope addParent:outerScope];
+
+        [middleScope registerComponent:@protocol(ILoggerA)
+                          dependentOn1:@protocol(ILog)
+                             initsWith:^(id<ILog> log){
+                                 return [[DescopeLoggerA alloc] initWithLog:log];
+                             }];
+
+        NSArray* logLines0 = [log getLines];
+        XCTAssertTrue(logLines0.count == 0, @"Dealloc on 0 objects logged.");
+
+        @autoreleasepool
+        {
+            CCTCocoatainer* innerScope = [[CCTCocoatainer alloc] init];
+                [innerScope addParent:middleScope];
 
             [middleScope registerComponent:@protocol(ILoggerB)
                               dependentOn1:@protocol(ILog)
@@ -389,7 +456,7 @@
              }];
 
             id<IDependsOnMultiple> testObject =
-            [innerScope resolveComponent:@protocol(IDependsOnMultiple)];
+                [innerScope resolveComponent:@protocol(IDependsOnMultiple)];
 
             XCTAssertNotNil(testObject, "testObject is not nil.");
             XCTAssertTrue([testObject conformsToProtocol:
@@ -397,8 +464,10 @@
                           "testObject conforms to TestProtocol.");
         } // End of inner scope
 
+        // LoggerB won't scope out, because we registered it into the middle
+        // container inside the inner autorelease pool.
         NSArray* logLines1 = [log getLines];
-        XCTAssertTrue(logLines1.count == 1, @"Dealloc on 1 objects logged.");
+        XCTAssertTrue(logLines1.count == 0, @"Dealloc on 0 objects logged.");
     } // End of middle scope
 
     NSArray* logLines2 = [log getLines];
