@@ -87,6 +87,30 @@ A class' dependents can be protocols, and a protocol's dependents can be classes
                  d1, d2, d3, d4, d5, d6, nil];
      }];
 ```
+
+Container scope nesting
+```objective-c
+    CCTCocoatainer* outerScope = [[CCTCocoatainer alloc] init];
+
+    [outerScope registerComponent:@protocol(ILog)
+                        initsWith:^{
+                            return [[ArrayLog alloc] init];
+                        }];
+
+    @autoreleasepool
+    {
+        CCTCocoatainer* innerScope = [[CCTCocoatainer alloc] init];
+        [innerScope addParent:outerScope];
+
+        [innerScope registerComponent:@protocol(ILoggerA)
+                         dependentOn1:@protocol(ILog)
+                            initsWith:^(id<ILog> log){
+                                return [[DescopeLoggerA alloc] initWithLog:log];
+                            }];
+
+        id testObject = [innerScope resolveComponent:@protocol(ILoggerA)];
+    } // End of inner scope
+```
 ### Getting Familiar ###
 
 Before using Cocoatainer in your own project, you may want to familiarize yourself with the framework. The following will help getting the Cocoatainer test harness and example code running.
