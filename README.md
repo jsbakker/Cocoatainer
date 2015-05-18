@@ -110,6 +110,8 @@ This is container scope nesting. Note, that an inner (descendant) container can 
 
         id testObject = [innerScope resolveComponent:@protocol(ILoggerA)];
     } // End of inner scope
+
+    // ILoggerA will scope out and print a dealloc message here, while ILog is still in scope
 ```
 ### Getting Familiar ###
 
