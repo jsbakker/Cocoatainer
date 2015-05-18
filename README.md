@@ -6,11 +6,10 @@ Cocoatainer provides an IoC container with constructor injection. What makes it 
 
 * Adding components by block (anonymous function) with dependencies
 * Adding components by pre-allocated instance
-* Multiple dependencies, which auto-resolve when needed
-* Nested dependencies, auto-resolving
-* Nested containers, with auto-resolution
-* Startable
-* Auto-resolution of objects not referenced outside the container
+* Multiple dependencies, auto-resolving when needed
+* Nested dependencies, auto-resolving when needed
+* Nested containers (with auto-resolving dependencies from parent)
+* Startable (with option of auto-resolution of objects not referenced outside the container, i.e. object lives solely in the container)
 
 The Cocoatainer framework code is covered by literally dozens of tests around all of the above scenarios. 
 
