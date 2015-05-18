@@ -88,7 +88,7 @@ A class' dependents can be protocols, and a protocol's dependents can be classes
      }];
 ```
 
-Container scope nesting
+This is container scope nesting. Note, that an inner (descendant) container can resolve objects from the outer (ancestor) containers, but the outer containers cannot resolve objects from the inner. This is because the outer scope is wider than inner scopes, so there is no guarantee the inner scope is active.
 ```objective-c
     CCTCocoatainer* outerScope = [[CCTCocoatainer alloc] init];
 
