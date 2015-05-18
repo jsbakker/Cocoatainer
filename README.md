@@ -23,7 +23,7 @@ To create a Cocoatainer container
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 ```
 
-To register a class (concrete) with no dependencies to a block
+To register a class (concrete) with no dependencies to an initializer block
 ```objective-c
     [config registerComponent:[MyClass class] initsWith:
      ^{
@@ -31,6 +31,15 @@ To register a class (concrete) with no dependencies to a block
      }];
 ```
 
+To do the above with 1 dependency it would look like
+```objective-c
+    [config registerComponent:[DependsOn1 class]
+                 dependentOn1:[SomeClass class]
+                    initsWith:^(SomeClass* d1)
+     {
+         return [[DependsOn1 alloc] initWithD1:d1];
+     }];
+```
 To register an pre-allocated instance of a class
 ```objective-c
     MyClass* myClass = [[MyClass alloc] init];
@@ -43,16 +52,23 @@ To resolve an instance of a registered class
     MyClass* testObject = [config resolveComponent:[MyClass class]];
 ```
 
-To register a protocol (abstract) with dependencies to a block
+To register a protocol (abstract) with 2 dependencies to an initializer block
 ```objective-c
-    [config registerComponent:@protocol(MyProtoc)
-                 dependentOn1:@protocol(IDependsOn1A)
-                         and2:@protocol(INoDepsA)
-                    initsWith:^(id<IDependsOn1A> d1, id<INoDepsA> d2)
+    [config registerComponent:@protocol(MyProtocol)
+                 dependentOn1:@protocol(ProtocolD1)
+                         and2:@protocol(ProtocolD2)
+                    initsWith:^(id<ProtocolD1> d1, id<ProtocolD2> d2)
      {
-         return [[DependsOn2C alloc] initWithD1:d1 and2:d2];
+         return [[MyClass2Deps alloc] initWithD1:d1 andD2:d2];
      }];
 ```
+
+To resolve a component by protocol
+```objective-c
+    id<MyProtocol> myMug =
+        [config resolveComponent:@protocol(MyProtocol)];
+```
+
 ### Getting Familiar ###
 
 Before using Cocoatainer in your own project, you may want to familiarize yourself with the framework. The following will help getting the Cocoatainer test harness and example code running.
