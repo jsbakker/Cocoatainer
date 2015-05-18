@@ -13,7 +13,23 @@ Cocoatainer provides an IoC container with constructor injection. What makes it 
 
 The Cocoatainer framework code is covered by literally dozens of tests around all of the above scenarios. 
 
-### Getting Started ###
+### Example Usages ###
+
+To create a Cocoatainer container
+```
+#import "CCTCocoatainer.h"
+...
+
+    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
+```
+
+To register a class (concrete) with no dependencies
+```
+    [config registerComponent:[MyClass class]
+                 withInstance:[[MyClass alloc] init]];
+```
+
+### Getting Familiar ###
 
 Before using Cocoatainer in your own project, you may want to familiarize yourself with the framework. The following will help getting the Cocoatainer test harness and example code running.
 
