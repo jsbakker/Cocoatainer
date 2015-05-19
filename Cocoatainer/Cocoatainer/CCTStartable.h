@@ -11,8 +11,14 @@
 
 #import <Foundation/Foundation.h>
 
+/*!
+ A protocol to implement for your registered object to become startable.
+ */
 @protocol CCTStartable <NSObject>
 
+/*!
+ When @p start on the container of the registered object is called, the so will the start message of all startable objects in the container.
+ */
 -(void)start;
 
 @end

@@ -12,6 +12,16 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (TypeDeduction)
+
+/*!
+ Checks if the receiver is a concrete class.
+ @returns YES if the receiver is a concrete @p Class, NO if its a @p Protocol.
+ */
 -(BOOL)isConcrete;
+
+/*!
+ Checks if the receiver is a concrete class.
+ @returns YES if the receiver has been instantiated. NO if it has not or cannot.
+ */
 -(BOOL)isInstance;
 @end
