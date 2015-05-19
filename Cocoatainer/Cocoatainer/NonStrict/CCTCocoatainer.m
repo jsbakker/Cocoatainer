@@ -205,7 +205,7 @@
     if (!type || ([type isConcrete] && [type isInstance]))
     {
         [NSException raise:NSInvalidArgumentException
-                    format:@"Must be a protocol or class"];
+                    format:@"Must be a protocol or class."];
     }
 }
 
@@ -218,6 +218,12 @@
     for (id dep in dependencies)
     {
         [self typeCheck:dep];
+
+        if (dep == abstraction)
+        {
+            [NSException raise:NSInvalidArgumentException
+                        format:@"Dependency cannot be same type as component."];
+        }
     }
 
     [_model addComponent:abstraction

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D24BC8881B0B20E1009DBC1C /* RegistrationConflictTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D24BC8871B0B20E1009DBC1C /* RegistrationConflictTests.m */; };
 		D29765811B06D9D800DE9E61 /* Cocoatainer.h in Headers */ = {isa = PBXBuildFile; fileRef = D29765801B06D9D800DE9E61 /* Cocoatainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D29765871B06D9D800DE9E61 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D297657B1B06D9D800DE9E61 /* Cocoatainer.framework */; };
 		D297658E1B06D9D800DE9E61 /* AbstractContainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D297658D1B06D9D800DE9E61 /* AbstractContainerTests.m */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D24BC8871B0B20E1009DBC1C /* RegistrationConflictTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationConflictTests.m; sourceTree = "<group>"; };
 		D297657B1B06D9D800DE9E61 /* Cocoatainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cocoatainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D297657F1B06D9D800DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29765801B06D9D800DE9E61 /* Cocoatainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cocoatainer.h; sourceTree = "<group>"; };
@@ -164,8 +166,9 @@
 				D297658D1B06D9D800DE9E61 /* AbstractContainerTests.m */,
 				D29765D71B07C1D600DE9E61 /* AbstractStartableTests.m */,
 				D29765FB1B07D46A00DE9E61 /* ConcreteContainerTests.m */,
-				D29766031B08834600DE9E61 /* MultipleDependencyTests.m */,
 				D29766111B0946F500DE9E61 /* ContainerScopeTests.m */,
+				D29766031B08834600DE9E61 /* MultipleDependencyTests.m */,
+				D24BC8871B0B20E1009DBC1C /* RegistrationConflictTests.m */,
 				D29766191B0A4ACA00DE9E61 /* TypeCheckingTests.m */,
 				D297658B1B06D9D800DE9E61 /* Supporting Files */,
 			);
@@ -378,6 +381,7 @@
 				D29765C31B06F09100DE9E61 /* NoDeps.m in Sources */,
 				D29765D81B07C1D600DE9E61 /* AbstractStartableTests.m in Sources */,
 				D297658E1B06D9D800DE9E61 /* AbstractContainerTests.m in Sources */,
+				D24BC8881B0B20E1009DBC1C /* RegistrationConflictTests.m in Sources */,
 				D29765D21B079EA100DE9E61 /* ArrayLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

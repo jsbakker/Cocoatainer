@@ -237,11 +237,6 @@
          return [[DependsOn1A alloc] initWithD1:d1];
      }];
 
-    [config registerComponent:@protocol(INoDepsB) initsWith:
-     ^{
-         return [[NoDepsB alloc] init];
-     }];
-
     [config registerComponent:@protocol(IDependsOn2B)
                  dependentOn1:@protocol(IDependsOn1A)
                          and2:@protocol(INoDepsB)
@@ -280,11 +275,6 @@
                     initsWith:^(id<INoDepsA> d1)
      {
          return [[DependsOn1A alloc] initWithD1:d1];
-     }];
-
-    [config registerComponent:@protocol(INoDepsB) initsWith:
-     ^{
-         return [[NoDepsB alloc] init];
      }];
 
     [config registerComponent:@protocol(IDependsOn2B)
