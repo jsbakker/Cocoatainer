@@ -12,6 +12,10 @@
 #import <Foundation/Foundation.h>
 #import "CCTCocoatainer.h"
 
+/*!
+ An Inversion of Control container by way of constructor injection, which manages dependencies and allows all of its objects to be contained within its lifetime scope. Containers can be nested through parent relationships.
+ @attention This is the strict version of the container class, allowing registration of only abstract types.
+ */
 @interface CCTAbstractCocoatainer : CCTCocoatainer
 
 -(id)resolveComponent:(id)abstraction;
