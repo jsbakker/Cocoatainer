@@ -198,7 +198,7 @@ This example below is container scope nesting. Note, that an inner (descendant) 
 Before using Cocoatainer in your own project, you may want to familiarize yourself with the framework. The following will help getting the Cocoatainer test harness and example code running.
 
 * Download the repo
-* In the root folder, open the Cocoatainer.xxworkspace file in XCode.
+* In the root folder, open the Cocoatainer.xcworkspace file in XCode.
 * Under the CocoatainerExample project, the example code is called my the AppDelegate's application:didFinisLaunching: method. Look at the CocoaMug example for practical uses of the container.
 * Under the Cocoatainer project, in the CocoatainerTests folder there are several files, each containing several unit tests on the container. Many of the types are only setup for the purpose of testing the container, and may not be setup with the best practices in mind.
 
