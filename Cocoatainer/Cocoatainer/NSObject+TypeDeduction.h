@@ -13,4 +13,5 @@
 
 @interface NSObject (TypeDeduction)
 -(BOOL)isConcrete;
+-(BOOL)isInstance;
 @end
