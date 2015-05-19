@@ -71,7 +71,7 @@ Boiling water to 100 degrees C.
 Creating CocoaPowder mix with Marshmallow topping
 Shovel three tablespoons of mixture.
 Pouring a cup of hot water.
-Mug is filled to 250 ml of hot Cocoa: 
+Mug is filled to 250 ml of hot Cocoa.
 
 // These messages are printed explicitly by call
 Drinking 20 ml from the mug
@@ -82,10 +82,10 @@ There is 200 ml of cocoa left in the mug
 // The following dealloc print messages are triggered
 // when the container is cleaned after leaving scope
 // of an autoreleasepool
-I will just pour it out.
+Someone left this 200 ml full mug here. I will just pour it out.
 This cocoa powder has coagulated at the bottom.
 This marshmallow is so soggy that it has nearly turned into liquid.
-This water got cold and looks old. I willl dump it out.
+This water got cold and looks old. I will dump it out.
 
 // Printed after autoreleasepool, before end of scope
 Before method's local scope end.
