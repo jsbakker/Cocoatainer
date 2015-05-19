@@ -10,8 +10,10 @@ Cocoatainer provides an IoC container with constructor injection. What makes it 
 * Nested dependencies, auto-resolving when needed
 * Nested containers (with auto-resolving dependencies from parent)
 * Startable (with option of auto-resolution of objects not referenced outside the container, i.e. object lives solely in the container)
+* Error checking on registration (throws), to help prevent logical errors after resolution
+* API docs via XCode Quick Help tab
 
-The Cocoatainer framework code is covered by literally dozens of tests around all of the above scenarios. 
+The Cocoatainer framework code is covered by several dozen unit tests around the above scenarios. 
 
 ### CocoaMug Example ###
 
