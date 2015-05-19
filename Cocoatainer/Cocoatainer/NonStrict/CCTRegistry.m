@@ -100,7 +100,8 @@
 
     if (_componentsMap[dependencyKey])
     {
-        return;
+        [NSException raise:NSInvalidArgumentException
+                    format:@"Cannot register the same type twice."];
     }
 
     CCTComponent* c = [[CCTComponent alloc] init];
