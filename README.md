@@ -91,7 +91,8 @@ To do the above with 1 dependency it would look like
          return [[DependsOn1 alloc] initWithD1:d1];
      }];
 ```
-To register an pre-allocated instance of a class
+
+To register a pre-allocated instance of a class
 ```objective-c
     MyClass* myClass = [[MyClass alloc] init];
     [config registerComponent:[MyClass class]
@@ -120,7 +121,7 @@ To resolve a component by protocol
         [config resolveComponent:@protocol(MyProtocol)];
 ```
 
-A class' dependents can be protocols, and a protocol's dependents can be classes. Here's what 6 dependencies looks like
+A class' dependents can be protocols, and a protocol's dependents can be classes. Here's what 6 class dependencies for a protocol looks like
 ```objective-c
     [config registerComponent:@protocol(IDependsOnMultiple)
                  dependentOn1:[MyClassA class]
@@ -139,7 +140,7 @@ A class' dependents can be protocols, and a protocol's dependents can be classes
      }];
 ```
 
-This is container scope nesting. Note, that an inner (descendant) container can resolve objects from the outer (ancestor) containers, but the outer containers cannot resolve objects from the inner. This is because the outer scope is wider than inner scopes, so there is no guarantee the inner scope is active.
+This example below is container scope nesting. Note, that an inner (descendant) container can resolve objects from the outer (ancestor) containers, but the outer containers cannot resolve objects from the inner. This is because the outer scope is wider than inner scopes, so there is no guarantee the inner scope is active.
 ```objective-c
     CCTCocoatainer* outerScope = [[CCTCocoatainer alloc] init];
 
