@@ -12,8 +12,16 @@
 #import "NSObject+TypeDeduction.h"
 
 @implementation NSObject (TypeDeduction)
+
 -(BOOL)isConcrete
 {
-    return [self respondsToSelector:@selector(alloc)];
+    NSString* strType = NSStringFromClass([self class]);
+    return ![strType isEqualToString:@"Protocol"];
 }
+
+-(BOOL)isInstance
+{
+    return ![self respondsToSelector:@selector(alloc)];
+}
+
 @end

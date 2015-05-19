@@ -35,6 +35,7 @@
 		D29766071B0884D500DE9E61 /* DependsOnMultiple.m in Sources */ = {isa = PBXBuildFile; fileRef = D29766061B0884D500DE9E61 /* DependsOnMultiple.m */; };
 		D29766121B0946F500DE9E61 /* ContainerScopeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29766111B0946F500DE9E61 /* ContainerScopeTests.m */; };
 		D29766151B0949E100DE9E61 /* DescopeLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = D29766141B0949E100DE9E61 /* DescopeLogger.m */; };
+		D297661A1B0A4ACA00DE9E61 /* TypeCheckingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29766191B0A4ACA00DE9E61 /* TypeCheckingTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		D29766111B0946F500DE9E61 /* ContainerScopeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerScopeTests.m; sourceTree = "<group>"; };
 		D29766131B0949E100DE9E61 /* DescopeLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescopeLogger.h; sourceTree = "<group>"; };
 		D29766141B0949E100DE9E61 /* DescopeLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescopeLogger.m; sourceTree = "<group>"; };
+		D29766191B0A4ACA00DE9E61 /* TypeCheckingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeCheckingTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				D29765FB1B07D46A00DE9E61 /* ConcreteContainerTests.m */,
 				D29766031B08834600DE9E61 /* MultipleDependencyTests.m */,
 				D29766111B0946F500DE9E61 /* ContainerScopeTests.m */,
+				D29766191B0A4ACA00DE9E61 /* TypeCheckingTests.m */,
 				D297658B1B06D9D800DE9E61 /* Supporting Files */,
 			);
 			path = CocoatainerTests;
@@ -367,6 +370,7 @@
 				D29766151B0949E100DE9E61 /* DescopeLogger.m in Sources */,
 				D29766121B0946F500DE9E61 /* ContainerScopeTests.m in Sources */,
 				D29765FC1B07D46A00DE9E61 /* ConcreteContainerTests.m in Sources */,
+				D297661A1B0A4ACA00DE9E61 /* TypeCheckingTests.m in Sources */,
 				D29766071B0884D500DE9E61 /* DependsOnMultiple.m in Sources */,
 				D29766041B08834600DE9E61 /* MultipleDependencyTests.m in Sources */,
 				D29765D51B07A00F00DE9E61 /* StartupLogger.m in Sources */,

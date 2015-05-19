@@ -15,12 +15,21 @@
 #import "CCTRegistry.h"
 #import "CCTStartable.h"
 
+#import "NSObject+TypeDeduction.h"
+
 @interface CCTCocoatainer ()
 {
 @protected
     CCTRegistry* _model;
     CCTCocoatainer* _parent;
 }
+
+-(void)typeCheck:(id)type;
+
+-(void)registerDependencies:(NSArray*)dependencies
+             forAbstraction:(id)abstraction
+             withInitilizer:(id)initializer;
+
 -(CCTRegistry*)getModel;
 -(void)resolveAll;
 -(void)setAbstract;
@@ -70,13 +79,17 @@
 
 -(void)registerComponent:(id)abstraction withInstance:(id)object
 {
+    [self typeCheck:abstraction];
     [_model addComponent:abstraction withInstance:object];
 }
 
 -(void)registerComponent:(id)abstraction
                initsWith:(Initializer0)block
 {
-    [_model addComponent:abstraction withDependencies:@[] andConstructor:block];
+    [self typeCheck:abstraction];
+    [self registerDependencies:@[]
+                forAbstraction:abstraction
+                withInitilizer:block];
 }
 
 -(void)registerComponent:(id)abstraction
@@ -84,9 +97,9 @@
                initsWith:(Initializer1)block
 {
     NSArray* dependencies = @[d1];
-    [_model addComponent:abstraction
-        withDependencies:dependencies
-          andConstructor:block];
+    [self registerDependencies:dependencies
+                forAbstraction:abstraction
+                withInitilizer:block];
 }
 
 -(void)registerComponent:(id)abstraction
@@ -95,9 +108,9 @@
                initsWith:(Initializer2)block
 {
     NSArray* dependencies = @[d1, d2];
-    [_model addComponent:abstraction
-        withDependencies:dependencies
-          andConstructor:block];
+    [self registerDependencies:dependencies
+                forAbstraction:abstraction
+                withInitilizer:block];
 }
 
 -(void)registerComponent:(id)abstraction
@@ -107,9 +120,9 @@
                initsWith:(Initializer3)block
 {
     NSArray* dependencies = @[d1, d2, d3];
-    [_model addComponent:abstraction
-        withDependencies:dependencies
-          andConstructor:block];
+    [self registerDependencies:dependencies
+                forAbstraction:abstraction
+                withInitilizer:block];
 }
 
 -(void)registerComponent:(id)abstraction
@@ -120,9 +133,9 @@
                initsWith:(Initializer4)block
 {
     NSArray* dependencies = @[d1, d2, d3, d4];
-    [_model addComponent:abstraction
-        withDependencies:dependencies
-          andConstructor:block];
+    [self registerDependencies:dependencies
+                forAbstraction:abstraction
+                withInitilizer:block];
 }
 
 -(void)registerComponent:(id)abstraction
@@ -134,9 +147,9 @@
                initsWith:(Initializer5)block
 {
     NSArray* dependencies = @[d1, d2, d3, d4, d5];
-    [_model addComponent:abstraction
-        withDependencies:dependencies
-          andConstructor:block];
+    [self registerDependencies:dependencies
+                forAbstraction:abstraction
+                withInitilizer:block];
 }
 
 -(void)registerComponent:(id)abstraction
@@ -149,18 +162,18 @@
                initsWith:(Initializer6)block
 {
     NSArray* dependencies = @[d1, d2, d3, d4, d5, d6];
-    [_model addComponent:abstraction
-        withDependencies:dependencies
-          andConstructor:block];
+    [self registerDependencies:dependencies
+                forAbstraction:abstraction
+                withInitilizer:block];
 }
 
 -(void)registerComponent:(id)abstraction
              dependentOn:(NSArray*)dependencies
                initsWith:(Initializer)block
 {
-    [_model addComponent:abstraction
-        withDependencies:dependencies
-          andConstructor:block];
+    [self registerDependencies:dependencies
+                forAbstraction:abstraction
+                withInitilizer:block];
 }
 
 -(id)resolveComponent:(id)abstraction
@@ -185,6 +198,31 @@
                 format:@"Cannot resolve unregistered component."];
 
     return nil;
+}
+
+-(void)typeCheck:(id)type
+{
+    if (!type || ([type isConcrete] && [type isInstance]))
+    {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"Must be a protocol or class"];
+    }
+}
+
+-(void)registerDependencies:(NSArray*)dependencies
+             forAbstraction:(id)abstraction
+             withInitilizer:(id)initializer
+
+{
+    [self typeCheck:abstraction];
+    for (id dep in dependencies)
+    {
+        [self typeCheck:dep];
+    }
+
+    [_model addComponent:abstraction
+        withDependencies:dependencies
+          andConstructor:initializer];
 }
 
 -(CCTRegistry*)getModel
