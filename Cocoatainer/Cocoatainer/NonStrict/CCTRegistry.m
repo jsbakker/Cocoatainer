@@ -95,10 +95,10 @@
                     format:@"Cannot register concrete types in abstract mode."];
     }
 
-    NSString *dependencyKey = [abstraction isConcrete] ?
+    NSString *componentKey = [abstraction isConcrete] ?
         NSStringFromClass(abstraction) : NSStringFromProtocol(abstraction);
 
-    if (_componentsMap[dependencyKey])
+    if (_componentsMap[componentKey])
     {
         [NSException raise:NSInvalidArgumentException
                     format:@"Cannot register the same type twice."];
@@ -109,7 +109,7 @@
     c.instance = instance;
     c.constructor = constructor;
     c.dependencies = dependencies;
-    [_componentsMap setObject:c forKey:dependencyKey];
+    [_componentsMap setObject:c forKey:componentKey];
 }
 
 @end

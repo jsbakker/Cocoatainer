@@ -19,10 +19,10 @@
 +(id)resolveComponent:(id)abstraction
               fromMap:(CCTRegistry*)registry
 {
-    NSString *dependencyKey = [abstraction isConcrete] ?
+    NSString *componentKey = [abstraction isConcrete] ?
         NSStringFromClass(abstraction) : NSStringFromProtocol(abstraction);
 
-    CCTComponent* c = [registry getComponentRegistry:dependencyKey];
+    CCTComponent* c = [registry getComponentRegistry:componentKey];
     id resolvedInstance = c.instance;
     if (resolvedInstance)
     {

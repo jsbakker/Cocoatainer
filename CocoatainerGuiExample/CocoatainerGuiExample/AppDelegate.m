@@ -1,14 +1,12 @@
 //
 //  AppDelegate.m
-//  CocoatainerExample
+//  CocoatainerGuiExample
 //
-//  Created by Jeffrey Bakker on 2015-05-13.
+//  Created by Jeffrey Bakker on 2015-05-19.
 //  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
-#import "_ExampleCodeLivesHere.h"
 
 @interface AppDelegate ()
 
@@ -19,9 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-
-    [_ExampleCodeLivesHere runCocoaMugExample1];
-
     return YES;
 }
 
