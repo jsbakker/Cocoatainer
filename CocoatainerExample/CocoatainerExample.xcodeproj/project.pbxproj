@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D297646C1B042A0200DE9E61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D297646B1B042A0200DE9E61 /* main.m */; };
-		D297646F1B042A0200DE9E61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D297646E1B042A0200DE9E61 /* AppDelegate.m */; };
-		D29764721B042A0200DE9E61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764711B042A0200DE9E61 /* ViewController.m */; };
-		D29764751B042A0200DE9E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29764731B042A0200DE9E61 /* Main.storyboard */; };
-		D29764771B042A0200DE9E61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29764761B042A0200DE9E61 /* Images.xcassets */; };
-		D297647A1B042A0200DE9E61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29764781B042A0200DE9E61 /* LaunchScreen.xib */; };
 		D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649E1B046C4800DE9E61 /* CocoaMug.m */; };
 		D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764A81B0472EB00DE9E61 /* Kettle.m */; };
 		D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764AB1B0477A900DE9E61 /* CocoaPowder.m */; };
@@ -25,13 +20,6 @@
 		D29764661B042A0200DE9E61 /* CocoatainerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoatainerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D297646A1B042A0200DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D297646B1B042A0200DE9E61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D297646D1B042A0200DE9E61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D297646E1B042A0200DE9E61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D29764701B042A0200DE9E61 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D29764711B042A0200DE9E61 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D29764741B042A0200DE9E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D29764761B042A0200DE9E61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D29764791B042A0200DE9E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D297649D1B046C4800DE9E61 /* CocoaMug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaMug.h; sourceTree = "<group>"; };
 		D297649E1B046C4800DE9E61 /* CocoaMug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaMug.m; sourceTree = "<group>"; };
 		D29764A01B046CB300DE9E61 /* LiquidVessel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiquidVessel.h; sourceTree = "<group>"; };
@@ -83,13 +71,6 @@
 			children = (
 				D29766161B0958D000DE9E61 /* _ExampleCodeLivesHere.h */,
 				D29766171B0958D000DE9E61 /* _ExampleCodeLivesHere.m */,
-				D297646D1B042A0200DE9E61 /* AppDelegate.h */,
-				D297646E1B042A0200DE9E61 /* AppDelegate.m */,
-				D29764701B042A0200DE9E61 /* ViewController.h */,
-				D29764711B042A0200DE9E61 /* ViewController.m */,
-				D29764731B042A0200DE9E61 /* Main.storyboard */,
-				D29764761B042A0200DE9E61 /* Images.xcassets */,
-				D29764781B042A0200DE9E61 /* LaunchScreen.xib */,
 				D29764691B042A0200DE9E61 /* Supporting Files */,
 				D297649D1B046C4800DE9E61 /* CocoaMug.h */,
 				D297649E1B046C4800DE9E61 /* CocoaMug.m */,
@@ -173,9 +154,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D29764751B042A0200DE9E61 /* Main.storyboard in Resources */,
-				D297647A1B042A0200DE9E61 /* LaunchScreen.xib in Resources */,
-				D29764771B042A0200DE9E61 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,8 +164,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D29764721B042A0200DE9E61 /* ViewController.m in Sources */,
-				D297646F1B042A0200DE9E61 /* AppDelegate.m in Sources */,
 				D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */,
 				D297646C1B042A0200DE9E61 /* main.m in Sources */,
 				D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */,
@@ -198,25 +174,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D29764731B042A0200DE9E61 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D29764741B042A0200DE9E61 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D29764781B042A0200DE9E61 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D29764791B042A0200DE9E61 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D29764871B042A0200DE9E61 /* Debug */ = {

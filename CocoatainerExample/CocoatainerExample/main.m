@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 
-int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
+
+#import "_ExampleCodeLivesHere.h"
+
+int main(int argc, char * argv[])
+{
+    [_ExampleCodeLivesHere runCocoaMugExample1];
 }
