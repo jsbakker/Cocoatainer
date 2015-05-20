@@ -13,6 +13,7 @@
 @private
     id<HotWaterSource> _hotWaterSource;
     id<Mix> _cocoaMix;
+    id<ILog> _log;
     NSInteger _millilitres;
 }
 @end
@@ -21,12 +22,14 @@
 
 -(id)initWithHotWater:(id<HotWaterSource>)source
            andMixture:(id<Mix>)cocoaMix
+               andLog:(id<ILog>)log
 {
     self = [super init];
     if (self)
     {
         _hotWaterSource = source;
         _cocoaMix = cocoaMix;
+        _log = log;
         _millilitres = 0;
     }
     return self;
@@ -34,8 +37,9 @@
 
 -(void)dealloc
 {
-    NSLog(@"Someone left this %ld ml full mug here. I will just pour it out.",
-          _millilitres);
+    [_log write:
+     @"Someone left this %ld ml full mug here. I will just pour it out.",
+     _millilitres ];
 
     _hotWaterSource = nil;
     _cocoaMix = nil;
@@ -50,17 +54,27 @@
 {
     [_cocoaMix shovel];
     _millilitres = [_hotWaterSource pourCup];
-    NSLog(@"Mug is filled to %ld ml of hot Cocoa.", _millilitres);
+    [_log write:@"Mug is filled to %ld ml of hot Cocoa.", _millilitres];
 }
 
 -(void)drink:(NSInteger)amount
 {
-    NSLog(@"Drinking %ld ml from the mug.", amount);
+    if (_millilitres == 0)
+    {
+        [_log write:@"The mug is empty."];
+        return;
+    }
+
+    [_log write:@"Drinking %ld ml from the mug.", amount];
     _millilitres -= amount;
+    if (_millilitres < 0)
+    {
+        _millilitres = 0;
+    }
 }
 
 -(void)checkAmount
 {
-    NSLog(@"There is %ld ml of cocoa left in the mug.", _millilitres);
+    [_log write:@"There is %ld ml of cocoa left in the mug.", _millilitres];
 }
 @end

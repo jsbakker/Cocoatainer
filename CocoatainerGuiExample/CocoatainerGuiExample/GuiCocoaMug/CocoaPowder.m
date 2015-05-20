@@ -12,34 +12,37 @@
 {
 @private
     id<Topping> _topping;
+    id<ILog> _log;
 }
 @end
 @implementation CocoaPowder
 
 -(id)initWithTopping:(id<Topping>)topping
+              andLog:(id<ILog>)log
 {
     self = [super init];
     if (self)
     {
         _topping = topping;
+        _log = log;
     }
     return self;
 }
 
 -(void)dealloc
 {
-    NSLog(@"This cocoa powder has coagulated at the bottom.");
+    [_log write:@"This cocoa powder has coagulated at the bottom."];
 }
 
 -(void)start
 {
-    NSLog(@"Creating %@ mix with %@ topping.",
-          NSStringFromClass([self class]), [_topping name]);
+    [_log write:@"Creating %@ mix with %@ topping.",
+          NSStringFromClass([self class]), [_topping name]];
 }
 
 -(void)shovel
 {
-    NSLog(@"Shovel three tablespoons of mixture.");
+    [_log write:@"Shovel three tablespoons of mixture."];
 }
 
 @end
