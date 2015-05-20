@@ -31,7 +31,7 @@
 
 -(void)dealloc
 {
-    [_log write:@"This water got cold and looks old. I willl dump it out."];
+    [_log write:@"This water got cold and looks old. I will dump it out."];
 }
 
 -(void)start

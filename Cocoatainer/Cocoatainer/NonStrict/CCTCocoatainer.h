@@ -173,4 +173,7 @@
  */
 -(void)start:(BOOL)autoResolve;
 
+-(void)registerContract:(Protocol*)abstraction
+              initsWith:(Initializer0)block;
+
 @end

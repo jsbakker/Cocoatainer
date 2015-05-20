@@ -10,4 +10,7 @@
    <FileRef
       location = "group:CocoatainerExample/../CocoatainerGuiExample/CocoatainerGuiExample.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:CocoatainerSwiftExample/CocoatainerSwiftExample.xcodeproj">
+   </FileRef>
 </Workspace>
