@@ -199,7 +199,8 @@ Before using Cocoatainer in your own project, you may want to familiarize yourse
 
 * Download the repo
 * In the root folder, open the Cocoatainer.xcworkspace file in XCode.
-* Under the CocoatainerExample project, the example code is called my the AppDelegate's application:didFinisLaunching: method. Look at the CocoaMug example for practical uses of the container.
+* Under the CocoatainerExample project, the example code is called in the main.m file. Running it will print to the Console. Look at the CocoaMug example for practical uses of the container.
+* Under the CocoatainerGuiExample project, this example code will run a GUI application which contains buttons to control the lifecycle of an inner container. There is an outer container owned by IB which provides View dependencies to the inner container.
 * Under the Cocoatainer project, in the CocoatainerTests folder there are several files, each containing several unit tests on the container. Many of the types are only setup for the purpose of testing the container, and may not be setup with the best practices in mind.
 
 ### License ###
