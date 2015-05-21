@@ -252,10 +252,4 @@
     _model.strict = YES;
 }
 
--(void)registerContract:(Protocol*)abstraction
-              initsWith:(Initializer0)block
-{
-    [self registerComponent:abstraction initsWith:block];
-}
-
 @end

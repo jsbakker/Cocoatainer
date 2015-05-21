@@ -14,45 +14,31 @@ class _SwiftExampleLivesHere: NSObject
     {
         var container = CCTCocoatainer()
 
-        // Works (overload to Protocol* in Obj-C API)
-//        container.registerContract(HotWaterSource.self, initsWith:                         { () -> AnyObject in
-//                return Kettle()
-//            })
+        var phws: AnyObject! = NSObject.abstractId(HotWaterSource.self)
+        var ptop: AnyObject! = NSObject.abstractId(Topping.self)
+        var pmix: AnyObject! = NSObject.abstractId(Mixture.self)
+        var pmug: AnyObject! = NSObject.abstractId(LiquidVessel.self)
 
-        // Throws on type check
-//        container.registerComponent(HotWaterSource.self as? AnyObject, initsWith:                         { () -> AnyObject in
-//                return Kettle()
-//            })
-
-//        var phws : Protocol! = HotWaterSource.self
-//        var ptop : Protocol! = Topping.self
-//
-//        container.registerComponent(phws as! AnyObject!, initsWith:
-//            { () -> AnyObject in
-//                Kettle()
-//        })
-
-        // Works (concrete type)
-        container.registerComponent(Kettle.self, initsWith:
+        container.registerComponent(phws, initsWith:
             { () -> AnyObject in
                 Kettle()
             })
 
-        container.registerComponent(Marshmallow.self, initsWith:
+        container.registerComponent(ptop, initsWith:
             { () -> AnyObject in
                 Marshmallow()
             })
 
-        container.registerComponent(CocoaPowder.self,
-            dependentOn1: Marshmallow.self,
+        container.registerComponent(pmix,
+            dependentOn1: ptop,
             initsWith:
             { (top: AnyObject!) -> AnyObject! in
                 CocoaPowder(topping: top as! Topping)
             })
 
-        container.registerComponent(CocoaMug.self,
-            dependentOn1: Kettle.self,
-            and2: CocoaPowder.self)
+        container.registerComponent(pmug!,
+            dependentOn1: phws,
+            and2: pmix)
             { (source: AnyObject!, mix: AnyObject!) -> AnyObject! in
                 CocoaMug(source: source as! HotWaterSource,
                     mixture: mix as! Mixture)
@@ -61,7 +47,7 @@ class _SwiftExampleLivesHere: NSObject
         container.start(true)
 
         var mug: LiquidVessel =
-            container.resolveComponent(CocoaMug.self) as! LiquidVessel
+            container.resolveComponent(pmug) as! LiquidVessel
 
         mug.drink(25)
         mug.checkAmount()

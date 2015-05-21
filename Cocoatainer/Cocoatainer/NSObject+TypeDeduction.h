@@ -24,4 +24,11 @@
  @returns YES if the receiver has been instantiated. NO if it has not or cannot.
  */
 -(BOOL)isInstance;
+
+/*!
+ Converts a Swift Protocol into an Objective-C Protocol* and returns a wrapped object.
+ @returns and id to Swift that is wrapped in AnyObject!
+ */
++(id)abstractId:(Protocol*)p;
+
 @end
