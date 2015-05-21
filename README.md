@@ -1,6 +1,6 @@
 # README #
 
-Welcome to the Cocoatainer project. This project is aimed at providing Objective-C developers with an iOS framework for [Dependency Injection](http://en.wikipedia.org/wiki/Dependency_injection) / [Inversion of Control](http://en.wikipedia.org/wiki/Inversion_of_control). 
+Welcome to the Cocoatainer project. This project is aimed at providing Objective-C (and Swift) developers with an iOS framework for [Dependency Injection](http://en.wikipedia.org/wiki/Dependency_injection) / [Inversion of Control](http://en.wikipedia.org/wiki/Inversion_of_control). 
  
 Cocoatainer provides an IoC container with constructor injection. What makes it different is that it supports registering components either by abstract (protocol) or by concrete type (class), although there is also a strict, abstract-only version as well. The container also supports:
 
@@ -13,7 +13,7 @@ Cocoatainer provides an IoC container with constructor injection. What makes it 
 * Error checking on registration (throws), to help prevent logical errors after resolution
 * API docs via XCode Quick Help tab
 
-The Cocoatainer framework code is covered by several dozen unit tests around the above scenarios. 
+The Cocoatainer framework code is covered by several dozen unit tests around the above scenarios. The workspace also contains examples projects for using it from Swift and for using with Interface Builder demonstrating how to insert view objects into the container. 
 
 ### CocoaMug Example ###
 
