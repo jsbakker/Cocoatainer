@@ -26,7 +26,7 @@ class CocoatainerSwiftExampleTests: XCTestCase {
 
         var container = CCTCocoatainer()
 
-        var phws: AnyObject! = NSObject.abstractId(HotWaterSource.self)
+        var phws: AnyObject! = NSObject.protocolAsId(HotWaterSource.self)
 
         container.registerComponent(phws, initsWith:
             { () -> AnyObject in

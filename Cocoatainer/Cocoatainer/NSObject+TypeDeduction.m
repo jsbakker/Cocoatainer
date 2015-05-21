@@ -26,7 +26,7 @@
 
 // Hack. Pass ProtocolName.self from Swift to get the proper
 // type back. Otherwise lots of casting is required.
-+(id)abstractId:(Protocol*)p;
++(id)protocolAsId:(Protocol*)p;
 {
     return p;
 }

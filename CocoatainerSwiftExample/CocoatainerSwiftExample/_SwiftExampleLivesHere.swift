@@ -14,10 +14,13 @@ class _SwiftExampleLivesHere: NSObject
     {
         var container = CCTCocoatainer()
 
-        var phws: AnyObject! = NSObject.abstractId(HotWaterSource.self)
-        var ptop: AnyObject! = NSObject.abstractId(Topping.self)
-        var pmix: AnyObject! = NSObject.abstractId(Mixture.self)
-        var pmug: AnyObject! = NSObject.abstractId(LiquidVessel.self)
+        // If there's a nicer way to turn a Swift Protocol into a Protocol!
+        // and cast again into an AnyObject! so it can be passed to Obj-C
+        // as an id then we can get rid of this ugly bit.
+        var phws: AnyObject! = NSObject.protocolAsId(HotWaterSource.self)
+        var ptop: AnyObject! = NSObject.protocolAsId(Topping.self)
+        var pmix: AnyObject! = NSObject.protocolAsId(Mixture.self)
+        var pmug: AnyObject! = NSObject.protocolAsId(LiquidVessel.self)
 
         container.registerComponent(phws, initsWith:
             { () -> AnyObject in
