@@ -200,10 +200,10 @@ import Cocoatainer
 ...
         var container = CCTCocoatainer()
 
-        var phws: AnyObject! = NSObject.abstractId(HotWaterSource.self)
-        var ptop: AnyObject! = NSObject.abstractId(Topping.self)
-        var pmix: AnyObject! = NSObject.abstractId(Mixture.self)
-        var pmug: AnyObject! = NSObject.abstractId(LiquidVessel.self)
+        var phws: AnyObject! = NSObject.protocolAsId(HotWaterSource.self)
+        var ptop: AnyObject! = NSObject.protocolAsId(Topping.self)
+        var pmix: AnyObject! = NSObject.protocolAsId(Mixture.self)
+        var pmug: AnyObject! = NSObject.protocolAsId(LiquidVessel.self)
 
         container.registerComponent(phws, initsWith:
             { () -> AnyObject in
