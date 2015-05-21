@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol LiquidVessel
+@objc public protocol LiquidVessel
 {
     func fill()
     func drink(amount: Int)

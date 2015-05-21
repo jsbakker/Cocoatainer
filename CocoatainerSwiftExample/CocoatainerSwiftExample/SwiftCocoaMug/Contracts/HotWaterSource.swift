@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol HotWaterSource
+@objc public protocol HotWaterSource
 {
     func heat()
     func pourCup() -> Int

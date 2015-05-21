@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Marshmallow: NSObject, Topping
+public class Marshmallow: NSObject, Topping
 {
-    func name() -> String
+    public func name() -> String
     {
         return "\(_stdlib_getDemangledTypeName(self))"
     }

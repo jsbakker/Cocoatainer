@@ -8,7 +8,7 @@
 
 import Cocoatainer
 
-class Kettle: NSObject, HotWaterSource, CCTStartable
+public class Kettle: NSObject, HotWaterSource, CCTStartable
 {
     let FullCup = 250
 
@@ -17,17 +17,17 @@ class Kettle: NSObject, HotWaterSource, CCTStartable
         println("This water got cold and looks old. I will dump it out.")
     }
 
-    func start()
+    public func start()
     {
         heat()
     }
 
-    func heat()
+    public func heat()
     {
         println("Boiling water to 100 degrees C.")
     }
 
-    func pourCup() -> Int
+    public func pourCup() -> Int
     {
         println("Pouring a cup of hot water.")
         return FullCup
