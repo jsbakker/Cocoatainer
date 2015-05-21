@@ -222,7 +222,7 @@ import Cocoatainer
                 CocoaPowder(topping: top as! Topping)
             })
 
-        container.registerComponent(pmug!,
+        container.registerComponent(pmug,
             dependentOn1: phws,
             and2: pmix)
             { (source: AnyObject!, mix: AnyObject!) -> AnyObject! in
