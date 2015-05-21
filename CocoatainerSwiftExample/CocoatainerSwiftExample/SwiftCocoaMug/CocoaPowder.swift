@@ -8,11 +8,11 @@
 
 import Cocoatainer
 
-class CocoaPowder: NSObject, Mixture, CCTStartable
+public class CocoaPowder: NSObject, Mixture, CCTStartable
 {
     var topping: Topping
 
-    init(topping: Topping)
+    public init(topping: Topping)
     {
         self.topping = topping
     }
@@ -22,12 +22,12 @@ class CocoaPowder: NSObject, Mixture, CCTStartable
         println("This cocoa powder has coagulated at the bottom.")
     }
 
-    func start()
+    public func start()
     {
         println("Creating \(_stdlib_getDemangledTypeName(self)) mix with \(topping.name()) topping.")
     }
 
-    func shovel()
+    public func shovel()
     {
         println("Shovel three tablespoons of mixture.")
     }

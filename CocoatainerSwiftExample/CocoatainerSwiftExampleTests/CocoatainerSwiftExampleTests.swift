@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Jeffrey Bakker. All rights reserved.
 //
 
-import UIKit
+import Cocoatainer
+import CocoatainerSwiftExample
 import XCTest
 
 class CocoatainerSwiftExampleTests: XCTestCase {
@@ -21,16 +22,33 @@ class CocoatainerSwiftExampleTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testRegisterByProtocol() {
+
+        var container = CCTCocoatainer()
+
+        var phws: AnyObject! = NSObject.abstractId(HotWaterSource.self)
+
+        container.registerComponent(phws, initsWith:
+            { () -> AnyObject in
+                Kettle()
+        })
+
+        var hws = container.resolveComponent(phws) as! HotWaterSource!
+
+        XCTAssertTrue(hws != nil, "HotWaterSource not nil")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+
+    func testRegisterByClass() {
+
+        var container = CCTCocoatainer()
+
+        container.registerComponent(Kettle.self, initsWith:
+            { () -> AnyObject in
+                Kettle()
+        })
+
+        var k = container.resolveComponent(Kettle.self) as! Kettle!
+
+        XCTAssertTrue(k != nil, "Kettle not nil")
     }
-    
 }
