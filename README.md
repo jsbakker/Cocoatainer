@@ -193,6 +193,53 @@ This example below is container scope nesting. Note, that an inner (descendant) 
 
     // ILoggerA will scope out and print a dealloc message here, while ILog is still in scope
 ```
+
+### CocoaMug Example in Swift ###
+```
+import Cocoatainer
+...
+        var container = CCTCocoatainer()
+
+        var phws: AnyObject! = NSObject.abstractId(HotWaterSource.self)
+        var ptop: AnyObject! = NSObject.abstractId(Topping.self)
+        var pmix: AnyObject! = NSObject.abstractId(Mixture.self)
+        var pmug: AnyObject! = NSObject.abstractId(LiquidVessel.self)
+
+        container.registerComponent(phws, initsWith:
+            { () -> AnyObject in
+                Kettle()
+            })
+
+        container.registerComponent(ptop, initsWith:
+            { () -> AnyObject in
+                Marshmallow()
+            })
+
+        container.registerComponent(pmix,
+            dependentOn1: ptop,
+            initsWith:
+            { (top: AnyObject!) -> AnyObject! in
+                CocoaPowder(topping: top as! Topping)
+            })
+
+        container.registerComponent(pmug!,
+            dependentOn1: phws,
+            and2: pmix)
+            { (source: AnyObject!, mix: AnyObject!) -> AnyObject! in
+                CocoaMug(source: source as! HotWaterSource,
+                    mixture: mix as! Mixture)
+            }
+
+        container.start(true)
+
+        var mug: LiquidVessel =
+            container.resolveComponent(pmug) as! LiquidVessel
+
+        mug.drink(25)
+        mug.checkAmount()
+        mug.drink(25)
+        mug.checkAmount()
+```
 ### Getting Familiar ###
 
 Before using Cocoatainer in your own project, you may want to familiarize yourself with the framework. The following will help getting the Cocoatainer test harness and example code running.
