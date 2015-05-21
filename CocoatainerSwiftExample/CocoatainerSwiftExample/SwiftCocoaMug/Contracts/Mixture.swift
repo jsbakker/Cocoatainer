@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Mixture
+@objc protocol Mixture
 {
     func shovel()
 }

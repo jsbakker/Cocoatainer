@@ -29,6 +29,7 @@
 #import "CCTAbstractCocoatainer.h"
 #import "CCTCocoatainer.h"
 #import "CCTStartable.h"
+#import "CCTInitializers.h"
 
 //! Project version number for Cocoatainer.
 FOUNDATION_EXPORT double CocoatainerVersionNumber;

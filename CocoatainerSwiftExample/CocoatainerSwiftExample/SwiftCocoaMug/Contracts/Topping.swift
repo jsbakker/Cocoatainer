@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Topping
+@objc protocol Topping
 {
     func name() -> String
 }
