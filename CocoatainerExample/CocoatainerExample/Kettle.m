@@ -14,7 +14,7 @@
 
 -(void)dealloc
 {
-    NSLog(@"This water got cold and looks old. I willl dump it out.");
+    NSLog(@"This water got cold and looks old. I will dump it out.");
 }
 
 -(void)start

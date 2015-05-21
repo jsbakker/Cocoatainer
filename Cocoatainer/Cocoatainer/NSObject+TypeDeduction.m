@@ -24,4 +24,11 @@
     return ![self respondsToSelector:@selector(alloc)];
 }
 
+// Hack. Pass ProtocolName.self from Swift to get the proper
+// type back. Otherwise lots of casting is required.
++(id)abstractId:(Protocol*)p;
+{
+    return p;
+}
+
 @end
