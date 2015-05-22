@@ -258,7 +258,7 @@ To start using Cocoatainer in your project, here's how you would set it up:
 * First, [download a pre-built zip](https://bitbucket.org/staeryatz/cocoatainer/downloads) of the framework.
 * In the same directory as your XCode project, create a 'lib' directory. This directory should be a sibling of the .xcodeproj file.
 * Unzip the Cocoatainer-*.zip file into the newly created 'lib' directory so that the 'Debug' and 'Release' folders are direct children 'lib'.
-* In your XCode project's 'Build settings' located 'Framework Search Paths' and add “$(PROJECT_DIR)/lib/$(CONFIGURATION)” to the value.
+* In your XCode project's 'Build settings' located 'Framework Search Paths' and add `$(PROJECT_DIR)/lib/$(CONFIGURATION)` to the value.
 * In the 'General' section of your project settings, find 'Embedded Binaries'. Click the '+' and choose 'Add other', and browse to your 'lib' folder. Expand the 'Release' folder and choose the Cocoatainer.framework file.
 * You should now be able to `#import <Cocoatainer/Cocoatainer.h>` and start using it in your project.
 
