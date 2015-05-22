@@ -285,7 +285,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cocoatainer-gwoiayrvfduaawaonebwtzhetokc/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,7 +306,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cocoatainer-gwoiayrvfduaawaonebwtzhetokc/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

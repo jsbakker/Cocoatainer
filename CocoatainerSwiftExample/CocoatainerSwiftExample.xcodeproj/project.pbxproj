@@ -414,8 +414,7 @@
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/staeryatz/Projects/iOS/CocoatainerExample/Cocoatainer/build/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cocoatainer-gwoiayrvfduaawaonebwtzhetokc/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerSwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -431,8 +430,7 @@
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/staeryatz/Projects/iOS/CocoatainerExample/Cocoatainer/build/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Cocoatainer-gwoiayrvfduaawaonebwtzhetokc/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerSwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
