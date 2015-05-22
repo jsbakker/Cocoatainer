@@ -262,6 +262,9 @@ To start using Cocoatainer in your project, here's how you would set it up:
 * In the 'General' section of your project settings, find 'Embedded Binaries'. Click the '+' and choose 'Add other', and browse to your 'lib' folder. Expand the 'Release' folder and choose the Cocoatainer.framework file.
 * You should now be able to `#import <Cocoatainer/Cocoatainer.h>` and start using it in your project.
 
+Note, that according to [this guide](https://kodmunki.wordpress.com/2015/03/04/cocoa-touch-frameworks-for-ios8-remix/), the steps above will keep your project App Store submission-friendly. Worse case, you can download the Cocoatainer source and and the framework to your project.
+
+Another tip is that if you don't like committing 3rd party binaries into your git repo (especially if you're keen on keeping them up-to-date), you can use [git-fat](https://github.com/jedbrown/git-fat) to manage binaries on separate storage with version control.
 
 ### License ###
 
