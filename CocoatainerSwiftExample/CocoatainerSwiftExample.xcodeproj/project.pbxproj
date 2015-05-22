@@ -14,7 +14,6 @@
 		D2FA7E751B0CD3EE00069FE3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FA7E731B0CD3EE00069FE3 /* LaunchScreen.xib */; };
 		D2FA7E811B0CD3EE00069FE3 /* CocoatainerSwiftExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E801B0CD3EE00069FE3 /* CocoatainerSwiftExampleTests.swift */; };
 		D2FA7E8B1B0CD46700069FE3 /* _SwiftExampleLivesHere.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E8A1B0CD46700069FE3 /* _SwiftExampleLivesHere.swift */; };
-		D2FA7E8D1B0CD48900069FE3 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FA7E8C1B0CD48900069FE3 /* Cocoatainer.framework */; };
 		D2FA7E911B0CD64E00069FE3 /* LiquidVessel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E901B0CD64E00069FE3 /* LiquidVessel.swift */; };
 		D2FA7E931B0CD74B00069FE3 /* HotWaterSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E921B0CD74B00069FE3 /* HotWaterSource.swift */; };
 		D2FA7E951B0CD7C400069FE3 /* Topping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E941B0CD7C400069FE3 /* Topping.swift */; };
@@ -23,6 +22,8 @@
 		D2FA7E9B1B0CDB5F00069FE3 /* CocoaPowder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E9A1B0CDB5F00069FE3 /* CocoaPowder.swift */; };
 		D2FA7E9D1B0CDDD100069FE3 /* Kettle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E9C1B0CDDD100069FE3 /* Kettle.swift */; };
 		D2FA7E9F1B0CDF5B00069FE3 /* CocoaMug.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E9E1B0CDF5B00069FE3 /* CocoaMug.swift */; };
+		D2FA7EED1B0F0DF100069FE3 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FA7EEC1B0F0DF100069FE3 /* Cocoatainer.framework */; };
+		D2FA7EEE1B0F0DFB00069FE3 /* Cocoatainer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2FA7EEC1B0F0DF100069FE3 /* Cocoatainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,19 @@
 			remoteInfo = CocoatainerSwiftExample;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D2FA7EEA1B0F0D3C00069FE3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D2FA7EEE1B0F0DFB00069FE3 /* Cocoatainer.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D2FA7E651B0CD3EE00069FE3 /* CocoatainerSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoatainerSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +61,6 @@
 		D2FA7E7F1B0CD3EE00069FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2FA7E801B0CD3EE00069FE3 /* CocoatainerSwiftExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoatainerSwiftExampleTests.swift; sourceTree = "<group>"; };
 		D2FA7E8A1B0CD46700069FE3 /* _SwiftExampleLivesHere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _SwiftExampleLivesHere.swift; sourceTree = "<group>"; };
-		D2FA7E8C1B0CD48900069FE3 /* Cocoatainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoatainer.framework; path = "../Cocoatainer/build/Debug-iphoneos/Cocoatainer.framework"; sourceTree = "<group>"; };
 		D2FA7E901B0CD64E00069FE3 /* LiquidVessel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidVessel.swift; sourceTree = "<group>"; };
 		D2FA7E921B0CD74B00069FE3 /* HotWaterSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotWaterSource.swift; sourceTree = "<group>"; };
 		D2FA7E941B0CD7C400069FE3 /* Topping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topping.swift; sourceTree = "<group>"; };
@@ -56,6 +69,7 @@
 		D2FA7E9A1B0CDB5F00069FE3 /* CocoaPowder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaPowder.swift; sourceTree = "<group>"; };
 		D2FA7E9C1B0CDDD100069FE3 /* Kettle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kettle.swift; sourceTree = "<group>"; };
 		D2FA7E9E1B0CDF5B00069FE3 /* CocoaMug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaMug.swift; sourceTree = "<group>"; };
+		D2FA7EEC1B0F0DF100069FE3 /* Cocoatainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoatainer.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Cocoatainer-gwoiayrvfduaawaonebwtzhetokc/Build/Products/Debug-iphoneos/Cocoatainer.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FA7E8D1B0CD48900069FE3 /* Cocoatainer.framework in Frameworks */,
+				D2FA7EED1B0F0DF100069FE3 /* Cocoatainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +94,7 @@
 		D2FA7E5C1B0CD3EE00069FE3 = {
 			isa = PBXGroup;
 			children = (
-				D2FA7E8C1B0CD48900069FE3 /* Cocoatainer.framework */,
+				D2FA7EEC1B0F0DF100069FE3 /* Cocoatainer.framework */,
 				D2FA7E671B0CD3EE00069FE3 /* CocoatainerSwiftExample */,
 				D2FA7E7D1B0CD3EE00069FE3 /* CocoatainerSwiftExampleTests */,
 				D2FA7E661B0CD3EE00069FE3 /* Products */,
@@ -169,6 +183,7 @@
 				D2FA7E611B0CD3EE00069FE3 /* Sources */,
 				D2FA7E621B0CD3EE00069FE3 /* Frameworks */,
 				D2FA7E631B0CD3EE00069FE3 /* Resources */,
+				D2FA7EEA1B0F0D3C00069FE3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -399,10 +414,11 @@
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/staeryatz/Projects/iOS/CocoatainerExample/Cocoatainer/build/Debug-iphoneos",
+					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerSwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -414,10 +430,11 @@
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/staeryatz/Projects/iOS/CocoatainerExample/Cocoatainer/build/Debug-iphoneos",
+					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerSwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -475,6 +492,7 @@
 				D2FA7E861B0CD3EE00069FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2FA7E871B0CD3EE00069FE3 /* Build configuration list for PBXNativeTarget "CocoatainerSwiftExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +501,7 @@
 				D2FA7E891B0CD3EE00069FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
