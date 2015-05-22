@@ -4,7 +4,7 @@ Welcome to the Cocoatainer project. This project is aimed at providing Objective
  
 Cocoatainer provides an IoC container with constructor injection. What makes it different is that it supports registering components either by abstract (protocol) or by concrete type (class), although there is also a strict, abstract-only version as well. The container also supports:
 
-* Adding components by block (anonymous function) with dependencies
+* Adding components by block (closure) with dependencies
 * Adding components by pre-allocated instance
 * Multiple dependencies, auto-resolving when needed
 * Nested dependencies, auto-resolving when needed
@@ -250,6 +250,18 @@ Before using Cocoatainer in your own project, you may want to familiarize yourse
 * Under the CocoatainerGuiExample project, this example code will run a GUI application which contains buttons to control the lifecycle of an inner container. There is an outer container owned by IB which provides View dependencies to the inner container.
 * Under the CocoatainerSwiftExample project, there is a Swift port of the CocoaMug example, along with Swift unit tests.
 * Under the Cocoatainer project, in the CocoatainerTests folder there are several files, each containing several unit tests on the container. Many of the types are only setup for the purpose of testing the container, and may not be setup with the best practices in mind.
+
+### Getting Started ###
+
+To start using Cocoatainer in your project, here's how you would set it up:
+
+* First, [download a pre-built zip](https://bitbucket.org/staeryatz/cocoatainer/downloads) of the framework.
+* In the same directory as your XCode project, create a 'lib' directory. This directory should be a sibling of the .xcodeproj file.
+* Unzip the Cocoatainer-*.zip file into the newly created 'lib' directory so that the 'Debug' and 'Release' folders are direct children 'lib'.
+* In your XCode project's 'Build settings' located 'Framework Search Paths' and add “$(PROJECT_DIR)/lib/$(CONFIGURATION)” to the value.
+* In the 'General' section of your project settings, find 'Embedded Binaries'. Click the '+' and choose 'Add other', and browse to your 'lib' folder. Expand the 'Release' folder and choose the Cocoatainer.framework file.
+* You should now be able to `#import <Cocoatainer/Cocoatainer.h>` and start using it in your project.
+
 
 ### License ###
 
