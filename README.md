@@ -2,7 +2,7 @@
 
 Welcome to the Cocoatainer project. This project is aimed at providing Objective-C (and Swift) developers with an iOS framework for [Dependency Injection](http://en.wikipedia.org/wiki/Dependency_injection) / [Inversion of Control](http://en.wikipedia.org/wiki/Inversion_of_control). 
  
-Cocoatainer provides an IoC container with constructor injection (as opposed to property injection) and does not require your classes to be written in an esoteric way for its dependencies to be injected. Cocoatainer supports registering components either by abstract (protocol) or by concrete type (class). The container supports the following features:
+Cocoatainer provides an IoC container using constructor injection (as opposed to property injection) and does not require your classes to be written in an esoteric way for its dependencies to be injected. Cocoatainer supports registering components either by abstract (protocol) or by concrete type (class). The container supports the following features:
 
 * Adding components by pre-allocated instance
 * Adding components by block (closure) with dependencies
