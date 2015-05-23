@@ -23,10 +23,10 @@ If you wanted some hot cocoa, first you'd need [some sort of mug](https://bitbuc
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
     [config registerComponent:@protocol(HotWaterSource)
-                 withInstance:[[Kettle alloc] init];
+                 withInstance:[[Kettle alloc] init]];
 
     [config registerComponent:@protocol(Topping)
-                 withInstance:[[Marshmallow alloc] init];
+                 withInstance:[[Marshmallow alloc] init]];
 
     [config registerComponent:@protocol(Mix)
                  dependentOn1:@protocol(Topping)
