@@ -201,15 +201,9 @@ import Cocoatainer
         var pmix: AnyObject! = NSObject.protocolAsId(Mixture.self)
         var pmug: AnyObject! = NSObject.protocolAsId(LiquidVessel.self)
 
-        container.registerComponent(phws, initsWith:
-            { () -> AnyObject in
-                Kettle()
-            })
+        container.registerComponent(phws, withInstance: Kettle())
 
-        container.registerComponent(ptop, initsWith:
-            { () -> AnyObject in
-                Marshmallow()
-            })
+        container.registerComponent(ptop, withInstance: Marshmallow())
 
         container.registerComponent(pmix,
             dependentOn1: ptop,
