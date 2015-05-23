@@ -22,15 +22,11 @@ If you wanted some hot cocoa, first you'd need [some sort of mug](https://bitbuc
 ```objective-c
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 
-    [config registerComponent:@protocol(HotWaterSource) initsWith:
-     ^{
-         return [[Kettle alloc] init];
-     }];
+    [config registerComponent:@protocol(HotWaterSource)
+                 withInstance:[[Kettle alloc] init];
 
-    [config registerComponent:@protocol(Topping) initsWith:
-     ^{
-         return [[Marshmallow alloc] init];
-     }];
+    [config registerComponent:@protocol(Topping)
+                 withInstance:[[Marshmallow alloc] init];
 
     [config registerComponent:@protocol(Mix)
                  dependentOn1:@protocol(Topping)
