@@ -72,8 +72,7 @@
 
     for (id dep in dependencies)
     {
-        id instance =
-        [self resolveComponent:dep fromMap:registry];
+        id instance = [self resolveComponent:dep fromMap:registry];
         [depInstances addObject:instance];
     }
     return ((Initializer)block)(depInstances);
@@ -169,6 +168,57 @@
                                          depInstance3,
                                          depInstance4,
                                          depInstance5);
+        }
+        case 7:
+        {
+            id depInstance0 =
+                [self resolveComponent:dependencies[0] fromMap:registry];
+            id depInstance1 =
+                [self resolveComponent:dependencies[1] fromMap:registry];
+            id depInstance2 =
+                [self resolveComponent:dependencies[2] fromMap:registry];
+            id depInstance3 =
+                [self resolveComponent:dependencies[3] fromMap:registry];
+            id depInstance4 =
+                [self resolveComponent:dependencies[4] fromMap:registry];
+            id depInstance5 =
+                [self resolveComponent:dependencies[5] fromMap:registry];
+            id depInstance6 =
+                [self resolveComponent:dependencies[6] fromMap:registry];
+            return ((Initializer7)block)(depInstance0,
+                                         depInstance1,
+                                         depInstance2,
+                                         depInstance3,
+                                         depInstance4,
+                                         depInstance5,
+                                         depInstance6);
+        }
+        case 8:
+        {
+            id depInstance0 =
+                [self resolveComponent:dependencies[0] fromMap:registry];
+            id depInstance1 =
+                [self resolveComponent:dependencies[1] fromMap:registry];
+            id depInstance2 =
+                [self resolveComponent:dependencies[2] fromMap:registry];
+            id depInstance3 =
+                [self resolveComponent:dependencies[3] fromMap:registry];
+            id depInstance4 =
+                [self resolveComponent:dependencies[4] fromMap:registry];
+            id depInstance5 =
+                [self resolveComponent:dependencies[5] fromMap:registry];
+            id depInstance6 =
+                [self resolveComponent:dependencies[6] fromMap:registry];
+            id depInstance7 =
+                [self resolveComponent:dependencies[7] fromMap:registry];
+            return ((Initializer8)block)(depInstance0,
+                                         depInstance1,
+                                         depInstance2,
+                                         depInstance3,
+                                         depInstance4,
+                                         depInstance5,
+                                         depInstance6,
+                                         depInstance7);
         }
     }
     return nil;

@@ -76,6 +76,33 @@ typedef id (^Initializer6)(id, id, id, id, id, id);
 
 /*!
  A code block for supporting object initialization.
+ @param 1st Dependency instance for initializer inside code block.
+ @param 2nd Dependency instance for initializer inside code block.
+ @param 3rd Dependency instance for initializer inside code block.
+ @param 4rd Dependency instance for initializer inside code block.
+ @param 5th Dependency instance for initializer inside code block.
+ @param 6th Dependency instance for initializer inside code block.
+ @param 7th Dependency instance for initializer inside code block.
+ @returns an initialized object.
+ */
+typedef id (^Initializer7)(id, id, id, id, id, id, id);
+
+/*!
+ A code block for supporting object initialization.
+ @param 1st Dependency instance for initializer inside code block.
+ @param 2nd Dependency instance for initializer inside code block.
+ @param 3rd Dependency instance for initializer inside code block.
+ @param 4rd Dependency instance for initializer inside code block.
+ @param 5th Dependency instance for initializer inside code block.
+ @param 6th Dependency instance for initializer inside code block.
+ @param 7th Dependency instance for initializer inside code block.
+ @param 8th Dependency instance for initializer inside code block.
+ @returns an initialized object.
+ */
+typedef id (^Initializer8)(id, id, id, id, id, id, id, id);
+
+/*!
+ A code block for supporting object initialization.
  @param NSArray an array of dependency instances for initializer inside code block.
  @returns an initialized object.
  */
