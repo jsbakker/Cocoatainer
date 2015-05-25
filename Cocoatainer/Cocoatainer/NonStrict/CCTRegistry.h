@@ -29,11 +29,7 @@ typedef void (^TraverseComponents)(CCTComponent*);
 
 -(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
+   initializesArray:(BOOL)initWithArray
      andConstructor:(id)constructor;
-
--(void)addComponent:(id)abstraction
-   withDependencies:(NSArray*)dependencies
-     andConstructor:(id)constructor
-        andInstance:(id)instance;
 
 @end

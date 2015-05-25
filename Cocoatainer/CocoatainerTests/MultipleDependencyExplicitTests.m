@@ -1,5 +1,5 @@
 //
-//  MultipleDependencyTests.m
+//  MultipleDependencyExplicitTests.m
 //  Cocoatainer
 //
 //  Created by Jeffrey Bakker on 2015-05-17.
@@ -11,11 +11,11 @@
 #import "CCTCocoatainer.h"
 #import "TestTypes/DependsOnMultiple.h"
 
-@interface MultipleDependencyTests : XCTestCase
+@interface MultipleDependencyExplicitTests : XCTestCase
 
 @end
 
-@implementation MultipleDependencyTests
+@implementation MultipleDependencyExplicitTests
 
 - (void)setUp {
     [super setUp];
@@ -259,182 +259,6 @@
 
     NSArray* depends = [testObject injections];
     XCTAssertTrue(depends.count == 6, "Injection count.");
-}
-
-- (void)testResolveDependsOnArray7
-{
-    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
-
-    [config registerComponent:[NSString class] initsWith:
-     ^{
-         return @"Injected";
-     }];
-
-    [config registerComponent:@protocol(IDependsOnMultiple)
-                  dependentOn:@[[NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class]]
-                    initsWith:^(NSArray* dependencies)
-     {
-         return [[DependsOnMultiple alloc] initWithDependencies:
-                 dependencies[0],
-                 dependencies[1],
-                 dependencies[2],
-                 dependencies[3],
-                 dependencies[4],
-                 dependencies[5],
-                 dependencies[6],
-                 nil];
-     }];
-
-    id<IDependsOnMultiple> testObject =
-        [config resolveComponent:@protocol(IDependsOnMultiple)];
-
-    XCTAssertNotNil(testObject, "testObject is not nil.");
-    XCTAssertTrue([testObject conformsToProtocol:@protocol(IDependsOnMultiple)],
-                  "testObject conforms to protocol IDependsOnMultiple.");
-
-    NSArray* depends = [testObject injections];
-    XCTAssertTrue(depends.count == 7, "Injection count.");
-}
-
-- (void)testResolveDependsOnArray8
-{
-    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
-
-    [config registerComponent:[NSString class] initsWith:
-     ^{
-         return @"Injected";
-     }];
-
-    [config registerComponent:@protocol(IDependsOnMultiple)
-                  dependentOn:@[[NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class]]
-                    initsWith:^(NSArray* dependencies)
-     {
-         return [[DependsOnMultiple alloc] initWithDependencies:
-                 dependencies[0],
-                 dependencies[1],
-                 dependencies[2],
-                 dependencies[3],
-                 dependencies[4],
-                 dependencies[5],
-                 dependencies[6],
-                 dependencies[7],
-                 nil];
-     }];
-
-    id<IDependsOnMultiple> testObject =
-        [config resolveComponent:@protocol(IDependsOnMultiple)];
-
-    XCTAssertNotNil(testObject, "testObject is not nil.");
-    XCTAssertTrue([testObject conformsToProtocol:@protocol(IDependsOnMultiple)],
-                  "testObject conforms to protocol IDependsOnMultiple.");
-
-    NSArray* depends = [testObject injections];
-    XCTAssertTrue(depends.count == 8, "Injection count.");
-}
-
-- (void)testResolveDependsOnArray9
-{
-    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
-
-    [config registerComponent:[NSString class] initsWith:
-     ^{
-         return @"Injected";
-     }];
-
-    [config registerComponent:@protocol(IDependsOnMultiple)
-                  dependentOn:@[[NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class]]
-                    initsWith:^(NSArray* dependencies)
-     {
-         return [[DependsOnMultiple alloc] initWithDependencies:
-                 dependencies[0],
-                 dependencies[1],
-                 dependencies[2],
-                 dependencies[3],
-                 dependencies[4],
-                 dependencies[5],
-                 dependencies[6],
-                 dependencies[7],
-                 dependencies[8],
-                 nil];
-     }];
-
-    id<IDependsOnMultiple> testObject =
-        [config resolveComponent:@protocol(IDependsOnMultiple)];
-
-    XCTAssertNotNil(testObject, "testObject is not nil.");
-    XCTAssertTrue([testObject conformsToProtocol:@protocol(IDependsOnMultiple)],
-                  "testObject conforms to protocol IDependsOnMultiple.");
-
-    NSArray* depends = [testObject injections];
-    XCTAssertTrue(depends.count == 9, "Injection count.");
-}
-
-- (void)testResolveDependsOnArray10
-{
-    CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
-
-    [config registerComponent:[NSString class] initsWith:
-     ^{
-         return @"Injected";
-     }];
-
-    [config registerComponent:@protocol(IDependsOnMultiple)
-                  dependentOn:@[[NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class],
-                                [NSString class]]
-                    initsWith:^(NSArray* dependencies)
-     {
-         return [[DependsOnMultiple alloc] initWithDependencies:
-                 dependencies[0],
-                 dependencies[1],
-                 dependencies[2],
-                 dependencies[3],
-                 dependencies[4],
-                 dependencies[5],
-                 dependencies[6],
-                 dependencies[7],
-                 dependencies[8],
-                 dependencies[9],
-                 nil];
-     }];
-
-    id<IDependsOnMultiple> testObject =
-        [config resolveComponent:@protocol(IDependsOnMultiple)];
-
-    XCTAssertNotNil(testObject, "testObject is not nil.");
-    XCTAssertTrue([testObject conformsToProtocol:@protocol(IDependsOnMultiple)],
-                  "testObject conforms to protocol IDependsOnMultiple.");
-
-    NSArray* depends = [testObject injections];
-    XCTAssertTrue(depends.count == 10, "Injection count.");
 }
 
 @end

@@ -19,6 +19,11 @@
     CCTRegistry* _parent;
 }
 
+-(void)addComponent:(id)abstraction
+   withDependencies:(NSArray*)dependencies
+   initializesArray:(BOOL)initWithArray
+     andConstructor:(id)constructor
+        andInstance:(id)instance;
 @end
 
 @implementation CCTRegistry
@@ -70,22 +75,26 @@
 {
     [self addComponent:abstraction
       withDependencies:@[]
+      initializesArray:NO
         andConstructor:nil
            andInstance:object];
 }
 
 -(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
+   initializesArray:(BOOL)initWithArray
      andConstructor:(id)constructor
 {
     [self addComponent:abstraction
       withDependencies:dependencies
+      initializesArray:initWithArray
         andConstructor:constructor
            andInstance:nil];
 }
 
 -(void)addComponent:(id)abstraction
    withDependencies:(NSArray*)dependencies
+   initializesArray:(BOOL)initWithArray
      andConstructor:(id)constructor
         andInstance:(id)instance
 {
@@ -105,6 +114,7 @@
     }
 
     CCTComponent* c = [[CCTComponent alloc] init];
+    c.initWithDepsArray = initWithArray;
     c.abstracion = abstraction;
     c.instance = instance;
     c.constructor = constructor;
