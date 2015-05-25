@@ -27,6 +27,7 @@
 -(void)typeCheck:(id)type;
 
 -(void)registerDependencies:(NSArray*)dependencies
+           initializesArray:(BOOL)initWithArray
              forAbstraction:(id)abstraction
              withInitilizer:(id)initializer;
 
@@ -88,6 +89,7 @@
 {
     [self typeCheck:abstraction];
     [self registerDependencies:@[]
+              initializesArray:NO
                 forAbstraction:abstraction
                 withInitilizer:block];
 }
@@ -98,6 +100,7 @@
 {
     NSArray* dependencies = @[d1];
     [self registerDependencies:dependencies
+              initializesArray:NO
                 forAbstraction:abstraction
                 withInitilizer:block];
 }
@@ -109,6 +112,7 @@
 {
     NSArray* dependencies = @[d1, d2];
     [self registerDependencies:dependencies
+              initializesArray:NO
                 forAbstraction:abstraction
                 withInitilizer:block];
 }
@@ -121,6 +125,7 @@
 {
     NSArray* dependencies = @[d1, d2, d3];
     [self registerDependencies:dependencies
+              initializesArray:NO
                 forAbstraction:abstraction
                 withInitilizer:block];
 }
@@ -134,6 +139,7 @@
 {
     NSArray* dependencies = @[d1, d2, d3, d4];
     [self registerDependencies:dependencies
+              initializesArray:NO
                 forAbstraction:abstraction
                 withInitilizer:block];
 }
@@ -148,6 +154,7 @@
 {
     NSArray* dependencies = @[d1, d2, d3, d4, d5];
     [self registerDependencies:dependencies
+              initializesArray:NO
                 forAbstraction:abstraction
                 withInitilizer:block];
 }
@@ -163,6 +170,7 @@
 {
     NSArray* dependencies = @[d1, d2, d3, d4, d5, d6];
     [self registerDependencies:dependencies
+              initializesArray:NO
                 forAbstraction:abstraction
                 withInitilizer:block];
 }
@@ -172,6 +180,7 @@
                initsWith:(Initializer)block
 {
     [self registerDependencies:dependencies
+              initializesArray:YES
                 forAbstraction:abstraction
                 withInitilizer:block];
 }
@@ -210,9 +219,9 @@
 }
 
 -(void)registerDependencies:(NSArray*)dependencies
+           initializesArray:(BOOL)initWithArray
              forAbstraction:(id)abstraction
              withInitilizer:(id)initializer
-
 {
     [self typeCheck:abstraction];
     for (id dep in dependencies)
@@ -228,6 +237,7 @@
 
     [_model addComponent:abstraction
         withDependencies:dependencies
+        initializesArray:initWithArray
           andConstructor:initializer];
 }
 

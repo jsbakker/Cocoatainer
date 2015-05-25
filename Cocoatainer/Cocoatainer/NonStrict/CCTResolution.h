@@ -18,7 +18,15 @@
 +(id)resolveComponent:(id)abstraction
               fromMap:(CCTRegistry*)registry;
 
-+(id)resolveDependencies:(NSArray*)dependencies
-                 fromMap:(CCTRegistry*)registry
-              usingBlock:(id)block;
++(id)resolveDependenciesFor:(CCTComponent*)component
+                    fromMap:(CCTRegistry*)registry
+                 usingBlock:(id)block;
+
++(id)resolveArrayDependencies:(NSArray*)dependencies
+                      fromMap:(CCTRegistry*)registry
+                   usingBlock:(id)block;
+
++(id)resolveFixedDependencies:(NSArray*)dependencies
+                      fromMap:(CCTRegistry*)registry
+                   usingBlock:(id)block;
 @end

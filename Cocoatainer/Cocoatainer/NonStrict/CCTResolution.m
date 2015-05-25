@@ -29,27 +29,59 @@
         return resolvedInstance;
     }
 
-    id creationBlock = c.constructor;
+    id initializer = c.constructor;
 
-    if (!creationBlock)
+    if (!initializer)
     {
         return nil;
     }
 
-    NSArray* dependencies = c.dependencies;
-    resolvedInstance =
-    [self resolveDependencies:dependencies
-                      fromMap:registry
-                   usingBlock:creationBlock];
+    resolvedInstance = [self resolveDependenciesFor:c
+                                            fromMap:registry
+                                         usingBlock:initializer];
 
     c.instance = resolvedInstance;
 
     return resolvedInstance;
 }
 
-+(id)resolveDependencies:(NSArray*)dependencies
-                 fromMap:(CCTRegistry*)registry
-              usingBlock:(id)block
++(id)resolveDependenciesFor:(CCTComponent*)component
+                    fromMap:(CCTRegistry*)registry
+                 usingBlock:(id)block
+{
+    NSArray* dependencies = component.dependencies;
+
+    if (component.initWithDepsArray)
+    {
+        return [self resolveArrayDependencies:dependencies
+                                      fromMap:registry
+                                   usingBlock:block];
+    }
+
+    return [self resolveFixedDependencies:dependencies
+                                  fromMap:registry
+                               usingBlock:block];
+}
+
++(id)resolveArrayDependencies:(NSArray*)dependencies
+                      fromMap:(CCTRegistry*)registry
+                   usingBlock:(id)block
+{
+    NSMutableArray* depInstances =
+        [NSMutableArray arrayWithCapacity:dependencies.count];
+
+    for (id dep in dependencies)
+    {
+        id instance =
+        [self resolveComponent:dep fromMap:registry];
+        [depInstances addObject:instance];
+    }
+    return ((Initializer)block)(depInstances);
+}
+
++(id)resolveFixedDependencies:(NSArray*)dependencies
+                      fromMap:(CCTRegistry*)registry
+                   usingBlock:(id)block
 {
     switch (dependencies.count)
     {
@@ -137,19 +169,6 @@
                                          depInstance3,
                                          depInstance4,
                                          depInstance5);
-        }
-        default:
-        {
-            NSMutableArray* depInstances =
-                [NSMutableArray arrayWithCapacity:dependencies.count];
-
-            for (id dep in dependencies)
-            {
-                id instance =
-                    [self resolveComponent:dep fromMap:registry];
-                [depInstances addObject:instance];
-            }
-            return ((Initializer)block)(depInstances);
         }
     }
     return nil;
