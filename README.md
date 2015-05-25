@@ -164,6 +164,24 @@ A class' dependents can be protocols, and a protocol's dependents can be classes
      }];
 ```
 
+The shorthand for the above is shown below. While the above should be preferred because it is more explicit, this form below can handle any number of dependencies, whereas the above method has a limited number of overloads.
+```objective-c
+    [config registerComponent:@protocol(IDependsOnMultiple)
+                  dependentOn:@[[MyClassA class],
+                                [MyClassB class],
+                                [MyClassC class],
+                                [MyClassD class],
+                                [MyClassE class],
+                                [MyClassF class]]
+                    initsWith:
+     ^(NSArray* deps)
+     {
+         // This init takes nil-terminated VA args
+         return [[DependsOnMultiple alloc] initWithDependencies:
+                 deps[0], deps[1], deps[2], deps[3], deps[4], deps[5], nil];
+     }];
+```
+
 This example below is container scope nesting. Note, that an inner (descendant) container can resolve objects from the outer (ancestor) containers, but the outer containers cannot resolve objects from the inner. This is because the outer scope is wider than inner scopes, so there is no guarantee the inner scope is active.
 ```objective-c
     CCTCocoatainer* outerScope = [[CCTCocoatainer alloc] init];
