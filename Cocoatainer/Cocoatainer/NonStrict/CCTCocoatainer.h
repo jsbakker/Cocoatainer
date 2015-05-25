@@ -147,6 +147,56 @@
 
 /*!
  Register a type into the container with dependencies and an initialization block.
+ @attention Parameter @p abstraction and @p d1, @p d2, @p d3, @p d4, @p d5, @p d6, @p d7 must be of type @p Class or @p Protocol* e.g. @p[MyClass @p class] or @p @@protocol(MyProtocol).
+ @param abstraction The type to register as.
+ @param d1 The first dependency.
+ @param d2 The second dependency.
+ @param d3 The third dependency.
+ @param d4 The fourth dependency.
+ @param d5 The fifth dependency.
+ @param d6 The sixth dependency.
+ @param d7 The seventh dependency.
+ @param block A code block for object initialization to be executed at resolve time. Accepts parameter instances of type @p d1, @p d2, @p d3, @p d4, @p d5, @p d6, @p d7 and returns an object of type @p abstraction.
+ @exception NSInvalidArgumentException
+ */
+-(void)registerComponent:(id)abstraction
+            dependentOn1:(id)d1
+                    and2:(id)d2
+                    and3:(id)d3
+                    and4:(id)d4
+                    and5:(id)d5
+                    and6:(id)d6
+                    and7:(id)d7
+               initsWith:(Initializer7)block;
+
+/*!
+ Register a type into the container with dependencies and an initialization block.
+ @attention Parameter @p abstraction and @p d1, @p d2, @p d3, @p d4, @p d5, @p d6, @p d7, @p d8 must be of type @p Class or @p Protocol* e.g. @p[MyClass @p class] or @p @@protocol(MyProtocol).
+ @param abstraction The type to register as.
+ @param d1 The first dependency.
+ @param d2 The second dependency.
+ @param d3 The third dependency.
+ @param d4 The fourth dependency.
+ @param d5 The fifth dependency.
+ @param d6 The sixth dependency.
+ @param d7 The seventh dependency.
+ @param d8 The eighth dependency.
+ @param block A code block for object initialization to be executed at resolve time. Accepts parameter instances of type @p d1, @p d2, @p d3, @p d4, @p d5, @p d6, @p d7, @p d8 and returns an object of type @p abstraction.
+ @exception NSInvalidArgumentException
+ */
+-(void)registerComponent:(id)abstraction
+            dependentOn1:(id)d1
+                    and2:(id)d2
+                    and3:(id)d3
+                    and4:(id)d4
+                    and5:(id)d5
+                    and6:(id)d6
+                    and7:(id)d7
+                    and8:(id)d8
+               initsWith:(Initializer8)block;
+
+/*!
+ Register a type into the container with dependencies and an initialization block.
  @attention Parameter @p abstraction and the objects inside @p dependencies must be of type @p Class or @p Protocol* e.g. @p[MyClass @p class] or @p @@protocol(MyProtocol).
  @param abstraction The type to register as.
  @param dependencies An array of dependencies by type.

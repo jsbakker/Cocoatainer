@@ -176,6 +176,41 @@
 }
 
 -(void)registerComponent:(id)abstraction
+            dependentOn1:(id)d1
+                    and2:(id)d2
+                    and3:(id)d3
+                    and4:(id)d4
+                    and5:(id)d5
+                    and6:(id)d6
+                    and7:(id)d7
+               initsWith:(Initializer7)block
+{
+    NSArray* dependencies = @[d1, d2, d3, d4, d5, d6, d7];
+    [self registerDependencies:dependencies
+              initializesArray:NO
+                forAbstraction:abstraction
+                withInitilizer:block];
+}
+
+-(void)registerComponent:(id)abstraction
+            dependentOn1:(id)d1
+                    and2:(id)d2
+                    and3:(id)d3
+                    and4:(id)d4
+                    and5:(id)d5
+                    and6:(id)d6
+                    and7:(id)d7
+                    and8:(id)d8
+               initsWith:(Initializer8)block
+{
+    NSArray* dependencies = @[d1, d2, d3, d4, d5, d6, d7, d8];
+    [self registerDependencies:dependencies
+              initializesArray:NO
+                forAbstraction:abstraction
+                withInitilizer:block];
+}
+
+-(void)registerComponent:(id)abstraction
              dependentOn:(NSArray*)dependencies
                initsWith:(Initializer)block
 {
