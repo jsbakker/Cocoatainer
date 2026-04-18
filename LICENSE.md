@@ -1,3 +1,5 @@
+MIT License
+
 Cocoatainer - an Inversion of Control container for Objective-C 
 Copyright (c) 2015 Jeffrey Bakker. 
  
