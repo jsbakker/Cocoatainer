@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00F0189A2F934437008865FA /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F018992F934437008865FA /* Cocoatainer.framework */; };
+		00F0189B2F934437008865FA /* Cocoatainer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00F018992F934437008865FA /* Cocoatainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D2FA7E6B1B0CD3EE00069FE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E6A1B0CD3EE00069FE3 /* AppDelegate.swift */; };
 		D2FA7E6D1B0CD3EE00069FE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E6C1B0CD3EE00069FE3 /* ViewController.swift */; };
 		D2FA7E701B0CD3EE00069FE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2FA7E6E1B0CD3EE00069FE3 /* Main.storyboard */; };
@@ -22,8 +24,6 @@
 		D2FA7E9B1B0CDB5F00069FE3 /* CocoaPowder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E9A1B0CDB5F00069FE3 /* CocoaPowder.swift */; };
 		D2FA7E9D1B0CDDD100069FE3 /* Kettle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E9C1B0CDDD100069FE3 /* Kettle.swift */; };
 		D2FA7E9F1B0CDF5B00069FE3 /* CocoaMug.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA7E9E1B0CDF5B00069FE3 /* CocoaMug.swift */; };
-		D2FA7EED1B0F0DF100069FE3 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FA7EEC1B0F0DF100069FE3 /* Cocoatainer.framework */; };
-		D2FA7EEE1B0F0DFB00069FE3 /* Cocoatainer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2FA7EEC1B0F0DF100069FE3 /* Cocoatainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,19 +37,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D2FA7EEA1B0F0D3C00069FE3 /* CopyFiles */ = {
+		00F0189C2F934437008865FA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D2FA7EEE1B0F0DFB00069FE3 /* Cocoatainer.framework in CopyFiles */,
+				00F0189B2F934437008865FA /* Cocoatainer.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00F018992F934437008865FA /* Cocoatainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cocoatainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FA7E651B0CD3EE00069FE3 /* CocoatainerSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoatainerSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FA7E691B0CD3EE00069FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2FA7E6A1B0CD3EE00069FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FA7EED1B0F0DF100069FE3 /* Cocoatainer.framework in Frameworks */,
+				00F0189A2F934437008865FA /* Cocoatainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +93,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00F018982F934437008865FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00F018992F934437008865FA /* Cocoatainer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2FA7E5C1B0CD3EE00069FE3 = {
 			isa = PBXGroup;
 			children = (
 				D2FA7EEC1B0F0DF100069FE3 /* Cocoatainer.framework */,
 				D2FA7E671B0CD3EE00069FE3 /* CocoatainerSwiftExample */,
 				D2FA7E7D1B0CD3EE00069FE3 /* CocoatainerSwiftExampleTests */,
+				00F018982F934437008865FA /* Frameworks */,
 				D2FA7E661B0CD3EE00069FE3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -183,7 +194,7 @@
 				D2FA7E611B0CD3EE00069FE3 /* Sources */,
 				D2FA7E621B0CD3EE00069FE3 /* Frameworks */,
 				D2FA7E631B0CD3EE00069FE3 /* Resources */,
-				D2FA7EEA1B0F0D3C00069FE3 /* CopyFiles */,
+				00F0189C2F934437008865FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,9 +234,11 @@
 				TargetAttributes = {
 					D2FA7E641B0CD3EE00069FE3 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 6XKLFA63LP;
 					};
 					D2FA7E791B0CD3EE00069FE3 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 6XKLFA63LP;
 						TestTargetID = D2FA7E641B0CD3EE00069FE3;
 					};
 				};
@@ -235,6 +248,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -362,11 +376,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -400,9 +415,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -412,14 +428,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6XKLFA63LP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerSwiftExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -428,14 +447,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6XKLFA63LP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerSwiftExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -443,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6XKLFA63LP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -462,6 +485,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6XKLFA63LP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

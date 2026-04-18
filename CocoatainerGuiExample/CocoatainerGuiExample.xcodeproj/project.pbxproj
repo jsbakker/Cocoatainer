@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00F018952F934030008865FA /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F018942F934030008865FA /* Cocoatainer.framework */; };
+		00F018962F934030008865FA /* Cocoatainer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00F018942F934030008865FA /* Cocoatainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D2827F2B1B0C57A20061C407 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2827F2A1B0C57A20061C407 /* main.m */; };
 		D2827F2E1B0C57A20061C407 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2827F2D1B0C57A20061C407 /* AppDelegate.m */; };
 		D2827F311B0C57A20061C407 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2827F301B0C57A20061C407 /* ViewController.m */; };
@@ -18,24 +20,24 @@
 		D2827F661B0C5A690061C407 /* Kettle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2827F5E1B0C5A690061C407 /* Kettle.m */; };
 		D2827F671B0C5A690061C407 /* Marshmallow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2827F611B0C5A690061C407 /* Marshmallow.m */; };
 		D2827F6D1B0C5BF30061C407 /* TextViewLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D2827F6C1B0C5BF30061C407 /* TextViewLog.m */; };
-		D2FA7EDF1B0F075A00069FE3 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FA7EDE1B0F075A00069FE3 /* Cocoatainer.framework */; };
-		D2FA7EE91B0F0C8500069FE3 /* Cocoatainer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2FA7EDE1B0F075A00069FE3 /* Cocoatainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D2FA7EE81B0F0C7500069FE3 /* CopyFiles */ = {
+		00F018972F934030008865FA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D2FA7EE91B0F0C8500069FE3 /* Cocoatainer.framework in CopyFiles */,
+				00F018962F934030008865FA /* Cocoatainer.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00F018942F934030008865FA /* Cocoatainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cocoatainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2827F251B0C57A20061C407 /* CocoatainerGuiExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoatainerGuiExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2827F291B0C57A20061C407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2827F2A1B0C57A20061C407 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,18 +71,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FA7EDF1B0F075A00069FE3 /* Cocoatainer.framework in Frameworks */,
+				00F018952F934030008865FA /* Cocoatainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00F018932F934030008865FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00F018942F934030008865FA /* Cocoatainer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2827F1C1B0C57A20061C407 = {
 			isa = PBXGroup;
 			children = (
 				D2FA7EDE1B0F075A00069FE3 /* Cocoatainer.framework */,
 				D2827F271B0C57A20061C407 /* CocoatainerGuiExample */,
+				00F018932F934030008865FA /* Frameworks */,
 				D2827F261B0C57A20061C407 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,7 +161,7 @@
 				D2827F211B0C57A20061C407 /* Sources */,
 				D2827F221B0C57A20061C407 /* Frameworks */,
 				D2827F231B0C57A20061C407 /* Resources */,
-				D2FA7EE81B0F0C7500069FE3 /* CopyFiles */,
+				00F018972F934030008865FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +183,7 @@
 				TargetAttributes = {
 					D2827F241B0C57A20061C407 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 6XKLFA63LP;
 					};
 				};
 			};
@@ -180,6 +192,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -280,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -318,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -330,11 +343,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6XKLFA63LP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerGuiExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,11 +361,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6XKLFA63LP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)../Cocoatainer",
 				);
 				INFOPLIST_FILE = CocoatainerGuiExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -10,7 +10,7 @@
 //  http://opensource.org/licenses/MIT
 
 #import <Foundation/Foundation.h>
-#import "CCTInitializers.h"
+#import <Cocoatainer/CCTInitializers.h>
 
 /*!
  An Inversion of Control container by way of constructor injection, which manages dependencies and allows all of its objects to be contained within its lifetime scope. Containers can be nested through parent relationships.

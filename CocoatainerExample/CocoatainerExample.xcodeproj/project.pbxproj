@@ -7,30 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00F018902F934022008865FA /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F0188C2F933F1E008865FA /* Cocoatainer.framework */; };
+		00F018912F934022008865FA /* Cocoatainer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00F0188C2F933F1E008865FA /* Cocoatainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D297646C1B042A0200DE9E61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D297646B1B042A0200DE9E61 /* main.m */; };
 		D297649F1B046C4800DE9E61 /* CocoaMug.m in Sources */ = {isa = PBXBuildFile; fileRef = D297649E1B046C4800DE9E61 /* CocoaMug.m */; };
 		D29764A91B0472EB00DE9E61 /* Kettle.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764A81B0472EB00DE9E61 /* Kettle.m */; };
 		D29764AC1B0477A900DE9E61 /* CocoaPowder.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764AB1B0477A900DE9E61 /* CocoaPowder.m */; };
 		D29764B21B04FD0300DE9E61 /* Marshmallow.m in Sources */ = {isa = PBXBuildFile; fileRef = D29764B11B04FD0300DE9E61 /* Marshmallow.m */; };
 		D29766181B0958D000DE9E61 /* _ExampleCodeLivesHere.m in Sources */ = {isa = PBXBuildFile; fileRef = D29766171B0958D000DE9E61 /* _ExampleCodeLivesHere.m */; };
-		D2FA7EE31B0F081200069FE3 /* Cocoatainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FA7EE21B0F081200069FE3 /* Cocoatainer.framework */; };
-		D2FA7EE71B0F0BFC00069FE3 /* Cocoatainer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2FA7EE21B0F081200069FE3 /* Cocoatainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D2FA7EE61B0F0BF100069FE3 /* CopyFiles */ = {
+		00F018922F934022008865FA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D2FA7EE71B0F0BFC00069FE3 /* Cocoatainer.framework in CopyFiles */,
+				00F018912F934022008865FA /* Cocoatainer.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00F0188C2F933F1E008865FA /* Cocoatainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cocoatainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29764661B042A0200DE9E61 /* CocoatainerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoatainerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D297646A1B042A0200DE9E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D297646B1B042A0200DE9E61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,18 +58,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FA7EE31B0F081200069FE3 /* Cocoatainer.framework in Frameworks */,
+				00F018902F934022008865FA /* Cocoatainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00F0188B2F933F1E008865FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00F0188C2F933F1E008865FA /* Cocoatainer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D297645D1B042A0200DE9E61 = {
 			isa = PBXGroup;
 			children = (
 				D2FA7EE21B0F081200069FE3 /* Cocoatainer.framework */,
 				D29764681B042A0200DE9E61 /* CocoatainerExample */,
+				00F0188B2F933F1E008865FA /* Frameworks */,
 				D29764671B042A0200DE9E61 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,7 +132,7 @@
 				D29764621B042A0200DE9E61 /* Sources */,
 				D29764631B042A0200DE9E61 /* Frameworks */,
 				D29764641B042A0200DE9E61 /* Resources */,
-				D2FA7EE61B0F0BF100069FE3 /* CopyFiles */,
+				00F018922F934022008865FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +163,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -229,7 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
@@ -268,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
@@ -283,6 +295,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6XKLFA63LP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)../Cocoatainer",
@@ -292,6 +305,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = CocoatainerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -304,6 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6XKLFA63LP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)../Cocoatainer",
@@ -313,6 +328,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = CocoatainerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

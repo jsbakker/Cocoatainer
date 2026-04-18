@@ -25,11 +25,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "NSObject+TypeDeduction.h"
-#import "CCTAbstractCocoatainer.h"
-#import "CCTCocoatainer.h"
-#import "CCTStartable.h"
-#import "CCTInitializers.h"
+#import <Cocoatainer/NSObject+TypeDeduction.h>
+#import <Cocoatainer/CCTAbstractCocoatainer.h>
+#import <Cocoatainer/CCTCocoatainer.h>
+#import <Cocoatainer/CCTStartable.h>
+#import <Cocoatainer/CCTInitializers.h>
 
 //! Project version number for Cocoatainer.
 FOUNDATION_EXPORT double CocoatainerVersionNumber;

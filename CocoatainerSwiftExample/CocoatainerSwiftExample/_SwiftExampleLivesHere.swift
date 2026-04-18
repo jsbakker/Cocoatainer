@@ -17,10 +17,10 @@ class _SwiftExampleLivesHere: NSObject
         // If there's a nicer way to turn a Swift Protocol into a Protocol!
         // and cast again into an AnyObject! so it can be passed to Obj-C
         // as an id then we can get rid of this ugly bit.
-        var phws: AnyObject! = NSObject.protocolAsId(HotWaterSource.self)
-        var ptop: AnyObject! = NSObject.protocolAsId(Topping.self)
-        var pmix: AnyObject! = NSObject.protocolAsId(Mixture.self)
-        var pmug: AnyObject! = NSObject.protocolAsId(LiquidVessel.self)
+        var phws: AnyObject! = NSObject.protocol(asId: HotWaterSource.self) as AnyObject
+        var ptop: AnyObject! = NSObject.protocol(asId: Topping.self) as AnyObject
+        var pmix: AnyObject! = NSObject.protocol(asId: Mixture.self) as AnyObject
+        var pmug: AnyObject! = NSObject.protocol(asId: LiquidVessel.self) as AnyObject
 
 
         container.registerComponent(phws, withInstance: Kettle())
