@@ -59,7 +59,7 @@ The above might happen inside of some cocoa configuration module, and the below 
 
     // Pass myMug to a CocoaDrinker
 
-...
+    // later ...
 
     // Later on inside of CocoaDrinker
 
@@ -100,7 +100,8 @@ Before method's local scope end.
 To create a Cocoatainer container
 ```objective-c
 #import "CCTCocoatainer.h"
-// ...
+
+// later...
 
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 ```
@@ -271,16 +272,11 @@ Before using Cocoatainer in your own project, you may want to familiarize yourse
 
 To start using Cocoatainer in your project, here's how you would set it up:
 
-* First, [download a pre-built zip](https://bitbucket.org/staeryatz/cocoatainer/downloads) of the framework.
-* In the same directory as your XCode project, create a 'lib' directory. This directory should be a sibling of the .xcodeproj file.
-* Unzip the Cocoatainer-*.zip file into the newly created 'lib' directory so that the 'Debug' and 'Release' folders are direct children 'lib'.
-* In your XCode project's 'Build settings' located 'Framework Search Paths' and add `$(PROJECT_DIR)/lib/$(CONFIGURATION)` to the value.
-* In the 'General' section of your project settings, find 'Embedded Binaries'. Click the '+' and choose 'Add other', and browse to your 'lib' folder. Expand the 'Release' folder and choose the Cocoatainer.framework file.
+* First, clone the framework: `git clone git@github.com:jsbakker/Cocoatainer.git`.
+* Inside the Cocoatainer repo, drag-drop the Cocoatainer folder into your Xcode project to add it.
+* In your XCode project target settings, General, click the Add button under "Frameworks and Libraries".
+* Find Cocoatainer.framework (should be near the top if it's added to your Xcode project).
 * You should now be able to `#import <Cocoatainer/Cocoatainer.h>` and start using it in your project.
-
-Note, that according to [this guide](https://kodmunki.wordpress.com/2015/03/04/cocoa-touch-frameworks-for-ios8-remix/), the steps above will keep your project App Store submission-friendly. Worse case, you can download the Cocoatainer source and and the framework to your project.
-
-Another tip is that if you don't like committing 3rd party binaries into your git repo (especially if you're keen on keeping them up-to-date), you can use [git-fat](https://github.com/jedbrown/git-fat) to manage binaries on separate storage with version control.
 
 ### License ###
 
