@@ -2,6 +2,7 @@
 ![macOS](https://img.shields.io/badge/os-macOS-green.svg)
 ![iOS](https://img.shields.io/badge/os-iOS-green.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![Xcode - Build and Analyze](https://github.com/jsbakker/Cocoatainer/actions/workflows/objective-c-xcode.yml/badge.svg)](https://github.com/jsbakker/Cocoatainer/actions/workflows/objective-c-xcode.yml)
 
 # Cocoatainer #
 **NOTE:** This project has been replaced by the framework [CocoatainerSwift](https://github.com/jsbakker/CocoatainerSwift), which is a Swift implementation of Cocoatainer. CocoatainerSwift supports the Swift Package Manager for your convenience to consume it.
