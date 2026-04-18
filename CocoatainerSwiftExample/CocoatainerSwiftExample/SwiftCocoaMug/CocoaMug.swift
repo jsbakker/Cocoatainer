@@ -24,7 +24,7 @@ public class CocoaMug: NSObject, LiquidVessel, CCTStartable
 
     deinit
     {
-        println("Someone left this \(millilitres) ml full mug here. I will just pour it out.")
+        print("Someone left this \(millilitres) ml full mug here. I will just pour it out.")
     }
 
     public func start()
@@ -36,17 +36,17 @@ public class CocoaMug: NSObject, LiquidVessel, CCTStartable
     {
         mixture.shovel()
         millilitres = source.pourCup()
-        println("Mug is filled to \(millilitres) ml of hot Cocoa.")
+        print("Mug is filled to \(millilitres) ml of hot Cocoa.")
     }
 
-    public func drink(amount: Int)
+    public func drink(_ amount: Int)
     {
-        println("Drinking \(millilitres) ml from the mug.")
+        print("Drinking \(millilitres) ml from the mug.")
         millilitres -= amount
     }
 
     public func checkAmount()
     {
-        println("There is \(millilitres) ml of cocoa left in the mug.")
+        print("There is \(millilitres) ml of cocoa left in the mug.")
     }
 }

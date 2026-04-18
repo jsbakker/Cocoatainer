@@ -19,16 +19,16 @@ public class CocoaPowder: NSObject, Mixture, CCTStartable
 
     deinit
     {
-        println("This cocoa powder has coagulated at the bottom.")
+        print("This cocoa powder has coagulated at the bottom.")
     }
 
     public func start()
     {
-        println("Creating \(_stdlib_getDemangledTypeName(self)) mix with \(topping.name()) topping.")
+        print("Creating \(String(describing: type(of: self))) mix with \(topping.name()) topping.")
     }
 
     public func shovel()
     {
-        println("Shovel three tablespoons of mixture.")
+        print("Shovel three tablespoons of mixture.")
     }
 }

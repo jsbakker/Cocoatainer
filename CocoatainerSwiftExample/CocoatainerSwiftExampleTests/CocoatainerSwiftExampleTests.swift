@@ -24,81 +24,65 @@ class CocoatainerSwiftExampleTests: XCTestCase {
     
     func testRegisterProtocolWithClosure() {
 
-        var container = CCTCocoatainer()
+        let container = CCTCocoatainer()
 
-        var phws: AnyObject! = NSObject.protocolAsId(HotWaterSource.self)
+        let phws = NSObject.protocol(asId: HotWaterSource.self) as AnyObject
 
-        container.registerComponent(phws, initsWith:
-            { () -> AnyObject in
-                Kettle()
-        })
+        container.registerComponent(phws, initsWith: { Kettle() })
 
-        var hws = container.resolveComponent(phws) as! HotWaterSource!
-
-        XCTAssertTrue(hws != nil, "HotWaterSource not nil")
+        XCTAssertNotNil(container.resolveComponent(phws) as? HotWaterSource, "HotWaterSource not nil")
     }
 
     func testRegisterClassWithClosure() {
 
-        var container = CCTCocoatainer()
+        let container = CCTCocoatainer()
 
-        container.registerComponent(Kettle.self, initsWith:
-            { () -> AnyObject in
-                Kettle()
-        })
+        container.registerComponent(Kettle.self, initsWith: { Kettle() })
 
-        var k = container.resolveComponent(Kettle.self) as! Kettle!
-
-        XCTAssertTrue(k != nil, "Kettle not nil")
+        XCTAssertNotNil(container.resolveComponent(Kettle.self) as? Kettle, "Kettle not nil")
     }
 
     func testRegisterProtocolWithInstance() {
 
-        var container = CCTCocoatainer()
+        let container = CCTCocoatainer()
 
-        var phws: AnyObject! = NSObject.protocolAsId(HotWaterSource.self)
+        let phws = NSObject.protocol(asId: HotWaterSource.self) as AnyObject
 
         container.registerComponent(phws, withInstance: Kettle())
 
-        var hws = container.resolveComponent(phws) as! HotWaterSource!
-
-        XCTAssertTrue(hws != nil, "HotWaterSource not nil")
+        XCTAssertNotNil(container.resolveComponent(phws) as? HotWaterSource, "HotWaterSource not nil")
     }
 
     func testRegisterClassWithInstance() {
 
-        var container = CCTCocoatainer()
+        let container = CCTCocoatainer()
 
         container.registerComponent(Kettle.self, withInstance: Kettle())
 
-        var k = container.resolveComponent(Kettle.self) as! Kettle!
-        
-        XCTAssertTrue(k != nil, "Kettle not nil")
+        XCTAssertNotNil(container.resolveComponent(Kettle.self) as? Kettle, "Kettle not nil")
     }
 
     func testNestedScope() {
 
-        var ptop: AnyObject! = NSObject.protocolAsId(Topping.self)
-        var pmix: AnyObject! = NSObject.protocolAsId(Mixture.self)
+        let ptop = NSObject.protocol(asId: Topping.self) as AnyObject
+        let pmix = NSObject.protocol(asId: Mixture.self) as AnyObject
 
-        var outerScope = CCTCocoatainer()
+        let outerScope = CCTCocoatainer()
 
         outerScope.registerComponent(ptop, withInstance: Marshmallow())
 
         autoreleasepool {
 
-            var innerScope = CCTCocoatainer()
+            let innerScope = CCTCocoatainer()
             innerScope.addParent(outerScope)
 
             innerScope.registerComponent(pmix,
                 dependentOn1: ptop,
-                initsWith:
-                { (top: AnyObject!) -> AnyObject! in
+                initsWith: { top in
                     CocoaPowder(topping: top as! Topping)
                 })
 
-            var mixture =
-                innerScope.resolveComponent(pmix) as! Mixture
+            let mixture = innerScope.resolveComponent(pmix) as! Mixture
 
             XCTAssertNotNil(mixture, "Mixture resolved.")
         }
@@ -106,43 +90,41 @@ class CocoatainerSwiftExampleTests: XCTestCase {
 
     func testNestedScopeThreeGenerations() {
 
-        var phws: AnyObject! = NSObject.protocolAsId(HotWaterSource.self)
-        var ptop: AnyObject! = NSObject.protocolAsId(Topping.self)
-        var pmix: AnyObject! = NSObject.protocolAsId(Mixture.self)
-        var pmug: AnyObject! = NSObject.protocolAsId(LiquidVessel.self)
+        let phws = NSObject.protocol(asId: HotWaterSource.self) as AnyObject
+        let ptop = NSObject.protocol(asId: Topping.self) as AnyObject
+        let pmix = NSObject.protocol(asId: Mixture.self) as AnyObject
+        let pmug = NSObject.protocol(asId: LiquidVessel.self) as AnyObject
 
-        var outerScope = CCTAbstractCocoatainer()
+        let outerScope = CCTAbstractCocoatainer()
 
         outerScope.registerComponent(phws, withInstance: Kettle())
         outerScope.registerComponent(ptop, withInstance: Marshmallow())
 
         autoreleasepool {
 
-            var middleScope = CCTAbstractCocoatainer()
+            let middleScope = CCTAbstractCocoatainer()
             middleScope.addParent(outerScope)
 
             middleScope.registerComponent(pmix,
                 dependentOn1: ptop,
-                initsWith:
-                { (top: AnyObject!) -> AnyObject! in
+                initsWith: { top in
                     CocoaPowder(topping: top as! Topping)
-            })
+                })
 
             autoreleasepool {
 
-                var innerScope = CCTAbstractCocoatainer()
+                let innerScope = CCTAbstractCocoatainer()
                 innerScope.addParent(middleScope)
 
-                innerScope.registerComponent(pmug!,
+                innerScope.registerComponent(pmug,
                     dependentOn1: phws,
-                    and2: pmix)
-                    { (source: AnyObject!, mix: AnyObject!) -> AnyObject! in
+                    and2: pmix,
+                    initsWith: { source, mix in
                         CocoaMug(source: source as! HotWaterSource,
                             mixture: mix as! Mixture)
-                }
+                    })
 
-                var mug: LiquidVessel =
-                    innerScope.resolveComponent(pmug) as! LiquidVessel
+                let mug = innerScope.resolveComponent(pmug) as! LiquidVessel
 
                 XCTAssertNotNil(mug, "LiquidVessel resolved.")
             }

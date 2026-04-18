@@ -14,7 +14,7 @@ public class Kettle: NSObject, HotWaterSource, CCTStartable
 
     deinit
     {
-        println("This water got cold and looks old. I will dump it out.")
+        print("This water got cold and looks old. I will dump it out.")
     }
 
     public func start()
@@ -24,12 +24,12 @@ public class Kettle: NSObject, HotWaterSource, CCTStartable
 
     public func heat()
     {
-        println("Boiling water to 100 degrees C.")
+        print("Boiling water to 100 degrees C.")
     }
 
     public func pourCup() -> Int
     {
-        println("Pouring a cup of hot water.")
+        print("Pouring a cup of hot water.")
         return FullCup
     }
 }

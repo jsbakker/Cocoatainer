@@ -11,6 +11,6 @@ import Foundation
 @objc public protocol LiquidVessel
 {
     func fill()
-    func drink(amount: Int)
+    func drink(_ amount: Int)
     func checkAmount()
 }

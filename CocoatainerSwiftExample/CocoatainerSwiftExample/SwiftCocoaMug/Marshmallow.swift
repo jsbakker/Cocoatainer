@@ -12,6 +12,6 @@ public class Marshmallow: NSObject, Topping
 {
     public func name() -> String
     {
-        return "\(_stdlib_getDemangledTypeName(self))"
+        return String(describing: type(of: self))
     }
 }
