@@ -1,6 +1,12 @@
-# README #
+![Objective-C](https://img.shields.io/badge/language-Objective&#8209;C-blue.svg)
+![macOS](https://img.shields.io/badge/os-macOS-green.svg)
+![iOS](https://img.shields.io/badge/os-iOS-green.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Welcome to the Cocoatainer project. This project is aimed at providing Objective-C (and Swift) developers with an iOS framework for [Dependency Injection](http://en.wikipedia.org/wiki/Dependency_injection) / [Inversion of Control](http://en.wikipedia.org/wiki/Inversion_of_control). 
+# Cocoatainer #
+**NOTE:** This project has been replaced by the framework [CocoatainerSwift](https://github.com/jsbakker/CocoatainerSwift), which is a Swift implementation of Cocoatainer. CocoatainerSwift supports the Swift Package Manager for your convenience to consume it.
+
+This project provides Objective-C (and Swift) developers with an iOS framework for [Dependency Injection](http://en.wikipedia.org/wiki/Dependency_injection) / [Inversion of Control](http://en.wikipedia.org/wiki/Inversion_of_control). 
  
 Cocoatainer provides an IoC container using constructor injection (as opposed to property injection) and does not require your classes to be written in an esoteric way for its dependencies to be injected. Cocoatainer supports registering components either by abstract (protocol) or by concrete type (class). The container supports the following features:
 
@@ -93,7 +99,7 @@ Before method's local scope end.
 To create a Cocoatainer container
 ```objective-c
 #import "CCTCocoatainer.h"
-...
+// ...
 
     CCTCocoatainer* config = [[CCTCocoatainer alloc] init];
 ```
@@ -209,44 +215,45 @@ This example below is container scope nesting. Note, that an inner (descendant) 
 ```
 
 ### CocoaMug Example in Swift ###
-```
+**NOTE:** While you can use Cocoatainer with Swift, it is recommended to use the framework [CocoatainerSwift](https://github.com/jsbakker/CocoatainerSwift), which is written in modern Swift, for Swift users. The example below may be used if you have an Objective-C project that also has Swift code, and you need the Inversion of Control to handle objects from both.
+```Swift
 import Cocoatainer
-...
-        var container = CCTCocoatainer()
 
-        var phws: AnyObject! = NSObject.protocolAsId(HotWaterSource.self)
-        var ptop: AnyObject! = NSObject.protocolAsId(Topping.self)
-        var pmix: AnyObject! = NSObject.protocolAsId(Mixture.self)
-        var pmug: AnyObject! = NSObject.protocolAsId(LiquidVessel.self)
+// later on...
 
-        container.registerComponent(phws, withInstance: Kettle())
+let container = CCTCocoatainer()
 
-        container.registerComponent(ptop, withInstance: Marshmallow())
+let phws = NSObject.protocol(asId: HotWaterSource.self) as AnyObject
+let ptop = NSObject.protocol(asId: Topping.self) as AnyObject
+let pmix = NSObject.protocol(asId: Mixture.self) as AnyObject
+let pmug = NSObject.protocol(asId: LiquidVessel.self) as AnyObject
 
-        container.registerComponent(pmix,
-            dependentOn1: ptop,
-            initsWith:
-            { (top: AnyObject!) -> AnyObject! in
-                CocoaPowder(topping: top as! Topping)
-            })
+container.registerComponent(phws, withInstance: Kettle())
 
-        container.registerComponent(pmug,
-            dependentOn1: phws,
-            and2: pmix)
-            { (source: AnyObject!, mix: AnyObject!) -> AnyObject! in
-                CocoaMug(source: source as! HotWaterSource,
-                    mixture: mix as! Mixture)
-            }
+container.registerComponent(ptop, withInstance: Marshmallow())
 
-        container.start(true)
+container.registerComponent(pmix,
+    dependentOn1: ptop,
+    initsWith: { top in
+        CocoaPowder(topping: top as! Topping)
+    })
 
-        var mug: LiquidVessel =
-            container.resolveComponent(pmug) as! LiquidVessel
+container.registerComponent(pmug,
+    dependentOn1: phws,
+    and2: pmix,
+    initsWith: { source, mix in
+        CocoaMug(source: source as! HotWaterSource,
+            mixture: mix as! Mixture)
+    })
 
-        mug.drink(25)
-        mug.checkAmount()
-        mug.drink(25)
-        mug.checkAmount()
+container.start(true)
+
+let mug = container.resolveComponent(pmug) as! LiquidVessel
+
+mug.drink(25)
+mug.checkAmount()
+mug.drink(25)
+mug.checkAmount()
 ```
 ### Getting Familiar ###
 
@@ -278,7 +285,3 @@ Another tip is that if you don't like committing 3rd party binaries into your gi
 
 Copyright (C)2015 Jeffrey Bakker. All rights reserved.  
 Released under the MIT license (see LICENSE.md for full text).
-
-### Contact ###
-
-Jeffrey Bakker <jeffrey at seatoskyware dot com>
